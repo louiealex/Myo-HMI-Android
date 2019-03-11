@@ -25,6 +25,7 @@ import java.util.Date;
 public class SaveData extends Activity{
 
     private static final int MY_PERMISSIONS_WRITE_EXTERNAL_STORAGE = 1;
+    private static final int MY_PERMISSIONS_READ_EXTERNAL_STORAGE = 2;
 
     private Context context;
 
@@ -110,6 +111,8 @@ public class SaveData extends Activity{
         return file;
     }
 
+//    public void readData(uri Uri)
+
     public void addToFile(File file, String line){
             try {
                 FileOutputStream fileOutputStream = new FileOutputStream(file, true);
@@ -128,7 +131,7 @@ public class SaveData extends Activity{
     }
 
     public void checkWriteExternalStoragePermission() {
-        ContextCompat.checkSelfPermission(context,      Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions((Activity) context,
                     new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
@@ -136,10 +139,24 @@ public class SaveData extends Activity{
         }
     }
 
+    public void checkReadExternalStoragePermission() {
+        Log.d("FUKKK","Checking reading external storage");
+        ContextCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE);
+        if (ContextCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions((Activity) context,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                    MY_PERMISSIONS_READ_EXTERNAL_STORAGE);
+        }
+    }
+
+    public void requestPermissions() {
+        ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, MY_PERMISSIONS_READ_EXTERNAL_STORAGE);
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        Log.d("REQUEST_CODE",String.valueOf(requestCode));
         switch (requestCode) {
-
             case MY_PERMISSIONS_WRITE_EXTERNAL_STORAGE: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(context, "Write Storage Permission (already) Granted", Toast.LENGTH_SHORT).show();
@@ -147,10 +164,15 @@ public class SaveData extends Activity{
                     Toast.makeText(context, "Permission Denied", Toast.LENGTH_SHORT).show();
                 }
                 return;
-
             }
-            // other 'case' lines to check for other
-            // permissions this app might request
+            case MY_PERMISSIONS_READ_EXTERNAL_STORAGE: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(context, "Write Storage Permission (already) Granted", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(context, "Permission Denied", Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
         }
     }
 

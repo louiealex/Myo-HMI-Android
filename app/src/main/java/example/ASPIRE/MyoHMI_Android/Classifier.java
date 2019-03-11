@@ -135,7 +135,7 @@ public class Classifier {
     public void setChoice(int newChoice) {
         trained2 = false;
 
-        if (trained) {//must re train if the a new lda is chosen.. NEED feature that checks if one has already been trained so it doesnt train the same one twice!!!
+        if (trained) {//must re train if the a new classifier is chosen.. NEED feature that checks if one has already been trained so it doesnt train the same one twice!!!
 
             switch (newChoice) {
                 case 0:
@@ -239,7 +239,7 @@ public class Classifier {
 //            Log.d("TIME", String.valueOf(System.currentTimeMillis() - MyoGattCallback.superTimeInitial));
             return prediction;
         }
-        return 1000;
+        return -1;
     }
 
     public void trainLDA() {

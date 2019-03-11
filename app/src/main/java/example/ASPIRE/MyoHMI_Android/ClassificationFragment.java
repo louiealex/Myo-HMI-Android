@@ -1,10 +1,12 @@
 package example.ASPIRE.MyoHMI_Android;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
@@ -18,8 +20,10 @@ import android.os.SystemClock;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.service.notification.Condition;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.util.LogPrinter;
 import android.util.SparseBooleanArray;
@@ -66,6 +70,8 @@ import static example.ASPIRE.MyoHMI_Android.ListActivity.TAG;
 import static example.ASPIRE.MyoHMI_Android.R.id.textView;
 import static example.ASPIRE.MyoHMI_Android.R.layout.countdown;
 import static java.lang.Character.FORMAT;
+import android.Manifest;
+
 
 /**
  * Created by User on 2/28/2017.
@@ -77,7 +83,7 @@ public class ClassificationFragment extends Fragment {
     private List<String> ListElementsArrayList;
     private List<String> ClassifierArrayList;
     private List<String> Copy_of_selectedItemsList;
-    private SaveData saver;
+    private static SaveData saver;
     private ArrayList<DataVector> trainData = new ArrayList<>();
     private int count = 4;
     private Handler mHandler = new Handler();
@@ -159,6 +165,7 @@ public class ClassificationFragment extends Fragment {
         fcalc = new FeatureCalculator(v, getActivity());
         classifier = new Classifier(getActivity());
         saver = new SaveData(this.getContext());
+        saver.checkReadExternalStoragePermission();
 
 
         or_text = (TextView) v.findViewById(R.id.or_text);
@@ -177,6 +184,7 @@ public class ClassificationFragment extends Fragment {
 
         ListElementsArrayList = new ArrayList<String>(Arrays.asList(ListElements));
         ClassifierArrayList = new ArrayList<String>(Arrays.asList(classifier_options));
+//        DocumentsContract = new DocumentsContract();
 
         cloudUpload = new CloudUpload(getActivity());
 
@@ -587,14 +595,17 @@ public class ClassificationFragment extends Fragment {
     }
 
     public void givePath(Uri data) {
+        saver.checkReadExternalStoragePermission();
+        saver.checkWriteExternalStoragePermission();
         ArrayList<String> TempGestures = new ArrayList<String>() {{ //temporary!!!
             add("A");
             add("B");
             add("C");
         }};
         try {
+
             BufferedReader reader = new BufferedReader(new FileReader(getPath(this.getContext(), data)));
-            String text = null;
+            String text;
             String[] column;
             String[] emgData;
             double[] lineData = new double[48];
@@ -630,66 +641,68 @@ public class ClassificationFragment extends Fragment {
 
     public static String getPath(final Context context, final Uri uri) {
 
-        final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
+//        final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
+//
+//        // DocumentProvider
+//        if (isKitKat && DocumentsContract.isDocumentUri(context, uri)) {
+////        if (isKitKat) {
+//            // ExternalStorageProvider
+//            if (isExternalStorageDocument(uri)) {
+//                final String docId = DocumentsContract.getDocumentId(uri);
+//                final String[] split = docId.split(":");
+//                final String type = split[0];
+//
+//                Log.d("HELLLOOOO!!", "");
+//
+//                if ("primary".equalsIgnoreCase(type)) {
+//                    return Environment.getExternalStorageDirectory() + "/" + split[1];
+//                }
+//            }
+//            // DownloadsProvider
+//            else if (isDownloadsDocument(uri)) {
+//
+//                final String id = DocumentsContract.getDocumentId(uri);
+//                final Uri contentUri = ContentUris.withAppendedId(
+//                        Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
+//
+//                return getDataColumn(context, contentUri, null, null);
+//            }
+//            // MediaProvider
+//            else if (isMediaDocument(uri)) {
+//                final String docId = DocumentsContract.getDocumentId(uri);
+//                final String[] split = docId.split(":");
+//                final String type = split[0];
+//
+//                Uri contentUri = null;
+//                if ("image".equals(type)) {
+//                    contentUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+//                } else if ("video".equals(type)) {
+//                    contentUri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
+//                } else if ("audio".equals(type)) {
+//                    contentUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
+//                }
+//
+//                final String selection = "_id=?";
+//                final String[] selectionArgs = new String[]{
+//                        split[1]
+//                };
+//
+//                return getDataColumn(context, contentUri, selection, selectionArgs);
+//            }
+//        }
+//        // MediaStore (and general)
+//        else if ("content".equalsIgnoreCase(uri.getScheme())) {
+//            return getDataColumn(context, uri, null, null);
+//        }
+//        // File
+//        else if ("file".equalsIgnoreCase(uri.getScheme())) {
+//            return uri.getPath();
+//        }
 
-        // DocumentProvider
-        if (isKitKat && DocumentsContract.isDocumentUri(context, uri)) {
-            // ExternalStorageProvider
-            if (isExternalStorageDocument(uri)) {
-                final String docId = DocumentsContract.getDocumentId(uri);
-                final String[] split = docId.split(":");
-                final String type = split[0];
+//        return context.getFilesDir().getPath();
 
-                Log.d("HELLLOOOO!!", "");
-
-                if ("primary".equalsIgnoreCase(type)) {
-                    return Environment.getExternalStorageDirectory() + "/" + split[1];
-                }
-
-                // TODO handle non-primary volumes
-            }
-            // DownloadsProvider
-            else if (isDownloadsDocument(uri)) {
-
-                final String id = DocumentsContract.getDocumentId(uri);
-                final Uri contentUri = ContentUris.withAppendedId(
-                        Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
-
-                return getDataColumn(context, contentUri, null, null);
-            }
-            // MediaProvider
-            else if (isMediaDocument(uri)) {
-                final String docId = DocumentsContract.getDocumentId(uri);
-                final String[] split = docId.split(":");
-                final String type = split[0];
-
-                Uri contentUri = null;
-                if ("image".equals(type)) {
-                    contentUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-                } else if ("video".equals(type)) {
-                    contentUri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
-                } else if ("audio".equals(type)) {
-                    contentUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
-                }
-
-                final String selection = "_id=?";
-                final String[] selectionArgs = new String[]{
-                        split[1]
-                };
-
-                return getDataColumn(context, contentUri, selection, selectionArgs);
-            }
-        }
-        // MediaStore (and general)
-        else if ("content".equalsIgnoreCase(uri.getScheme())) {
-            return getDataColumn(context, uri, null, null);
-        }
-        // File
-        else if ("file".equalsIgnoreCase(uri.getScheme())) {
-            return uri.getPath();
-        }
-
-        return null;
+        return uri.getPath();
+//        return null;
     }
 
     public static String getDataColumn(Context context, Uri uri, String selection, String[] selectionArgs) {

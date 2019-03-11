@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Alex\\Dropbox\\Desktop\\Vagrant\\Myo-HMI-Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-normal-v4\\values-normal-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Alex\\Dropbox\\Desktop\\Vagrant\\Myo-HMI-Android\\app\\src\\main\\res\\values-normal\\dimens.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "59",
+                        "endColumns": "43",
+                        "endOffsets": "98"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "43",
+                        "endOffsets": "94"
+                    }
+                }
+            ]
+        }
+    ]
+}

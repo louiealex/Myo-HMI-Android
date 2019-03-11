@@ -242,26 +242,26 @@ public class MyoGattCallback extends BluetoothGattCallback {
 
     public void onCharacteristicRead(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
 
-//        readCharacteristicQueue.remove();
         if (status == BluetoothGatt.GATT_SUCCESS) {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    textView.setText("" + ListActivity.myoName + " Connected");
+                    //textView.setText("" + ListActivity.myoName + " Connected");
                     myoConnected = true;
                     progress.setVisibility(View.INVISIBLE);
                     connectingTextView.setVisibility(View.INVISIBLE);
                 }
             });
-//            EmgFragment emgFrag = new EmgFragment();
-//            emgFrag.clickedemg(v);
         } else {
             myoConnected = false;
             Log.d(TAG, "onCharacteristicRead error: " + status);
         }
-
-//        if(readCharacteristicQueue.size() > 0)
-//            mBluetoothGatt.readCharacteristic(readCharacteristicQueue.element());
+        if (setMyoControlCommand(commandList.sendImuAndEmg())) {
+            textView.setText("");
+            Log.d(TAG, "Successfully started EMG stream");
+        } else {
+            Log.d(TAG, "Unable to start EMG stream");
+        }
     }
 
     @Override
@@ -299,13 +299,13 @@ public class MyoGattCallback extends BluetoothGattCallback {
 //            fcalc.pushFeatureBuffer(emg_data1);
             fcalc.pushFeatureBuffer(emg_data2);
 
-            byte cloudControl = 0;
-            if (fcalc.getClassify()) {
-                cloudControl = 1;
-            } else if (fcalc.getTrain()) {
-                cloudControl = 2;
-            }
-            byte[] emg_data_controlled = ArrayUtils.add(emg_data, 0, cloudControl);
+//            byte cloudControl = 0;
+//            if (fcalc.getClassify()) {
+//                cloudControl = 1;
+//            } else if (fcalc.getTrain()) {
+//                cloudControl = 2;
+//            }
+//            byte[] emg_data_controlled = ArrayUtils.add(emg_data, 0, cloudControl);
 
 //            /*The following can test the tcp latency by sending a timestamp to the server DOES NOT WORK NEED TO IMPLEMENT LAMPORT TIMESTAMPS*/
 //            long currentTime = System.currentTimeMillis();
@@ -320,21 +320,17 @@ public class MyoGattCallback extends BluetoothGattCallback {
             plotter.pushPlotter(emg_data);
 
             if (systemTime_ms > last_send_never_sleep_time_ms + NEVER_SLEEP_SEND_TIME) {
-                // set Myo [Never Sleep Mode]
                 setMyoControlCommand(commandList.sendUnSleep());
                 last_send_never_sleep_time_ms = systemTime_ms;
             }
         } else if (IMU_0_ID.equals(characteristic.getUuid().toString())) {
             long systemTime_ms = System.currentTimeMillis();
             byte[] imu_data = characteristic.getValue();
-//            imuPlotter.pushIMUPlotter(imu_data);
             Number[] emg_dataObj = ArrayUtils.toObject(imu_data);
             ArrayList<Number> imu_data_list1 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 0, 10)));
             ArrayList<Number> imu_data_list2 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 10, 20)));
             DataVector dvec1 = new DataVector(true, 1, 10, imu_data_list1, systemTime_ms);
             DataVector dvec2 = new DataVector(true, 2, 10, imu_data_list2, systemTime_ms);
-//            dvec1.printDataVector("IMU1");
-//            dvec2.printDataVector("IMU2");
             fcalc.pushIMUFeatureBuffer(dvec1);
             fcalc.pushIMUFeatureBuffer(dvec2);
 

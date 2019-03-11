@@ -256,6 +256,9 @@ public class FeatureCalculator {
 
         prediction = classifier.predict(inFeatemg);
 
+        if (prediction == -1) {
+            return;
+        }
         if (liveView != null) {
             classAct.runOnUiThread(new Runnable() {
                 @Override
