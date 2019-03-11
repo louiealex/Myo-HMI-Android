@@ -1,254 +1,254 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:2:1-83:12
-INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:2:1-83:12
-INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:2:1-83:12
-INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:2:1-83:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/f2140cb2fc93ec41112c4a16d8ce5897/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:design:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/bb890e22d2dfc65f5988b1b96df5ad63/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/140965df2c707b96035eda6583fc4629/AndroidManifest.xml:17:1-22:12
-MERGED from [:HoloGraphLibrary] /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/HoloGraphLibrary/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-18:12
-MERGED from [com.android.support:percent:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/percent-27.1.1.aar/5739ec236b637eaf4011f46a591d8538/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.volley:volley:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/2e26efa1c94d5ab4ddd2f59078d69ef3/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-v4:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/e92fb33d1d0cf66ad3f73908e60c15fd/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/36759cd67d46340cdb77cb1e070ce0e8/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/91cc79abca3dab208157f4be4782a797/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/b1257edc4a1265b38ea41b6a0dc40d22/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/404e6a1cdbad56de0a84f9ef48bc3a26/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/01d59e2ba2346b4cef15f25b4dee6ff0/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/1910c2aef2e30dda473f9e24ecaf2461/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:transition:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/9d85069499d2d6d02c6f07f3d7493bae/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/9d1ff6796d5682cb9d7303f04322cdf9/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/fdaf146a7d1132fc457efc10d568e900/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/1bf27fd08755a07c5e6fa9245e0d39b4/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/00d81ac3c0b7a9c948f36011e6b7b846/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/c3a7b62df4cab108f846cc25aba7bfa1/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/9416f5d983fdf09c32c33f01ed2222ac/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:2:1-83:12
-INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:2:1-83:12
-INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:2:1-83:12
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-83:12
+INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-83:12
+INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-83:12
+INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-83:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\5b73a5d2201de51ac252804402c6784b\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\0c307ea526450c6b13f4e4a9c93467e2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\5f8a7bac17bcc410e3db45e4951d7b8f\AndroidManifest.xml:17:1-22:12
+MERGED from [:HoloGraphLibrary] C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\HoloGraphLibrary\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-18:12
+MERGED from [com.android.support:percent:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\percent-27.1.1.aar\e27aae0f305e07ebdd66bb10bd33aa08\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\656ea526d60be64596f6afc60a2b3812\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\3febe9f16d7e7da2bc784efb25d32e70\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\ce5e69f2bf5df4c1824ee159d455695f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\445377640fb2eb724430774dba89620d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\99d8a63c3a218b50bd40d975c50402d1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\4d0925a9a65cc5d9f0dbd4f74a684f5d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\75767c30ea9122fcc12bab1dab6e6bba\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\a37f7b4d18c6cab700cc4707218d3cfb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\df808bb8ed0a66b95a4ae82451c4f68a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\382b8e1266a97283c91e1cbddb264687\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\ef1a4ad7c8c6090054672a3dc9317a5f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\0a71e826dfab491050ecf0ca9f8e9ac4\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\b50f842a4717bc97b2c849b0d2d0efcb\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\129d5b6f2445cdc0f69548fcb2484ccb\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\af262e8e8470321c05b038ca55ea8e51\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-83:12
+INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-83:12
+INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-83:12
 	package
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:4:5-44
-		INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:4:5-44
+		INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:2:1-83:12
-		INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-83:12
+		INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:3:5-51
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:2:1-83:12
-		INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-83:12
+		INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:11-69
 uses-sdk
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:6:5-8:41
-INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:6:5-8:41
-INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:6:5-8:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/f2140cb2fc93ec41112c4a16d8ce5897/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/f2140cb2fc93ec41112c4a16d8ce5897/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:design:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/bb890e22d2dfc65f5988b1b96df5ad63/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/bb890e22d2dfc65f5988b1b96df5ad63/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/140965df2c707b96035eda6583fc4629/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/140965df2c707b96035eda6583fc4629/AndroidManifest.xml:20:5-44
-MERGED from [:HoloGraphLibrary] /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/HoloGraphLibrary/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:HoloGraphLibrary] /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/HoloGraphLibrary/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:percent:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/percent-27.1.1.aar/5739ec236b637eaf4011f46a591d8538/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:percent:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/percent-27.1.1.aar/5739ec236b637eaf4011f46a591d8538/AndroidManifest.xml:20:5-44
-MERGED from [com.android.volley:volley:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/2e26efa1c94d5ab4ddd2f59078d69ef3/AndroidManifest.xml:7:5-43
-MERGED from [com.android.volley:volley:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/2e26efa1c94d5ab4ddd2f59078d69ef3/AndroidManifest.xml:7:5-43
-MERGED from [com.android.support:support-v4:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/e92fb33d1d0cf66ad3f73908e60c15fd/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/e92fb33d1d0cf66ad3f73908e60c15fd/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/36759cd67d46340cdb77cb1e070ce0e8/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/36759cd67d46340cdb77cb1e070ce0e8/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/91cc79abca3dab208157f4be4782a797/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/91cc79abca3dab208157f4be4782a797/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/b1257edc4a1265b38ea41b6a0dc40d22/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/b1257edc4a1265b38ea41b6a0dc40d22/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/404e6a1cdbad56de0a84f9ef48bc3a26/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/404e6a1cdbad56de0a84f9ef48bc3a26/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/01d59e2ba2346b4cef15f25b4dee6ff0/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/01d59e2ba2346b4cef15f25b4dee6ff0/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/1910c2aef2e30dda473f9e24ecaf2461/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/1910c2aef2e30dda473f9e24ecaf2461/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/9d85069499d2d6d02c6f07f3d7493bae/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/9d85069499d2d6d02c6f07f3d7493bae/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/9d1ff6796d5682cb9d7303f04322cdf9/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/9d1ff6796d5682cb9d7303f04322cdf9/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/fdaf146a7d1132fc457efc10d568e900/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/fdaf146a7d1132fc457efc10d568e900/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/1bf27fd08755a07c5e6fa9245e0d39b4/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/1bf27fd08755a07c5e6fa9245e0d39b4/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/00d81ac3c0b7a9c948f36011e6b7b846/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/00d81ac3c0b7a9c948f36011e6b7b846/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/c3a7b62df4cab108f846cc25aba7bfa1/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/c3a7b62df4cab108f846cc25aba7bfa1/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/9416f5d983fdf09c32c33f01ed2222ac/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/9416f5d983fdf09c32c33f01ed2222ac/AndroidManifest.xml:20:5-44
-INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:6:5-8:41
-INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:6:5-8:41
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:6:5-8:41
+INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:6:5-8:41
+INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\5b73a5d2201de51ac252804402c6784b\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\5b73a5d2201de51ac252804402c6784b\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\0c307ea526450c6b13f4e4a9c93467e2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\0c307ea526450c6b13f4e4a9c93467e2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\5f8a7bac17bcc410e3db45e4951d7b8f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\5f8a7bac17bcc410e3db45e4951d7b8f\AndroidManifest.xml:20:5-44
+MERGED from [:HoloGraphLibrary] C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\HoloGraphLibrary\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:HoloGraphLibrary] C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\HoloGraphLibrary\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:percent:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\percent-27.1.1.aar\e27aae0f305e07ebdd66bb10bd33aa08\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:percent:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\percent-27.1.1.aar\e27aae0f305e07ebdd66bb10bd33aa08\AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\656ea526d60be64596f6afc60a2b3812\AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\656ea526d60be64596f6afc60a2b3812\AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\3febe9f16d7e7da2bc784efb25d32e70\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\3febe9f16d7e7da2bc784efb25d32e70\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\ce5e69f2bf5df4c1824ee159d455695f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\ce5e69f2bf5df4c1824ee159d455695f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\445377640fb2eb724430774dba89620d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\445377640fb2eb724430774dba89620d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\99d8a63c3a218b50bd40d975c50402d1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\99d8a63c3a218b50bd40d975c50402d1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\4d0925a9a65cc5d9f0dbd4f74a684f5d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\4d0925a9a65cc5d9f0dbd4f74a684f5d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\75767c30ea9122fcc12bab1dab6e6bba\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\75767c30ea9122fcc12bab1dab6e6bba\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\a37f7b4d18c6cab700cc4707218d3cfb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\a37f7b4d18c6cab700cc4707218d3cfb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\df808bb8ed0a66b95a4ae82451c4f68a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\df808bb8ed0a66b95a4ae82451c4f68a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\382b8e1266a97283c91e1cbddb264687\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\382b8e1266a97283c91e1cbddb264687\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\ef1a4ad7c8c6090054672a3dc9317a5f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\ef1a4ad7c8c6090054672a3dc9317a5f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\0a71e826dfab491050ecf0ca9f8e9ac4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\0a71e826dfab491050ecf0ca9f8e9ac4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\b50f842a4717bc97b2c849b0d2d0efcb\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\b50f842a4717bc97b2c849b0d2d0efcb\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\129d5b6f2445cdc0f69548fcb2484ccb\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\129d5b6f2445cdc0f69548fcb2484ccb\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\af262e8e8470321c05b038ca55ea8e51\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\af262e8e8470321c05b038ca55ea8e51\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:6:5-8:41
+INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:6:5-8:41
 	android:targetSdkVersion
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:8:9-38
-		INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:8:9-38
+		INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:7:9-35
-		INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:7:9-35
+		INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:10:5-79
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:10:5-79
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:10:22-76
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:10:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:11:5-81
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:11:22-78
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:11:22-78
 uses-permission#android.permission.BLUETOOTH
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:12:5-68
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:12:5-68
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:12:22-65
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:12:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:13:5-74
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:13:5-74
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:13:22-71
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:13:22-71
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:14:5-81
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:14:5-81
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:14:22-78
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:14:22-78
 uses-permission#android.permission.INTERNET
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:15:5-67
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:15:5-67
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:15:22-64
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:15:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:16:5-79
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:16:5-79
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:16:22-76
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:16:22-76
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:17:5-80
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:17:5-80
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:17:22-77
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:17:22-77
 uses-permission#android.permission.READ_INTERNAL_STORAGE
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:19:5-80
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:19:5-80
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:19:22-77
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:19:22-77
 uses-permission#android.permission.WRITE_INTERNAL_STORAGE
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:20:5-81
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:20:5-81
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:20:22-78
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:20:22-78
 uses-feature#android.hardware.bluetooth_le
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:22:5-24:35
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:22:5-24:35
 	android:required
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:24:9-32
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:24:9-32
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:23:9-53
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:23:9-53
 permission#android.permission.BLUETOOTH
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:28:5-30:37
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:28:5-30:37
 	android:label
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:30:9-34
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:30:9-34
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:29:9-52
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:29:9-52
 permission#android.permission.BLUETOOTH_ADMIN
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:31:5-69
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:31:5-69
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:31:17-66
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:31:17-66
 permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:32:5-74
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:32:5-74
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:32:17-71
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:32:17-71
 permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:33:5-76
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:33:5-76
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:33:17-73
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:33:17-73
 supports-screens
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:35:5-38:39
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:35:5-38:39
 	android:largeScreens
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:36:9-36
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:36:9-36
 	android:smallScreens
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:38:9-36
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:38:9-36
 	android:normalScreens
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:37:9-37
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:37:9-37
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:40:5-75
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:40:5-75
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:40:22-72
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:40:22-72
 application
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:42:5-81:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/f2140cb2fc93ec41112c4a16d8ce5897/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/f2140cb2fc93ec41112c4a16d8ce5897/AndroidManifest.xml:9:5-20
-MERGED from [:HoloGraphLibrary] /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/HoloGraphLibrary/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-16:19
-MERGED from [:HoloGraphLibrary] /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/HoloGraphLibrary/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-16:19
-MERGED from [com.android.volley:volley:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/2e26efa1c94d5ab4ddd2f59078d69ef3/AndroidManifest.xml:9:5-20
-MERGED from [com.android.volley:volley:1.1.0] /Users/ricardocolin/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/2e26efa1c94d5ab4ddd2f59078d69ef3/AndroidManifest.xml:9:5-20
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:42:5-81:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\5b73a5d2201de51ac252804402c6784b\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\5b73a5d2201de51ac252804402c6784b\AndroidManifest.xml:9:5-20
+MERGED from [:HoloGraphLibrary] C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\HoloGraphLibrary\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-16:19
+MERGED from [:HoloGraphLibrary] C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\HoloGraphLibrary\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-16:19
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\656ea526d60be64596f6afc60a2b3812\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\Alex\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\656ea526d60be64596f6afc60a2b3812\AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:46:9-41
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:46:9-41
 	android:hardwareAccelerated
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:44:9-44
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:44:9-44
 	android:largeHeap
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:47:9-33
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:47:9-33
 	android:icon
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:45:9-42
-		REJECTED from [:HoloGraphLibrary] /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/HoloGraphLibrary/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:9-45
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:45:9-42
+		REJECTED from [:HoloGraphLibrary] C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\HoloGraphLibrary\build\intermediates\manifests\full\debug\AndroidManifest.xml:13:9-45
 	android:allowBackup
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:43:9-35
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:43:9-35
 	android:theme
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:48:9-40
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:48:9-40
 	tools:replace
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:49:9-37
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:49:9-37
 activity#example.ASPIRE.MyoHMI_Android.WelcomeActivity
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:50:9-59:20
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:50:9-59:20
 	android:label
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:53:13-45
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:53:13-45
 	android:configChanges
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:52:13-74
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:52:13-74
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:51:13-44
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:51:13-44
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:54:13-58:29
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:54:13-58:29
 action#android.intent.action.MAIN
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:55:17-69
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:55:17-69
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:55:25-66
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:55:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:57:17-77
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:57:17-77
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:57:27-74
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:57:27-74
 activity#example.ASPIRE.MyoHMI_Android.LoginActivity
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:60:9-63:51
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:60:9-63:51
 	android:label
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:63:13-48
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:63:13-48
 	android:configChanges
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:62:13-74
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:62:13-74
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:61:13-42
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:61:13-42
 activity#example.ASPIRE.MyoHMI_Android.MainActivity
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:64:9-67:48
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:64:9-67:48
 	android:label
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:67:13-45
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:67:13-45
 	android:configChanges
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:66:13-74
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:66:13-74
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:65:13-41
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:65:13-41
 activity#example.ASPIRE.MyoHMI_Android.ListActivity
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:68:9-71:59
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:68:9-71:59
 	android:label
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:71:13-56
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:71:13-56
 	android:configChanges
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:70:13-74
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:70:13-74
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:69:13-41
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:69:13-41
 service#com.amazonaws.mobileconnectors.s3.transferutility.TransferService
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:73:9-75:38
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:73:9-75:38
 	android:enabled
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:75:13-35
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:75:13-35
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:74:13-93
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:74:13-93
 activity#example.ASPIRE.MyoHMI_Android.RegisterActivity
-ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:77:9-80:54
+ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:77:9-80:54
 	android:label
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:80:13-51
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:80:13-51
 	android:configChanges
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:79:13-74
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:79:13-74
 	android:name
-		ADDED from /Users/ricardocolin/Desktop/Desktop/Projects/Aspires_Project/Myo-HMI-Android/MyoHMI_Android/app/src/main/AndroidManifest.xml:78:13-45
+		ADDED from C:\Users\Alex\Dropbox\Desktop\Vagrant\Myo-HMI-Android\app\src\main\AndroidManifest.xml:78:13-45
