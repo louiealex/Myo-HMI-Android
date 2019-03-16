@@ -47,6 +47,7 @@
         android:icon="@mipmap/sfsugators"
         android:label="@string/app_name"
         android:largeHeap="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="example.ASPIRE.MyoHMI_Android.WelcomeActivity"

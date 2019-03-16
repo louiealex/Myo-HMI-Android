@@ -10,232 +10,18 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e57a856-5ac7-439e-bc06-1da94ae2dfed" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Alex_Dropbox_Desktop_Vagrant_Myo_HMI_Android_app_libs_commons_lang3_3_6_jar_unspecified_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Alex_Dropbox_Desktop_Vagrant_Myo_HMI_Android_app_libs_commons_lang3_3_6_javadoc_jar_unspecified_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_Alex_Dropbox_Desktop_Vagrant_Myo_HMI_Android_app_libs_commons_lang3_3_6_sources_jar_unspecified_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_0_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_0_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_cognito_2_2_22_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_core_2_4_4_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_kms_2_4_4_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_lambda_2_2_22_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_amazonaws_aws_android_sdk_s3_2_4_4_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_1_2_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_percent_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_27_1_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_13_0_0_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_2_2_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_2_2_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_exposed_instrumentation_api_publish_0_5.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_rules_0_5.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_0_5.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_volley_volley_1_1_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_PhilJay_MPAndroidChart_v3_0_2_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_haifengl_smile_core_1_0_4_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_haifengl_smile_data_1_0_4_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_haifengl_smile_graph_1_0_4_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_haifengl_smile_math_1_0_4_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_2_4_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_annotation_javax_annotation_api_1_2_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Myo-HMI-Android.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/Myo-HMI-Android.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="99974f49-a8e1-4168-b23d-7cf33b4b70aa" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/HoloGraphLibrary/HoloGraphLibrary.iml" afterPath="$PROJECT_DIR$/HoloGraphLibrary/HoloGraphLibrary.iml" />
-      <change beforePath="$PROJECT_DIR$/HoloGraphLibrary/build/generated/source/r/debug/com/echo/holographlibrary/R.java" afterPath="$PROJECT_DIR$/HoloGraphLibrary/build/generated/source/r/debug/com/echo/holographlibrary/R.java" />
       <change beforePath="$PROJECT_DIR$/HoloGraphLibrary/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/HoloGraphLibrary/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" />
-      <change beforePath="$PROJECT_DIR$/HoloGraphLibrary/build/intermediates/incremental/packageDebugResources/merger.xml" afterPath="$PROJECT_DIR$/HoloGraphLibrary/build/intermediates/incremental/packageDebugResources/merger.xml" />
-      <change beforePath="$PROJECT_DIR$/HoloGraphLibrary/build/intermediates/manifests/aapt/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/HoloGraphLibrary/build/intermediates/manifests/aapt/debug/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/compat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/compat/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/coreui/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/coreui/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/coreutils/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/coreutils/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/design/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/design/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/fragment/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/fragment/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/graphics/drawable/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/graphics/drawable/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/graphics/drawable/animated/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/graphics/drawable/animated/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/mediacompat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/mediacompat/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/percent/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/percent/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/transition/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/transition/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v4/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v4/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/echo/holographlibrary/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/echo/holographlibrary/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/example/ASPIRE/MyoHMI_Android/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/example/ASPIRE/MyoHMI_Android/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/compat/R.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/coreui/R.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/coreutils/R.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$anim.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$animator.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$attr.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$bool.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$color.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$dimen.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$drawable.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$id.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$integer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$layout.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$string.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$style.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$styleable.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/fragment/R.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/graphics/drawable/R.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/graphics/drawable/animated/R.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/mediacompat/R.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/percent/R$attr.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/percent/R$styleable.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/percent/R.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/transition/R$id.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/transition/R.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v4/R.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$anim.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$attr.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$bool.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$color.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$dimen.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$drawable.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$integer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$string.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$style.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$styleable.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$attr.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$dimen.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$id.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$styleable.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/echo/holographlibrary/R$drawable.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/echo/holographlibrary/R$string.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/echo/holographlibrary/R$style.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/echo/holographlibrary/R.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/BuildConfig.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$1$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$1$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$10.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$11.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$12.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$13.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$14.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$3.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$4$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$4.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$5.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$6.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$7.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$8.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment$9.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClassificationFragment.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/Classifier.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ClientCommunicationThread.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/CloudUpload.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/Credentials.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/DataVector.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/EmgFragment$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/EmgFragment$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/EmgFragment$3.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/EmgFragment$4.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/EmgFragment$5.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/EmgFragment.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/FeatureCalculator$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/FeatureCalculator.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/FeatureFragment.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ImuFragment.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/Lambda$LTask.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/Lambda.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/LambdaInterface.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ListActivity$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ListActivity$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ListActivity$3.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ListActivity$4.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ListActivity$5$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ListActivity$5.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ListActivity$6.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ListActivity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/LoginActivity$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/LoginActivity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/MainActivity$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/MainActivity$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/MainActivity$TabsAdapter$TabInfo.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/MainActivity$TabsAdapter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/MainActivity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/Manifest$permission.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/Manifest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/MyoCommandList.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/MyoGattCallback$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/MyoGattCallback.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/PagerAdapter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/Plotter$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/Plotter$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/Plotter$3.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/Plotter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/R$anim.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/R$animator.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/R$attr.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/R$bool.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/R$color.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/R$dimen.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/R$drawable.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/R$id.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/R$integer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/R$layout.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/R$menu.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/R$mipmap.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/R$string.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/R$style.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/R$styleable.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/R.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/SaveData.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/ServerCommunicationThread.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/UploadListener.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/Util.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/emgConsumer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/example/ASPIRE/MyoHMI_Android/twoDimArray.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/ClassificationFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/ClassificationFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/Classifier.java" afterPath="$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/Classifier.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/FeatureCalculator.java" afterPath="$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/FeatureCalculator.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/MyoGattCallback.java" afterPath="$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/MyoGattCallback.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/SaveData.java" afterPath="$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/SaveData.java" />
-      <change beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -252,56 +38,38 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Myo-HMI-Android" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ClassificationFragment.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/ClassificationFragment.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+      <file leaf-file-name="app.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/app.iml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="613" column="22" lean-forward="true" selection-start-line="613" selection-start-column="22" selection-end-line="613" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3026#3036#0" expanded="true" />
-                <element signature="e#6170#6178#0" expanded="true" />
-                <element signature="e#6306#6314#0" expanded="true" />
-                <element signature="e#23416#23424#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="238">
+              <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <file leaf-file-name="MyoGattCallback.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/MyoGattCallback.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+            <state relative-caret-position="468">
+              <caret line="260" column="16" lean-forward="true" selection-start-line="260" selection-start-column="16" selection-end-line="260" selection-end-column="16" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SaveData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/SaveData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="152" column="155" lean-forward="false" selection-start-line="152" selection-start-column="155" selection-end-line="152" selection-end-column="155" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -3387,11 +3155,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/FeatureCalculator.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/MyoGattCallback.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/Classifier.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/SaveData.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/ClassificationFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/MyoGattCallback.java" />
       </list>
     </option>
   </component>
@@ -3438,8 +3206,8 @@
     <property name="android.sdk.path" value="$USER_HOME$/Documents/Android/sdk" />
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="device.picker.selection" value="988776415a46305753" />
-    <property name="SearchEverywhereHistoryKey" value="build.g&#9;FILE&#9;file://C:/Users/Alex/Dropbox/Desktop/Vagrant/Myo-HMI-Android/build.gradle&#10;save&#9;PSI&#9;JAVA://example.ASPIRE.MyoHMI_Android.SaveData&#10;saver&#9;PSI&#9;JAVA://android.service.autofill.SaveRequest&#10;CLASSIFIE&#9;PSI&#9;JAVA://example.ASPIRE.MyoHMI_Android.Classifier&#10;myoga&#9;PSI&#9;JAVA://example.ASPIRE.MyoHMI_Android.MyoGattCallback" />
+    <property name="device.picker.selection" value="0423516002349006e69c" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Alex/Dropbox/Desktop/Vagrant/Myo-HMI-Android/app/src/main/java/example/ASPIRE/MyoHMI_Android/MyoGattCallback.java&#10;build.g&#9;FILE&#9;file://C:/Users/Alex/Dropbox/Desktop/Vagrant/Myo-HMI-Android/build.gradle&#10;save&#9;PSI&#9;JAVA://example.ASPIRE.MyoHMI_Android.SaveData&#10;saver&#9;PSI&#9;JAVA://android.service.autofill.SaveRequest&#10;CLASSIFIE&#9;PSI&#9;JAVA://example.ASPIRE.MyoHMI_Android.Classifier&#10;myoga&#9;PSI&#9;JAVA://example.ASPIRE.MyoHMI_Android.MyoGattCallback" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -3621,37 +3389,37 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2861" y="-173" width="1581" height="1407" extended-state="0" />
-    <editor active="true" />
+    <frame x="-3848" y="-181" width="2576" height="1416" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28285256" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15779093" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2508013" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.02348178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="top" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9795699" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29473683" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5672609" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10015898" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -3663,10 +3431,46 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/MyoHMI_Android/app/src/main/java/example/ASPIRE/MyoHMI_Android/FeatureFragment.java" />
+    <entry file="file://$PROJECT_DIR$/MyoHMI_Android/build.gradle" />
+    <entry file="file://$PROJECT_DIR$/MyoHMI_Android/app/src/main/java/example/ASPIRE/MyoHMI_Android/FeatureFragment.java" />
+    <entry file="file://$PROJECT_DIR$/MyoHMI_Android/build.gradle" />
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/FeatureCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="230" column="17" lean-forward="false" selection-start-line="230" selection-start-column="17" selection-end-line="230" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/MyoGattCallback.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="755">
-          <caret line="374" column="1" lean-forward="false" selection-start-line="374" selection-start-column="1" selection-end-line="374" selection-end-column="1" />
+        <state relative-caret-position="550">
+          <caret line="265" column="0" lean-forward="false" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/Classifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -3731,9 +3535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="152" column="155" lean-forward="false" selection-start-line="152" selection-start-column="155" selection-end-line="152" selection-end-column="155" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3748,6 +3549,14 @@
             <element signature="e#6306#6314#0" expanded="true" />
             <element signature="e#23416#23424#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/example/ASPIRE/MyoHMI_Android/MyoGattCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="260" column="16" lean-forward="true" selection-start-line="260" selection-start-column="16" selection-end-line="260" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

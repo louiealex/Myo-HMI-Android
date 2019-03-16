@@ -257,7 +257,6 @@ public class MyoGattCallback extends BluetoothGattCallback {
             Log.d(TAG, "onCharacteristicRead error: " + status);
         }
         if (setMyoControlCommand(commandList.sendImuAndEmg())) {
-            textView.setText("");
             Log.d(TAG, "Successfully started EMG stream");
         } else {
             Log.d(TAG, "Unable to start EMG stream");
