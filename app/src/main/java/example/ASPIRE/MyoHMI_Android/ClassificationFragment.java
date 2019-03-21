@@ -82,7 +82,6 @@ public class ClassificationFragment extends Fragment {
     private FeatureCalculator fcalc;
     private List<String> ListElementsArrayList;
     private List<String> ClassifierArrayList;
-    private List<String> Copy_of_selectedItemsList;
     private static SaveData saver;
     private ArrayList<DataVector> trainData = new ArrayList<>();
     private int count = 4;
@@ -95,14 +94,12 @@ public class ClassificationFragment extends Fragment {
 
     Runnable r1;
     Runnable r2;
-    //private Classifier classifier;//for making toast on this activity
 
     EditText GetValue;
     ImageButton addButton;
     ImageButton deleteButton;
     ImageButton clearButton;
     ImageButton uploadButton;
-    //Button showButton;
     ImageButton trainButton;
     ImageButton loadButton;
     ImageButton resetButton;
@@ -113,7 +110,7 @@ public class ClassificationFragment extends Fragment {
     ViewGroup container;
 
     //create an ArrayList object to store selected items
-    public ArrayList<String> selectedItems = new ArrayList<>();
+    public static ArrayList<String> selectedItems = new ArrayList<>();
 
     Classifier classifier = new Classifier();
 
@@ -154,9 +151,6 @@ public class ClassificationFragment extends Fragment {
         final View v = inflater.inflate(R.layout.fragment_classification, container, false);
 
         assert v != null;
-
-//        final Runnable r1, r2;
-
         context = this.getContext();
 
         this.inflater = inflater;
@@ -214,21 +208,12 @@ public class ClassificationFragment extends Fragment {
             } else {
                 selectedItems.add(selectedItem); //add selected item to the list of selected items
             }
-
-            Copy_of_selectedItemsList = new ArrayList<String>(Arrays.asList(selectedItem));
         });
 
-
-        //set OnItemClickListener
         listview_Classifier.setOnItemClickListener((parent, view, position, id) -> {
-
             classifier.setChoice(position);
-
-            // selected item
             String Classifier_selectedItem = ((TextView) view).getText().toString();
-
             Toast.makeText(getActivity(), "selected: " + Classifier_selectedItem, Toast.LENGTH_SHORT).show();
-
         });
 
         deleteButton.setOnClickListener(new View.OnClickListener() {
@@ -260,12 +245,9 @@ public class ClassificationFragment extends Fragment {
                                     }
                                     selItems += "," + item;
                                 }
-
                             }
                             Toast.makeText(getActivity(), "Deleting: " + selItems, Toast.LENGTH_SHORT).show();
                             adapter.notifyDataSetChanged();
-
-
                         }
                     });
                     builder.show();
@@ -360,15 +342,6 @@ public class ClassificationFragment extends Fragment {
             public void onClick(View view) {
                 fileLoad();
             }
-
-//                IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-//                Intent batteryStatus = getContext().registerReceiver(null, ifilter);
-//                int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
-//                int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
-//                float batteryPct = level / (float)scale;
-//                Log.d("Battery$$$ ", String.valueOf(batteryPct));
-//                Toast.makeText(getActivity(), "Battery Level "+String.valueOf(batteryPct), Toast.LENGTH_SHORT).show();
-
         });
 
         return v;
@@ -449,7 +422,6 @@ public class ClassificationFragment extends Fragment {
             loadDialog.setIcon(R.drawable.add_icon_extra);
             loadDialog.setCancelable(true);
 
-
             loadDialog.setPositiveButton(
                     "SD CARD",
                     new DialogInterface.OnClickListener() {
@@ -458,13 +430,12 @@ public class ClassificationFragment extends Fragment {
                         }
                     });
 
-            loadDialog.setNegativeButton(
-                    "Cloud",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-
-                        }
-                    });
+//            loadDialog.setNegativeButton(
+//                    "Cloud",
+//                    new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int id) {
+//                        }
+//                    });
 
             loadDialog.setNeutralButton(
                     "Cancel",
@@ -549,7 +520,6 @@ public class ClassificationFragment extends Fragment {
                             } else {
                                 Log.d("Failed ", "uploading emg data");
                             }
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -594,48 +564,69 @@ public class ClassificationFragment extends Fragment {
         getActivity().startActivityForResult(intent, 2);
     }
 
-    public void givePath(Uri data) {
+    public void givePath(Uri data, Context context) {
         saver.checkReadExternalStoragePermission();
         saver.checkWriteExternalStoragePermission();
-        ArrayList<String> TempGestures = new ArrayList<String>() {{ //temporary!!!
-            add("A");
-            add("B");
-            add("C");
-        }};
+        ArrayList<String> TempGestures = new ArrayList<>();
+        for( int j = 0; j < ListElements.length; j++) {
+            TempGestures.add(j, ListElements[j]);
+        }
+//        Log.d("tempGestures:", TempGestures.toString());
         try {
+                BufferedReader reader = new BufferedReader(new FileReader(getPath(this.getContext(), data)));
+                String text;
+                String[] column;
+                String[] emgData;
+                double[] lineData = new double[48];
+                ArrayList<Integer> classes = new ArrayList<>();
 
-            BufferedReader reader = new BufferedReader(new FileReader(getPath(this.getContext(), data)));
-            String text;
-            String[] column;
-            String[] emgData;
-            double[] lineData = new double[48];
-            ArrayList<Integer> classes = new ArrayList<>();
-
-            int i = 0;
-            while ((text = reader.readLine()) != null) {
-                column = text.split("\t");
-                classes.add(Integer.parseInt(column[0]));
-                emgData = column[1].split(",");
-                for (int j = 0; j < emgData.length; j++) {
-                    lineData[j] = Double.parseDouble(emgData[j].replaceAll("[^\\d.]", ""));
+                int i = 0;
+                while ((text = reader.readLine()) != null) {
+                    column = text.split("\t");
+                    classes.add(Integer.parseInt(column[0]));
+                    emgData = column[1].split(",");
+                    for (int j = 0; j < emgData.length; j++) {
+                        lineData[j] = Double.parseDouble(emgData[j].replaceAll("[^\\d.]", ""));
+                    }
+                    Number[] feat_dataObj = ArrayUtils.toObject(lineData);
+                    ArrayList<Number> LineData = new ArrayList<Number>(Arrays.asList(feat_dataObj));
+                    DataVector dvec = new DataVector(Integer.parseInt(column[0]), lineData.length, LineData);
+                    trainData.add(dvec);
+                    i++;
                 }
-                Number[] feat_dataObj = ArrayUtils.toObject(lineData);
-                ArrayList<Number> LineData = new ArrayList<Number>(Arrays.asList(feat_dataObj));
-                DataVector dvec = new DataVector(Integer.parseInt(column[0]), lineData.length, LineData);
-                trainData.add(dvec);
-                i++;
-            }
-            Log.d("clases len, samples len", String.valueOf(classes.size()) + ", " + String.valueOf(trainData.size()));
-            fcalc.setClasses(classes);
-            fcalc.setSamplesClassifier(trainData);
-            fcalc.sendClasses(TempGestures); //read this from file
-            fcalc.Train();
-            fcalc.setClassify(true);
+                Log.d("clases len, samples len", String.valueOf(classes.size()) + ", " + String.valueOf(trainData.size()));
+                fcalc.setClasses(classes);
+                fcalc.setSamplesClassifier(trainData);
+                fcalc.sendClasses(TempGestures);
+                fcalc.Train();
+                fcalc.setClassify(true);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        Log.d("REQUEST_CODE",String.valueOf(requestCode));
+        switch (requestCode) {
+            case 1: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(context, "Write Storage Permission (already) Granted", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(context, "Permission Denied", Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+            case 2: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(context, "Read Storage Permission (already) Granted", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(context, "Permission Denied", Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
         }
     }
 

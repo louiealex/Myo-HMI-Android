@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Mar 16 13:18:20 PDT 2019
+#Thu Mar 21 14:03:14 PDT 2019
 1.base=C\:\\Users\\Alex\\Dropbox\\Desktop\\Vagrant\\Myo-HMI-Android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
 2.path=classes.dex
 0.baseType=DIRECTORY

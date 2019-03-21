@@ -1,17 +1,22 @@
 package example.ASPIRE.MyoHMI_Android;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.bluetooth.le.ScanResult;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
@@ -409,7 +414,7 @@ public class MainActivity extends AppCompatActivity {
             mLEScanner.startScan(scanCallback);
         }
         else if(requestCode==2 && resultCode==RESULT_OK){
-            classificationFragment.givePath(data.getData());
+            classificationFragment.givePath(data.getData(), this);
         }
     }
 
