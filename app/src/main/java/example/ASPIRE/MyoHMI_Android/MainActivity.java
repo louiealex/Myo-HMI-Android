@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.bluetooth.le.ScanResult;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -417,7 +418,6 @@ public class MainActivity extends AppCompatActivity {
             classificationFragment.givePath(data.getData(), this);
         }
     }
-
 }
 
 

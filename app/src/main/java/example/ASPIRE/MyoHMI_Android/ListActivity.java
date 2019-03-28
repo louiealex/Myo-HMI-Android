@@ -282,6 +282,7 @@ public class ListActivity extends AppCompatActivity {
 
             } else {
                 requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
+                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 2);
 //                requestPermissions(new String[]{Manifest.permission.BLUETOOTH}, 1);
 //                requestPermissions(new String[]{Manifest.permission.BLUETOOTH_ADMIN}, 1);
 
@@ -307,6 +308,22 @@ public class ListActivity extends AppCompatActivity {
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
                     Toast.makeText(this, "Permission denied to access location services (coarse)", Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+            case 2: {
+
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(this, "Permission denied to access external storage", Toast.LENGTH_SHORT).show();
                 }
                 return;
             }

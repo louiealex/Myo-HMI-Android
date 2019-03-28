@@ -401,21 +401,21 @@ public class ClassificationFragment extends Fragment {
     }
 
     private void fileLoad() {
-        if (MyoGattCallback.myoConnected == null) {
-            AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
-            alertDialog.setTitle("Myo not detected");
-            alertDialog.setMessage("Myo armband should be connected before importing data.");
-            alertDialog.setIcon(R.drawable.stop_icon);
-
-            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    Toast.makeText(getContext(), "On the top right corner, select 'Connect'", Toast.LENGTH_LONG).show();
-                }
-            });
-
-            alertDialog.show();
-
-        } else {
+//        if (MyoGattCallback.myoConnected == null) {
+//            AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+//            alertDialog.setTitle("Myo not detected");
+//            alertDialog.setMessage("Myo armband should be connected before importing data.");
+//            alertDialog.setIcon(R.drawable.stop_icon);
+//
+//            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+//                public void onClick(DialogInterface dialog, int which) {
+//                    Toast.makeText(getContext(), "On the top right corner, select 'Connect'", Toast.LENGTH_LONG).show();
+//                }
+//            });
+//
+//            alertDialog.show();
+//
+//        } else {
             AlertDialog.Builder loadDialog = new AlertDialog.Builder(getContext());
             loadDialog.setTitle("Load From:");
             loadDialog.setMessage("Where would you like to load the Trained Gestures from?");
@@ -462,7 +462,7 @@ public class ClassificationFragment extends Fragment {
 
             neutralButton.setTextColor(Color.parseColor("#FFFFFF"));
             neutralButton.setBackgroundColor(Color.parseColor("#FF0000"));
-        }
+//        }
     }
 
     private void fileUpload() {
@@ -565,135 +565,12 @@ public class ClassificationFragment extends Fragment {
     }
 
     public void givePath(Uri data, Context context) {
-        saver.checkReadExternalStoragePermission();
-        saver.checkWriteExternalStoragePermission();
         ArrayList<String> TempGestures = new ArrayList<>();
-        for( int j = 0; j < ListElements.length; j++) {
-            TempGestures.add(j, ListElements[j]);
+        for( int j = 0; j < selectedItems.size(); j++) {
+            Log.d("Selected Items:", String.valueOf(selectedItems.get(j)));
+            TempGestures.add(j, selectedItems.get(j));
         }
-//        Log.d("tempGestures:", TempGestures.toString());
-        try {
-                BufferedReader reader = new BufferedReader(new FileReader(getPath(this.getContext(), data)));
-                String text;
-                String[] column;
-                String[] emgData;
-                double[] lineData = new double[48];
-                ArrayList<Integer> classes = new ArrayList<>();
-
-                int i = 0;
-                while ((text = reader.readLine()) != null) {
-                    column = text.split("\t");
-                    classes.add(Integer.parseInt(column[0]));
-                    emgData = column[1].split(",");
-                    for (int j = 0; j < emgData.length; j++) {
-                        lineData[j] = Double.parseDouble(emgData[j].replaceAll("[^\\d.]", ""));
-                    }
-                    Number[] feat_dataObj = ArrayUtils.toObject(lineData);
-                    ArrayList<Number> LineData = new ArrayList<Number>(Arrays.asList(feat_dataObj));
-                    DataVector dvec = new DataVector(Integer.parseInt(column[0]), lineData.length, LineData);
-                    trainData.add(dvec);
-                    i++;
-                }
-                Log.d("clases len, samples len", String.valueOf(classes.size()) + ", " + String.valueOf(trainData.size()));
-                fcalc.setClasses(classes);
-                fcalc.setSamplesClassifier(trainData);
-                fcalc.sendClasses(TempGestures);
-                fcalc.Train();
-                fcalc.setClassify(true);
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        Log.d("REQUEST_CODE",String.valueOf(requestCode));
-        switch (requestCode) {
-            case 1: {
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(context, "Write Storage Permission (already) Granted", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(context, "Permission Denied", Toast.LENGTH_SHORT).show();
-                }
-                return;
-            }
-            case 2: {
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(context, "Read Storage Permission (already) Granted", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(context, "Permission Denied", Toast.LENGTH_SHORT).show();
-                }
-                return;
-            }
-        }
-    }
-
-    public static String getPath(final Context context, final Uri uri) {
-
-//        final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
-//
-//        // DocumentProvider
-//        if (isKitKat && DocumentsContract.isDocumentUri(context, uri)) {
-////        if (isKitKat) {
-//            // ExternalStorageProvider
-//            if (isExternalStorageDocument(uri)) {
-//                final String docId = DocumentsContract.getDocumentId(uri);
-//                final String[] split = docId.split(":");
-//                final String type = split[0];
-//
-//                Log.d("HELLLOOOO!!", "");
-//
-//                if ("primary".equalsIgnoreCase(type)) {
-//                    return Environment.getExternalStorageDirectory() + "/" + split[1];
-//                }
-//            }
-//            // DownloadsProvider
-//            else if (isDownloadsDocument(uri)) {
-//
-//                final String id = DocumentsContract.getDocumentId(uri);
-//                final Uri contentUri = ContentUris.withAppendedId(
-//                        Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
-//
-//                return getDataColumn(context, contentUri, null, null);
-//            }
-//            // MediaProvider
-//            else if (isMediaDocument(uri)) {
-//                final String docId = DocumentsContract.getDocumentId(uri);
-//                final String[] split = docId.split(":");
-//                final String type = split[0];
-//
-//                Uri contentUri = null;
-//                if ("image".equals(type)) {
-//                    contentUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-//                } else if ("video".equals(type)) {
-//                    contentUri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
-//                } else if ("audio".equals(type)) {
-//                    contentUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
-//                }
-//
-//                final String selection = "_id=?";
-//                final String[] selectionArgs = new String[]{
-//                        split[1]
-//                };
-//
-//                return getDataColumn(context, contentUri, selection, selectionArgs);
-//            }
-//        }
-//        // MediaStore (and general)
-//        else if ("content".equalsIgnoreCase(uri.getScheme())) {
-//            return getDataColumn(context, uri, null, null);
-//        }
-//        // File
-//        else if ("file".equalsIgnoreCase(uri.getScheme())) {
-//            return uri.getPath();
-//        }
-
-//        return context.getFilesDir().getPath();
-
-        return uri.getPath();
-//        return null;
+        saver.givePath(data, TempGestures);
     }
 
     public static String getDataColumn(Context context, Uri uri, String selection, String[] selectionArgs) {
@@ -738,4 +615,3 @@ public class ClassificationFragment extends Fragment {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
 }
-

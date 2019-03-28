@@ -4,18 +4,25 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.Toast;
+
+import org.apache.commons.lang3.ArrayUtils;
+
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 /**
@@ -28,6 +35,9 @@ public class SaveData extends Activity{
     private static final int MY_PERMISSIONS_READ_EXTERNAL_STORAGE = 2;
 
     private Context context;
+    private ArrayList<DataVector> trainData = new ArrayList<>();
+    private static SaveData saver;
+    private FeatureCalculator fcalc;
 
     String FileName;
 
@@ -36,6 +46,7 @@ public class SaveData extends Activity{
     public SaveData(Context context){
         this.context = context;
         checkWriteExternalStoragePermission();//move to initial upload file button
+        checkReadExternalStoragePermission();
         cloudUpload = new CloudUpload(context);
     }
 
@@ -111,8 +122,6 @@ public class SaveData extends Activity{
         return file;
     }
 
-//    public void readData(uri Uri)
-
     public void addToFile(File file, String line){
             try {
                 FileOutputStream fileOutputStream = new FileOutputStream(file, true);
@@ -140,7 +149,6 @@ public class SaveData extends Activity{
     }
 
     public void checkReadExternalStoragePermission() {
-        Log.d("FUKKK","Checking reading external storage");
         ContextCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE);
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions((Activity) context,
@@ -149,8 +157,40 @@ public class SaveData extends Activity{
         }
     }
 
-    public void requestPermissions() {
-        ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, MY_PERMISSIONS_READ_EXTERNAL_STORAGE);
+    public void givePath(Uri data, ArrayList<String> TempGestures) {
+        try {
+            File Root = Environment.getExternalStorageDirectory();
+            String[] elements = data.getPath().toString().split("/");
+            BufferedReader reader = new BufferedReader(new FileReader(Root + "/MyoAppFile/" + elements[elements.length-1]));
+            String text;
+            String[] column;
+            String[] emgData;
+            double[] lineData = new double[48];
+            ArrayList<Integer> classes = new ArrayList<>();
+
+            while ((text = reader.readLine()) != null) {
+                column = text.split("\t");
+                classes.add(Integer.parseInt(column[0]));
+                emgData = column[1].split(",");
+                for (int j = 0; j < emgData.length; j++) {
+                    lineData[j] = Double.parseDouble(emgData[j].replaceAll("[^\\d.]", ""));
+                }
+                Number[] feat_dataObj = ArrayUtils.toObject(lineData);
+                ArrayList<Number> LineData = new ArrayList<Number>(Arrays.asList(feat_dataObj));
+                DataVector dvec = new DataVector(Integer.parseInt(column[0]), lineData.length, LineData);
+                trainData.add(dvec);
+            }
+            Log.d("clases len, samples len", String.valueOf(classes.size()) + ", " + String.valueOf(trainData.size()));
+            fcalc.setClasses(classes);
+            fcalc.setSamplesClassifier(trainData);
+            fcalc.sendClasses(TempGestures);
+            fcalc.Train();
+            fcalc.setClassify(true);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -175,5 +215,4 @@ public class SaveData extends Activity{
             }
         }
     }
-
 }
