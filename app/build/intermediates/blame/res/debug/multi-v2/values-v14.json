@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Alex\\Dropbox\\Desktop\\Vagrant\\Myo-HMI-Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
+            "outputFile": "C:\\Users\\alexa\\Desktop\\Myo-HMI-Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Alex\\Dropbox\\Desktop\\Vagrant\\Myo-HMI-Android\\HoloGraphLibrary\\build\\intermediates\\packaged_res\\debug\\values-v14\\values-v14.xml",
+                    "source": "C:\\Users\\alexa\\Desktop\\Myo-HMI-Android\\HoloGraphLibrary\\build\\intermediates\\packaged_res\\debug\\values-v14\\values-v14.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

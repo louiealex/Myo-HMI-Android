@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Alex\\Dropbox\\Desktop\\Vagrant\\Myo-HMI-Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
+            "outputFile": "C:\\Users\\alexa\\Desktop\\Myo-HMI-Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Alex\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\0c307ea526450c6b13f4e4a9c93467e2\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\alexa\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\9d5d00f4c50269280643322882da9005\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,6",
                         "startColumns": "4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Alex\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5f8a7bac17bcc410e3db45e4951d7b8f\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\alexa\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d5d36a8f77b840d38c719f96d2305a39\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",
