@@ -1,12 +1,7 @@
 package example.ASPIRE.MyoHMI_Android;
 
-import java.io.File;
-import java.util.*;
-
 import android.app.Activity;
 import android.content.Context;
-import android.os.AsyncTask;
-import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -14,38 +9,18 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.w3c.dom.Node;
-import org.w3c.dom.Text;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.Map;
-
-import static java.lang.Math.abs;
+import java.util.List;
 
 /**
  * Created by Alex on 6/19/2017.
  */
 
 public class FeatureCalculator {
-    private String TAG = "FeatureCalculator";
-    int threshold = 3; //According to Ian using 3 gives better results
-    static int nFeatures = 6;
-    int nIMUFeatures = 1;
-    static int nIMUSensors = 0;
-    int nSensors = 8;
-    int bufsize = 128;
-    private ArrayList<DataVector> samplebuffer = new ArrayList<>(bufsize);
-    private ArrayList<DataVector> imusamplebuffer = new ArrayList<>(bufsize);
-    private LinkedHashMap<Integer, Integer> freq;
-    int ibuf = 0;
-    int imuibuf = 0;
-    int nDimensions = 10;
-    int lastCall, firstCall;
-    private twoDimArray featureVector;
-    private twoDimArray imuFeatureVector;
     public static Activity classAct;
     public static TextView liveView, status;
     public static ProgressBar progressBar;
@@ -53,47 +28,57 @@ public class FeatureCalculator {
     public static ImageButton resetButton;
     public static ImageButton trainButton;
     public static int prediction;
-    int winsize = 40;    //window size
-    int winincr = 8;    //separation length between windows
-    int winnext = winsize + 1;    //winsize + 2 samples until first feature
-    private Plotter plotter;
-    static boolean[] featSelected = {true, true, true, true, true, true};
-    static boolean[] imuSelected = {false, false, false, false, false, false, false, false, false, false};
-    int numFeatSelected = 6;
-    private static Classifier classifier = new Classifier();
-    private static int currentClass = 0;
     public static ArrayList<Integer> classes = new ArrayList<>();
     public static twoDimArray featemg;
     public static twoDimArray featimu;
-    int nSamples = 100; //Kattia: Should be set by the user and have interaction in GUI
     public static boolean train = false;
     public static boolean classify = false;
+    public static Context context;
+    public static DataVector[] aux;//does it have to be public?
+    static int nFeatures = 6;
+    static int nIMUSensors = 0;
+    static boolean[] featSelected = {true, true, true, true, true, true};
+    static boolean[] imuSelected = {false, false, false, false, false, false, false, false, false, false};
     static ArrayList<DataVector> samplesClassifier = new ArrayList<DataVector>();
     static ArrayList<DataVector> featureData = new ArrayList<DataVector>();
-    public static Context context;
-    private static View view;
-    private static List<String> gestures;
-    public static DataVector[] aux;//does it have to be public?
-    private byte[] sendBytes = new byte[0];
-    private static ServerCommunicationThread thread;
-    private static ClientCommunicationThread clientThread;
-//    private static SaveData saver;
-
-    private ArrayList<byte[]> samplebufferbytes = new ArrayList<>(bufsize);
-
     static long startCalc = System.currentTimeMillis();
     static long startClass = System.currentTimeMillis();
     static long startFeature = System.currentTimeMillis();
     static long time1 = 0;
-
+    static File predFile;
+    private static Classifier classifier = new Classifier();
+    private static int currentClass = 0;
+    private static View view;
+    private static List<String> gestures;
+    private static ServerCommunicationThread thread;
+    private static ClientCommunicationThread clientThread;
+    int threshold = 3; //According to Ian using 3 gives better results
+    int nIMUFeatures = 1;
+    int nSensors = 8;
+    int bufsize = 128;
+    int ibuf = 0;
+    int imuibuf = 0;
+    int nDimensions = 10;
+    int lastCall, firstCall;
+    int winsize = 40;    //window size
+    int winincr = 8;    //separation length between windows
+    int winnext = winsize + 1;    //winsize + 2 samples until first feature
+    int numFeatSelected = 6;
+    int nSamples = 100; //Kattia: Should be set by the user and have interaction in GUI
     byte[] windowFeat = new byte[96];
-
+    byte[] sendWindow = new byte[0];
+    private String TAG = "FeatureCalculator";
+//    private static SaveData saver;
+    private ArrayList<DataVector> samplebuffer = new ArrayList<>(bufsize);
+    private ArrayList<DataVector> imusamplebuffer = new ArrayList<>(bufsize);
+    private LinkedHashMap<Integer, Integer> freq;
+    private twoDimArray featureVector;
+    private twoDimArray imuFeatureVector;
+    private Plotter plotter;
+    private byte[] sendBytes = new byte[0];
+    private ArrayList<byte[]> samplebufferbytes = new ArrayList<>(bufsize);
     //Lambda lambda = new Lambda();//need to feed context in mainactivity
     private Lambda.LTask ltask;
-
-    byte[] sendWindow = new byte[0];
-
-    static File predFile;
 
     public FeatureCalculator() {
     }
@@ -117,8 +102,112 @@ public class FeatureCalculator {
         plotter = plot;
     }
 
+    public static boolean getTrain() {
+        return train;
+    }
+
+    public static void setTrain(boolean inTrain) {
+        train = inTrain;
+    }
+
+    public static boolean getClassify() {
+        return classify;
+    }
+
+    public static void setClassify(boolean inClassify) {
+        classify = inClassify;
+    }
+
+    public static void getThing(long time) {
+        time1 = time;
+//        System.out.println("GOT NEW TIME: " + time);
+    }
+
+    public static byte[] longToBytes(long l) {
+        byte[] result = new byte[8];
+        for (int i = 7; i >= 0; i--) {
+            result[i] = (byte) (l & 0xFF);
+            l >>= 8;
+        }
+        return result;
+    }
+
+    //Making the 100 x 40 matrix
+    public static void pushClassifyTrainer(DataVector[] inFeatemg) {
+        featureData.add(inFeatemg[1]);
+        samplesClassifier.add(inFeatemg[0]);
+        classes.add(currentClass);
+        Log.d("Hey There", String.valueOf(samplesClassifier.size()));
+    }
+
+    public static void pushClassifier(DataVector inFeatemg) {
+
+        startClass = System.nanoTime();
+
+//        Log.d("Featureslength: ", String.valueOf(inFeatemg.getLength()));
+
+        prediction = classifier.predict(inFeatemg);
+
+        if (prediction == -1) {
+            return;
+        }
+        if (liveView != null) {
+            classAct.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    liveView.setText(gestures.get(prediction));
+                    progressBar.setVisibility(View.INVISIBLE);
+                    uploadButton.setVisibility(View.VISIBLE);
+                    resetButton.setVisibility(View.VISIBLE);
+                    trainButton.setVisibility(View.INVISIBLE);
+                }
+            });
+        }
+        ClientCommunicationThread.calculateDiff(prediction, 1);
+    }
+
+    public static void sendClasses(List<String> classes) {
+        gestures = classes;
+    }
+
+//    ArrayList<Number> sendList = new ArrayList<Number>();
+
+    public static void Train() {
+        /* To save training data to file for server comp time analysis */
+//        File file = saver.addData(samplesClassifier);
+
+        classifier.Train(samplesClassifier, classes);
+    }
+
+    public static void reset() {
+        setClassify(false);
+        setTrain(false);
+        samplesClassifier = new ArrayList<>();
+        aux = null;
+        classes = new ArrayList<>();
+        currentClass = 0;
+        classifier.reset();
+        liveView.setText("");
+        trainButton.setVisibility(View.INVISIBLE);
+//        if(thread != null)
+//            thread.close();
+//            thread.start();
+//
+//        if(clientThread != null)
+//            clientThread.close();
+//            clientThread.start();
+    }
+
+    public static void setClasses(ArrayList<Integer> c) {
+        classes = c;
+    }
+
     public ArrayList<DataVector> getSamplesClassifier() {
         return samplesClassifier;
+    }
+
+    public static void setSamplesClassifier(ArrayList<DataVector> s) {
+        samplesClassifier = s;
     }
 
     public ArrayList<DataVector> getFeatureData() {
@@ -129,43 +218,11 @@ public class FeatureCalculator {
         return gestures.size();
     }
 
-    public static void setTrain(boolean inTrain) {
-        train = inTrain;
-    }
-
-    public static void setClassify(boolean inClassify) {
-        classify = inClassify;
-    }
-
-    public static boolean getTrain() {
-        return train;
-    }
-
-    public static boolean getClassify() {
-        return classify;
-    }
-
-    public static void getThing(long time) {
-        time1 = time;
-//        System.out.println("GOT NEW TIME: " + time);
-    }
-
     public void connect() {
         thread = new ServerCommunicationThread();
         thread.start();
         clientThread = new ClientCommunicationThread();
         clientThread.start();
-    }
-
-//    ArrayList<Number> sendList = new ArrayList<Number>();
-
-    public static byte[] longToBytes(long l) {
-        byte[] result = new byte[8];
-        for (int i = 7; i >= 0; i--) {
-            result[i] = (byte) (l & 0xFF);
-            l >>= 8;
-        }
-        return result;
     }
 
     public void pushFeatureBuffer(byte[] dataBytes) { //actively accepts single EMG arrays and runs calculations when window is reached
@@ -238,51 +295,6 @@ public class FeatureCalculator {
             winnext = (winnext + winincr) % bufsize;
         }
         ibuf = ++ibuf & (bufsize - 1); //make buffer circular
-    }
-
-    //Making the 100 x 40 matrix
-    public static void pushClassifyTrainer(DataVector[] inFeatemg) {
-        featureData.add(inFeatemg[1]);
-        samplesClassifier.add(inFeatemg[0]);
-        classes.add(currentClass);
-        Log.d("Hey There", String.valueOf(samplesClassifier.size()));
-    }
-
-    public static void pushClassifier(DataVector inFeatemg) {
-
-        startClass = System.nanoTime();
-
-//        Log.d("Featureslength: ", String.valueOf(inFeatemg.getLength()));
-
-        prediction = classifier.predict(inFeatemg);
-
-        if (prediction == -1) {
-            return;
-        }
-        if (liveView != null) {
-            classAct.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    liveView.setText(gestures.get(prediction));
-                    progressBar.setVisibility(View.INVISIBLE);
-                    uploadButton.setVisibility(View.VISIBLE);
-                    resetButton.setVisibility(View.VISIBLE);
-                    trainButton.setVisibility(View.INVISIBLE);
-                }
-            });
-        }
-        ClientCommunicationThread.calculateDiff(prediction, 1);
-    }
-
-    public static void sendClasses(List<String> classes) {
-        gestures = classes;
-    }
-
-    public static void Train() {
-        /* To save training data to file for server comp time analysis */
-//        File file = saver.addData(samplesClassifier);
-
-        classifier.Train(samplesClassifier, classes);
     }
 
     private DataVector[] buildDataVector(twoDimArray featureVector, twoDimArray imuFeatureVector)//ignoring grid and imu for now, assuming all features are selected
@@ -474,25 +486,7 @@ public class FeatureCalculator {
         }
         winincr = newWinincr;
     }
-
-    public static void reset() {
-        setClassify(false);
-        setTrain(false);
-        samplesClassifier = new ArrayList<>();
-        aux = null;
-        classes = new ArrayList<>();
-        currentClass = 0;
-        classifier.reset();
-        liveView.setText("");
-        trainButton.setVisibility(View.INVISIBLE);
-//        if(thread != null)
-//            thread.close();
-//            thread.start();
-//
-//        if(clientThread != null)
-//            clientThread.close();
-//            clientThread.start();
-    }
+//reset
 
     public void pushIMUFeatureBuffer(DataVector data) {
         imusamplebuffer.add(imuibuf, data);
@@ -519,7 +513,6 @@ public class FeatureCalculator {
         }
         return featimu;
     }
-//reset
 
     public void setFeatSelected(boolean[] boos) {
         featSelected = boos;
@@ -535,14 +528,6 @@ public class FeatureCalculator {
 
     public void setNumFeatSelected(int feats) {
         nFeatures = feats;
-    }
-
-    public static void setClasses(ArrayList<Integer> c) {
-        classes = c;
-    }
-
-    public static void setSamplesClassifier(ArrayList<DataVector> s) {
-        samplesClassifier = s;
     }
 
 }

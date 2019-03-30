@@ -15,48 +15,20 @@
 
 package example.ASPIRE.MyoHMI_Android;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.ListActivity;
-import android.content.ContentUris;
 import android.content.Context;
-import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Environment;
-import android.provider.DocumentsContract;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
-import android.widget.ProgressBar;
-import android.widget.RadioButton;
-import android.widget.SimpleAdapter;
-import android.widget.SimpleAdapter.ViewBinder;
-import android.widget.TextView;
-import android.widget.Toast;
 
-//import com.amazonaws.demo.s3transferutility.Constants;import com.amazonaws.demo.s3transferutility.R;import com.amazonaws.mobileconnectors.s3.transferutility.TransferListener;
-import com.amazonaws.mobileconnectors.s3.transferutility.TransferObserver;
-import com.amazonaws.mobileconnectors.s3.transferutility.TransferState;
-import com.amazonaws.mobileconnectors.s3.transferutility.TransferType;
-import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferListener;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferObserver;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferState;
-import com.amazonaws.mobileconnectors.s3.transferutility.TransferType;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
 
 import java.io.File;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+
+//import com.amazonaws.demo.s3transferutility.Constants;import com.amazonaws.demo.s3transferutility.R;import com.amazonaws.mobileconnectors.s3.transferutility.TransferListener;
 
 /**
  * UploadActivity is a ListActivity of uploading, and uploaded records as well
@@ -64,41 +36,28 @@ import java.util.List;
  */
 
 
+public class CloudUpload {
 
 
-
-
-
-public class  CloudUpload {
-
-
-    View view;
- //  Button cloudButton = (Button) findViewById(R.id.btnCloud);
-    Activity activity;
-    Context context;
-
-
-
-    public static boolean delete = false;
     // Indicates that no upload is currently selected
     private static final int INDEX_NOT_CHECKED = -1;
-
-    public static File file;
-
     // TAG for logging;
     private static final String TAG = "UploadActivity";
-
+    public static boolean delete = false;
+    public static File file;
+    public static long time;
+    public static long acutime;
+    View view;
+    //  Button cloudButton = (Button) findViewById(R.id.btnCloud);
+    Activity activity;
+    Context context;
     // Button for upload operations
     private Button btnUploadFile;
     private Button btnUploadImage;
-
     // The TransferUtility is the primary class for managing transfer to S3
     private TransferUtility transferUtility;
 
-    public static long time;
-    public static long acutime;
-
-    public CloudUpload(){
+    public CloudUpload() {
 
     }
 
@@ -109,15 +68,15 @@ public class  CloudUpload {
     }
 
     /*
-      * Begins to upload the file specified by the file path.
-      */
+     * Begins to upload the file specified by the file path.
+     */
     public void beginUpload(File file) {
 
         this.file = file;
         TransferObserver observer = transferUtility.upload(Credentials.BUCKET_NAME, file.getName(), file);
-        time =  System.currentTimeMillis();
+        time = System.currentTimeMillis();
 
-        Log.d("CloudUpload", "Time to gather data: " + String.valueOf(time-acutime) + " miliseconds");
+        Log.d("CloudUpload", "Time to gather data: " + String.valueOf(time - acutime) + " miliseconds");
 
         acutime = System.currentTimeMillis();
 //        TransferState state = observer.getState();
@@ -126,21 +85,25 @@ public class  CloudUpload {
         observer.setTransferListener(new UploadListener());
     }
 
-    public void delete(){
+    public void delete() {
         file.delete();
     }
 
-    public void setDelete(boolean delete){
-        this.delete = delete;
-    }
-
-    public boolean getDelete(){
+    public boolean getDelete() {
         return delete;
     }
 
-    public long getTime() {return time;}
+    public void setDelete(boolean delete) {
+        this.delete = delete;
+    }
 
-    public File getFile() {return file;}
+    public long getTime() {
+        return time;
+    }
+
+    public File getFile() {
+        return file;
+    }
 }
 
 
@@ -164,14 +127,13 @@ class UploadListener implements TransferListener {
     @Override
     public void onStateChanged(int id, TransferState newState) {
 //        Log.d("CloudUpload", "onStateChanged: " + id + ", " + newState);
-        if (newState.name() == "COMPLETED"){
+        if (newState.name() == "COMPLETED") {
 //            Log.d("CloudUpload", "Completed: "+String.valueOf(cloudUpload.getDelete()));
-            Log.d("CloudUpload", "Upload Time: "+String.valueOf(System.currentTimeMillis()-cloudUpload.getTime()) + " miliseconds");
-            Log.d("CloudUpload", "File Size: "+String.valueOf(cloudUpload.getFile().length()) + " bytes");
+            Log.d("CloudUpload", "Upload Time: " + String.valueOf(System.currentTimeMillis() - cloudUpload.getTime()) + " miliseconds");
+            Log.d("CloudUpload", "File Size: " + String.valueOf(cloudUpload.getFile().length()) + " bytes");
             if (cloudUpload.getDelete())
                 cloudUpload.delete();
-        }
-        else if(newState.name()=="FAILED"){
+        } else if (newState.name() == "FAILED") {
             //retry?
         }
     }

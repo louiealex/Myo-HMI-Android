@@ -1,23 +1,19 @@
 package example.ASPIRE.MyoHMI_Android;
+
 import android.util.Log;
 
 import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ClientCommunicationThread extends Thread {
 
     public final static int TCP_SERVER_PORT = 9941;
-
-    private ArrayList<byte[]> mMessages = new ArrayList<>();
-    private String mServer;
-
-    private boolean mRun = true;
-
+    static int lastpredC = 0;
+    static int lastpredR = 0;
+    static long regTime = 0;
     private final String ec2ip = "34.215.131.221";
     private final String alexHomeip = "2601:645:c100:b669:ad86:cf34:9b81:48e3";
     private final String icelabip = "192.168.0.100";//"34.213.61.15";
@@ -27,13 +23,27 @@ public class ClientCommunicationThread extends Thread {
     byte[] buffer = new byte[512];
 
     int length;
-
-    static int lastpredC = 0;
-    static int lastpredR = 0;
-    static long regTime = 0;
+    private ArrayList<byte[]> mMessages = new ArrayList<>();
+    private String mServer;
+    private boolean mRun = true;
 
     public ClientCommunicationThread() {
         this.mServer = ec2ip;
+    }
+
+    public static void calculateDiff(int choice, int cloudOrReg) {
+
+        if (cloudOrReg == 0) {//cloud
+            if (lastpredC != choice && lastpredR == choice) {
+                Log.d("Print Time Diff: ", String.valueOf(System.currentTimeMillis() - regTime));
+            }
+            lastpredC = choice;
+        } else {//regular
+            if (lastpredR != choice) {
+                regTime = System.currentTimeMillis();
+            }
+            lastpredR = choice;
+        }
     }
 
     @Override
@@ -50,7 +60,7 @@ public class ClientCommunicationThread extends Thread {
                     if ((length = input.read(buffer)) != -1)
                         Log.d("Cloud Prediction: ", String.valueOf(buffer[0]) + "  :  " + String.valueOf(System.currentTimeMillis()));
 //                        calculateDiff((int)buffer[0], 0);
-                        FeatureCalculator.getThing(System.nanoTime());
+                    FeatureCalculator.getThing(System.nanoTime());
                 }
 
             } catch (UnknownHostException e) {
@@ -67,21 +77,6 @@ public class ClientCommunicationThread extends Thread {
                     }
                 }
             }
-        }
-    }
-
-    public static void calculateDiff(int choice, int cloudOrReg){
-
-        if(cloudOrReg == 0) {//cloud
-            if(lastpredC!=choice && lastpredR == choice){
-                Log.d("Print Time Diff: ", String.valueOf(System.currentTimeMillis()-regTime));
-            }
-            lastpredC = choice;
-        }else{//regular
-            if(lastpredR!=choice){
-                regTime = System.currentTimeMillis();
-            }
-            lastpredR = choice;
         }
     }
 

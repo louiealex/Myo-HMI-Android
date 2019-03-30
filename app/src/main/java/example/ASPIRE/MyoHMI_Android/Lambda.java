@@ -1,12 +1,10 @@
 package example.ASPIRE.MyoHMI_Android;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
-import com.amazonaws.regions.Regions;
-import com.amazonaws.mobileconnectors.lambdainvoker.*;
+import com.amazonaws.mobileconnectors.lambdainvoker.LambdaInvokerFactory;
 
 /**
  * Created by Alex on 12/24/2017.
@@ -19,13 +17,13 @@ public class Lambda {
 
     static LambdaInterface myInterface;
 
-    public Lambda(CognitoCachingCredentialsProvider cog, LambdaInvokerFactory factory){ //to pass context in from main activity
+    public Lambda(CognitoCachingCredentialsProvider cog, LambdaInvokerFactory factory) { //to pass context in from main activity
         cognitoProvider = cog;
         this.factory = factory;
         myInterface = factory.build(LambdaInterface.class);
     }
 
-    public static class LTask extends AsyncTask<byte[], Void, Integer>{
+    public static class LTask extends AsyncTask<byte[], Void, Integer> {
         @Override
         protected Integer doInBackground(byte[]... params) {
             // invoke "echo" method. In case it fails, it will throw a
@@ -42,10 +40,11 @@ public class Lambda {
 
         @Override
         protected void onPostExecute(Integer result) {
-            if(result!=null) {
+            if (result != null) {
                 int prediction = result.intValue();
-                System.out.print("Lambda Prediction: !!!!! ");System.out.println(prediction);
-            }else{
+                System.out.print("Lambda Prediction: !!!!! ");
+                System.out.println(prediction);
+            } else {
                 System.out.println("result is null");
             }
         }

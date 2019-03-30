@@ -99,50 +99,42 @@
 
 package example.ASPIRE.MyoHMI_Android;
 
-import android.os.Environment;
 import android.util.Log;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
 
 /**
  * Created by Alex on 8/25/2017.
  */
 
-public class emgConsumer extends EmgFragment{
+public class emgConsumer extends EmgFragment {
 
+    long time1;
+    int linecount = 0;
     private byte[] data;
     private boolean newfile = true;
     private String FileName;
     private File file;
     private CloudUpload cloudUpload = new CloudUpload(getActivity());
-    long time1;
-    int linecount = 0;
 
-    public emgConsumer(){
+    public emgConsumer() {
         cloudUpload.setDelete(true);
     }
 
-    public void consume(byte[] data){
+    public void consume(byte[] data) {
 
         linecount++;
 
-        if(newfile) {
+        if (newfile) {
             newfile = false;
             time1 = System.currentTimeMillis();
         }
 
-        if(linecount >= 16000){
+        if (linecount >= 16000) {
             newfile = true;
-            Log.d("Performance, Time", String.valueOf(System.currentTimeMillis()-time1));
-            Log.d("Performance, Samples", String.valueOf(linecount*2));
-            linecount=0;
+            Log.d("Performance, Time", String.valueOf(System.currentTimeMillis() - time1));
+            Log.d("Performance, Samples", String.valueOf(linecount * 2));
+            linecount = 0;
         }
     }
 }

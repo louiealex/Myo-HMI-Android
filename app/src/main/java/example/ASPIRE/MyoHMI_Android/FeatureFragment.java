@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.RadarChart;
 
@@ -23,11 +22,11 @@ import java.util.List;
 
 public class FeatureFragment extends Fragment {
     private static final String TAG = "Tab2Fragment";
-    private RadarChart mChart;
-    private Plotter plotter;
-   // ListView listview_Classifier;
+    private static boolean[] featSelected = new boolean[]{true, true, true, true, true, true};
+    private static boolean[] imuSelected = new boolean[]{false, false, false, false, false, false, false, false, false, false};
+    // ListView listview_Classifier;
     ListView listView_Features;
-   // ListView listView_IMU;
+    // ListView listView_IMU;
 
     Classifier classifier = new Classifier();
 
@@ -35,12 +34,6 @@ public class FeatureFragment extends Fragment {
     ArrayList<String> selectedItems = new ArrayList<String>();
 
     //ArrayList<String> selectedItemsIMU = new ArrayList<String>();
-
-    //private int numIMU = 0;
-    private int numFeats = 6;
-
-    private FeatureCalculator fcalc = new FeatureCalculator();
-
     String[] featureNames = new String[]{
             "MAV",
             "WAV",
@@ -49,6 +42,8 @@ public class FeatureFragment extends Fragment {
             "SMAV",
             "AdjUnique"
     };
+    private RadarChart mChart;
+    private Plotter plotter;
 
 /*    String[] IMUs = new String[]{
             "Orientation W",
@@ -62,10 +57,13 @@ public class FeatureFragment extends Fragment {
             "Gyroscope Y",
             "Gyroscope Z",
     };*/
+    //private int numIMU = 0;
+    private int numFeats = 6;
+    private FeatureCalculator fcalc = new FeatureCalculator();
 
-    private static boolean[] featSelected = new boolean[]{true, true, true, true, true, true};
-
-    private static boolean[] imuSelected = new boolean[]{false, false, false, false, false, false, false, false, false, false};
+    public static boolean[] getFeatSelected() {
+        return featSelected;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -78,7 +76,7 @@ public class FeatureFragment extends Fragment {
 
         //listView_IMU = (ListView) v.findViewById(R.id.listViewIMU);
 
-       // listView_IMU.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        // listView_IMU.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
         final List<String> FeaturesArrayList = new ArrayList<String>(Arrays.asList(featureNames));
 
@@ -90,7 +88,7 @@ public class FeatureFragment extends Fragment {
 
         listView_Features.setAdapter(adapter_features);
 
-       // listView_IMU.setAdapter(adapter_IMU);
+        // listView_IMU.setAdapter(adapter_IMU);
 
         for (int i = 0; i < 6; i++) {
             listView_Features.setItemChecked(i, true);
@@ -153,16 +151,6 @@ public class FeatureFragment extends Fragment {
         return v;
     }
 
-    private void featureManager(String inFeature, boolean selected) {
-        int index = 0;
-        for (int i = 0; i < 6; i++) {
-            if (inFeature == featureNames[i]) {
-                index = i;
-            }
-        }
-        featSelected[index] = selected;
-    }
-
 /*    private void IMUManager(String inFeature, boolean selected) {
         int index = 0;
         for (int i = 0; i < 10; i++) {
@@ -174,12 +162,18 @@ public class FeatureFragment extends Fragment {
         imuSelected[index] = selected;
     }*/
 
-    public String[] getFeatureNames() {
-        return featureNames;
+    private void featureManager(String inFeature, boolean selected) {
+        int index = 0;
+        for (int i = 0; i < 6; i++) {
+            if (inFeature == featureNames[i]) {
+                index = i;
+            }
+        }
+        featSelected[index] = selected;
     }
 
-    public static boolean[] getFeatSelected() {
-        return featSelected;
+    public String[] getFeatureNames() {
+        return featureNames;
     }
 
     /*public static boolean[] getIMUSelected() {

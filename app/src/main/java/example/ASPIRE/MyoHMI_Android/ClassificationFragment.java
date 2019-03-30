@@ -1,41 +1,22 @@
 package example.ASPIRE.MyoHMI_Android;
 
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.ContentUris;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
-
-import android.os.Build;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.os.Environment;
 import android.os.Handler;
-import android.os.SystemClock;
-import android.provider.DocumentsContract;
-import android.provider.MediaStore;
-import android.service.notification.Condition;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
-import android.util.LogPrinter;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.os.CountDownTimer;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -47,30 +28,15 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 
-import org.apache.commons.lang3.ArrayUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.ReentrantLock;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
-import static example.ASPIRE.MyoHMI_Android.ListActivity.TAG;
-import static example.ASPIRE.MyoHMI_Android.R.id.textView;
-import static example.ASPIRE.MyoHMI_Android.R.layout.countdown;
-import static java.lang.Character.FORMAT;
-import android.Manifest;
 
 
 /**
@@ -79,22 +45,11 @@ import android.Manifest;
 
 public class ClassificationFragment extends Fragment {
 
-    private FeatureCalculator fcalc;
-    private List<String> ListElementsArrayList;
-    private List<String> ClassifierArrayList;
+    //create an ArrayList object to store selected items
+    public static ArrayList<String> selectedItems = new ArrayList<>();
     private static SaveData saver;
-    private ArrayList<DataVector> trainData = new ArrayList<>();
-    private int count = 4;
-    private Handler mHandler = new Handler();
-    private int gestureCounter = 0;
-    private TextView liveView, status;
-    private TextView or_text;
-    private CloudUpload cloudUpload;
-    private ArrayList<Runnable> taskList = new ArrayList<Runnable>();
-
     Runnable r1;
     Runnable r2;
-
     EditText GetValue;
     ImageButton addButton;
     ImageButton deleteButton;
@@ -108,16 +63,8 @@ public class ClassificationFragment extends Fragment {
     ProgressBar progressBar;
     LayoutInflater inflater;
     ViewGroup container;
-
-    //create an ArrayList object to store selected items
-    public static ArrayList<String> selectedItems = new ArrayList<>();
-
     Classifier classifier = new Classifier();
-
     ServerCommunicationThread comm = new ServerCommunicationThread();
-
-    private Context context;
-
     String[] ListElements = new String[]{
             "Rest",
             "Fist",
@@ -128,7 +75,6 @@ public class ClassificationFragment extends Fragment {
             "Supination",
             "Pronation"
     };
-
     String[] classifier_options = new String[]{
             "LDA",
             "SVM",
@@ -138,8 +84,60 @@ public class ClassificationFragment extends Fragment {
             "KNN",
             "Adaboost"
     };
-
+    private FeatureCalculator fcalc;
+    private List<String> ListElementsArrayList;
+    private List<String> ClassifierArrayList;
+    private ArrayList<DataVector> trainData = new ArrayList<>();
+    private int count = 4;
+    private Handler mHandler = new Handler();
+    private int gestureCounter = 0;
+    private TextView liveView, status;
+    private CloudUpload cloudUpload;
+    private ArrayList<Runnable> taskList = new ArrayList<Runnable>();
+    private Context context;
     private boolean listsDone = false;
+
+    public static String getDataColumn(Context context, Uri uri, String selection, String[] selectionArgs) {
+
+        Cursor cursor = null;
+        final String column = "_data";
+        final String[] projection = {
+                column
+        };
+
+        try {
+            cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs,
+                    null);
+            if (cursor != null && cursor.moveToFirst()) {
+                final int column_index = cursor.getColumnIndexOrThrow(column);
+                return cursor.getString(column_index);
+            }
+        } finally {
+            if (cursor != null)
+                cursor.close();
+        }
+        return null;
+    }
+
+    public static boolean isExternalStorageDocument(Uri uri) {
+        return "com.android.externalstorage.documents".equals(uri.getAuthority());
+    }
+
+    /**
+     * @param uri The Uri to check.
+     * @return Whether the Uri authority is DownloadsProvider.
+     */
+    public static boolean isDownloadsDocument(Uri uri) {
+        return "com.android.providers.downloads.documents".equals(uri.getAuthority());
+    }
+
+    /**
+     * @param uri The Uri to check.
+     * @return Whether the Uri authority is MediaProvider.
+     */
+    public static boolean isMediaDocument(Uri uri) {
+        return "com.android.providers.media.documents".equals(uri.getAuthority());
+    }
 
     boolean getListsDone() {
         return listsDone;
@@ -162,7 +160,6 @@ public class ClassificationFragment extends Fragment {
         saver.checkReadExternalStoragePermission();
 
 
-        or_text = (TextView) v.findViewById(R.id.or_text);
         liveView = (TextView) v.findViewById(R.id.gesture_detected);
         GetValue = (EditText) v.findViewById(R.id.add_gesture_text);
         trainButton = (ImageButton) v.findViewById(R.id.bt_train);
@@ -416,19 +413,19 @@ public class ClassificationFragment extends Fragment {
 //            alertDialog.show();
 //
 //        } else {
-            AlertDialog.Builder loadDialog = new AlertDialog.Builder(getContext());
-            loadDialog.setTitle("Load From:");
-            loadDialog.setMessage("Where would you like to load the Trained Gestures from?");
-            loadDialog.setIcon(R.drawable.add_icon_extra);
-            loadDialog.setCancelable(true);
+        AlertDialog.Builder loadDialog = new AlertDialog.Builder(getContext());
+        loadDialog.setTitle("Load From:");
+        loadDialog.setMessage("Where would you like to load the Trained Gestures from?");
+        loadDialog.setIcon(R.drawable.add_icon_extra);
+        loadDialog.setCancelable(true);
 
-            loadDialog.setPositiveButton(
-                    "SD CARD",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            openFolder();
-                        }
-                    });
+        loadDialog.setPositiveButton(
+                "SD CARD",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        openFolder();
+                    }
+                });
 
 //            loadDialog.setNegativeButton(
 //                    "Cloud",
@@ -437,31 +434,31 @@ public class ClassificationFragment extends Fragment {
 //                        }
 //                    });
 
-            loadDialog.setNeutralButton(
-                    "Cancel",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.cancel();
-                        }
-                    });
+        loadDialog.setNeutralButton(
+                "Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
 
-            AlertDialog loadOptions = loadDialog.create();
-            loadOptions.show();
+        AlertDialog loadOptions = loadDialog.create();
+        loadOptions.show();
 
-            // Get the alert dialog buttons reference
-            Button positiveButton = loadOptions.getButton(AlertDialog.BUTTON_POSITIVE);
-            Button negativeButton = loadOptions.getButton(AlertDialog.BUTTON_NEGATIVE);
-            Button neutralButton = loadOptions.getButton(AlertDialog.BUTTON_NEUTRAL);
+        // Get the alert dialog buttons reference
+        Button positiveButton = loadOptions.getButton(AlertDialog.BUTTON_POSITIVE);
+        Button negativeButton = loadOptions.getButton(AlertDialog.BUTTON_NEGATIVE);
+        Button neutralButton = loadOptions.getButton(AlertDialog.BUTTON_NEUTRAL);
 
-            // Change the alert dialog buttons text and background color
-            positiveButton.setTextColor(Color.parseColor("#FFFFFF"));
-            positiveButton.setBackgroundColor(Color.parseColor("#000000"));
+        // Change the alert dialog buttons text and background color
+        positiveButton.setTextColor(Color.parseColor("#FFFFFF"));
+        positiveButton.setBackgroundColor(Color.parseColor("#000000"));
 
-            negativeButton.setTextColor(Color.parseColor("#FFFFFF"));
-            negativeButton.setBackgroundColor(Color.parseColor("#030000"));
+        negativeButton.setTextColor(Color.parseColor("#FFFFFF"));
+        negativeButton.setBackgroundColor(Color.parseColor("#030000"));
 
-            neutralButton.setTextColor(Color.parseColor("#FFFFFF"));
-            neutralButton.setBackgroundColor(Color.parseColor("#FF0000"));
+        neutralButton.setTextColor(Color.parseColor("#FFFFFF"));
+        neutralButton.setBackgroundColor(Color.parseColor("#FF0000"));
 //        }
     }
 
@@ -530,10 +527,10 @@ public class ClassificationFragment extends Fragment {
 
                 RequestQueue queue = Volley.newRequestQueue(context);
                 for (int i = 0; i < featureRows.size(); i++) {
-                    double trunc = i/100;
+                    double trunc = i / 100;
                     exportEMGRequest emg = new exportEMGRequest(
                             featureRows.get(i),
-                            ListElementsArrayList.get((int)trunc),
+                            ListElementsArrayList.get((int) trunc),
                             responseListener
                     );
                     queue.add(emg);
@@ -566,52 +563,10 @@ public class ClassificationFragment extends Fragment {
 
     public void givePath(Uri data, Context context) {
         ArrayList<String> TempGestures = new ArrayList<>();
-        for( int j = 0; j < selectedItems.size(); j++) {
+        for (int j = 0; j < selectedItems.size(); j++) {
             Log.d("Selected Items:", String.valueOf(selectedItems.get(j)));
             TempGestures.add(j, selectedItems.get(j));
         }
         saver.givePath(data, TempGestures);
-    }
-
-    public static String getDataColumn(Context context, Uri uri, String selection, String[] selectionArgs) {
-
-        Cursor cursor = null;
-        final String column = "_data";
-        final String[] projection = {
-                column
-        };
-
-        try {
-            cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs,
-                    null);
-            if (cursor != null && cursor.moveToFirst()) {
-                final int column_index = cursor.getColumnIndexOrThrow(column);
-                return cursor.getString(column_index);
-            }
-        } finally {
-            if (cursor != null)
-                cursor.close();
-        }
-        return null;
-    }
-
-    public static boolean isExternalStorageDocument(Uri uri) {
-        return "com.android.externalstorage.documents".equals(uri.getAuthority());
-    }
-
-    /**
-     * @param uri The Uri to check.
-     * @return Whether the Uri authority is DownloadsProvider.
-     */
-    public static boolean isDownloadsDocument(Uri uri) {
-        return "com.android.providers.downloads.documents".equals(uri.getAuthority());
-    }
-
-    /**
-     * @param uri The Uri to check.
-     * @return Whether the Uri authority is MediaProvider.
-     */
-    public static boolean isMediaDocument(Uri uri) {
-        return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
 }

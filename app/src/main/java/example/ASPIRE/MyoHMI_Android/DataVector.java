@@ -1,9 +1,9 @@
 package example.ASPIRE.MyoHMI_Android;
 
-import java.util.Arrays;
-import java.util.ArrayList;
-
 import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by angorakat on 6/16/17.
@@ -55,6 +55,10 @@ public class DataVector {
         return this.flag;
     }
 
+    public void setFlag(int inFlag) {
+        this.flag = inFlag;
+    }
+
     public int getLength() {
         return this.length;
     }
@@ -69,10 +73,6 @@ public class DataVector {
 
     public void setTimestamp(long ts) {
         this.timestamp = ts;
-    }
-
-    public void setFlag(int inFlag) {
-        this.flag = inFlag;
     }
 
     public void printDataVector(String tag) {

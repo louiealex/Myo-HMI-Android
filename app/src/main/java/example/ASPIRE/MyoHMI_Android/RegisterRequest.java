@@ -1,4 +1,4 @@
-package  example.ASPIRE.MyoHMI_Android;
+package example.ASPIRE.MyoHMI_Android;
 
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;

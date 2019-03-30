@@ -1,36 +1,31 @@
 package example.ASPIRE.MyoHMI_Android;
 
-import android.app.Activity;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCallback;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattDescriptor;
 import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothProfile;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.os.BatteryManager;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import java.nio.ByteBuffer;
+import org.apache.commons.lang3.ArrayUtils;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.UUID;
-import java.util.Arrays;
-
-import org.apache.commons.lang3.ArrayUtils;
 
 /**
  * Created by naoki on 15/04/15.
  */
 
 public class MyoGattCallback extends BluetoothGattCallback {
-    public static double superTimeInitial;
+    final static long NEVER_SLEEP_SEND_TIME = 10000;  // Milli Second
     /**
      * Service ID
      */
@@ -53,10 +48,16 @@ public class MyoGattCallback extends BluetoothGattCallback {
      * android Characteristic ID (from Android Samples/BluetoothLeGatt/SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG)
      */
     private static final String CLIENT_CHARACTERISTIC_CONFIG = "00002902-0000-1000-8000-00805f9b34fb";
-
+    public static double superTimeInitial;
+    public static Boolean myoConnected;
+    private static Plotter imuPlotter;
+    private static Handler imuHandler;
+    public ImuFragment imuFragment;
+    ServerCommunicationThread thread;
+    ClientCommunicationThread clientThread;
+    long last_send_never_sleep_time_ms = System.currentTimeMillis();
     private Queue<BluetoothGattDescriptor> descriptorWriteQueue = new LinkedList<BluetoothGattDescriptor>();
     private Queue<BluetoothGattCharacteristic> readCharacteristicQueue = new LinkedList<BluetoothGattCharacteristic>();
-
     private BluetoothGatt mBluetoothGatt;
     private BluetoothGattCharacteristic mCharacteristic_command;
     private BluetoothGattCharacteristic mCharacteristic_emg0;
@@ -64,28 +65,15 @@ public class MyoGattCallback extends BluetoothGattCallback {
     private BluetoothGattCharacteristic mCharacteristic_emg2;
     private BluetoothGattCharacteristic mCharacteristic_emg3;
     private BluetoothGattCharacteristic mCharacteristic_imu0;
-
     private MyoCommandList commandList = new MyoCommandList();
-
     private String TAG = "MyoGatt";
-
     private TextView textView;
     private TextView connectingTextView;
     private String callback_msg;
     private Handler mHandler;
-
     private Plotter plotter;
-    private static Plotter imuPlotter;
-    private static Handler imuHandler;
     private ProgressBar progress;
-    public static Boolean myoConnected;
-    public ImuFragment imuFragment;
-
     private FeatureCalculator fcalc;//maybe needs to be later in process
-
-    ServerCommunicationThread thread;
-
-    ClientCommunicationThread clientThread;
 
     public MyoGattCallback(Handler handler, TextView view, ProgressBar prog, TextView connectingText, Plotter plot, View v) {
         mHandler = handler;
@@ -107,6 +95,15 @@ public class MyoGattCallback extends BluetoothGattCallback {
     public MyoGattCallback(Handler handler, Plotter plot) {
         imuHandler = handler;
         imuPlotter = plot;
+    }
+
+    public static byte[] longToBytes(long l) {
+        byte[] result = new byte[8];
+        for (int i = 7; i >= 0; i--) {
+            result[i] = (byte) (l & 0xFF);
+            l >>= 8;
+        }
+        return result;
     }
 
     @Override
@@ -272,18 +269,6 @@ public class MyoGattCallback extends BluetoothGattCallback {
         }
     }
 
-    long last_send_never_sleep_time_ms = System.currentTimeMillis();
-    final static long NEVER_SLEEP_SEND_TIME = 10000;  // Milli Second
-
-    public static byte[] longToBytes(long l) {
-        byte[] result = new byte[8];
-        for (int i = 7; i >= 0; i--) {
-            result[i] = (byte)(l & 0xFF);
-            l >>= 8;
-        }
-        return result;
-    }
-
     @Override
     public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
         if (EMG_0_ID.equals(characteristic.getUuid().toString()) || EMG_1_ID.equals(characteristic.getUuid().toString()) || EMG_2_ID.equals(characteristic.getUuid().toString()) || EMG_3_ID.equals(characteristic.getUuid().toString())) {
@@ -292,8 +277,8 @@ public class MyoGattCallback extends BluetoothGattCallback {
             superTimeInitial = systemTime_ms;
             byte[] emg_data = characteristic.getValue();
 
-            byte[] emg_data1 = Arrays.copyOfRange(emg_data,0,8);
-            byte[] emg_data2 = Arrays.copyOfRange(emg_data,8,16);
+            byte[] emg_data1 = Arrays.copyOfRange(emg_data, 0, 8);
+            byte[] emg_data2 = Arrays.copyOfRange(emg_data, 8, 16);
 
 //            fcalc.pushFeatureBuffer(emg_data1);
             fcalc.pushFeatureBuffer(emg_data2);

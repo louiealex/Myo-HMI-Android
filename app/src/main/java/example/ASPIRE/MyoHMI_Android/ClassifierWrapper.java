@@ -19,55 +19,61 @@ public class ClassifierWrapper implements Serializable {
     KNN knn;
     AdaBoost forest;
 
-    public LDA getLDA(){
+    public LDA getLDA() {
         return lda;
     }
 
-    public SVM getSVM(){
-        return svm;
-    }
-
-    public LogisticRegression getLogit(){
-        return logit;
-    }
-
-    public DecisionTree getTree(){
-        return tree;
-    }
-
-    public NeuralNetwork getNet(){
-        return net;
-    }
-
-    public KNN getKNN(){
-        return knn;
-    }
-
-    public AdaBoost getForest(){
-        return forest;
-    }
-
-    public void setLDA(LDA lda){
+    public void setLDA(LDA lda) {
         this.lda = lda;
     }
 
-    public void setSVM(SVM svm){
+    public SVM getSVM() {
+        return svm;
+    }
+
+    public void setSVM(SVM svm) {
         this.svm = svm;
     }
 
-    public void setLogit(LogisticRegression logit){
+    public LogisticRegression getLogit() {
+        return logit;
+    }
+
+    public void setLogit(LogisticRegression logit) {
         this.logit = logit;
     }
 
-    public void setTree(DecisionTree tree){
+    public DecisionTree getTree() {
+        return tree;
+    }
+
+    public void setTree(DecisionTree tree) {
         this.tree = tree;
     }
 
-    public void setNet(NeuralNetwork net) {this.net = net; }
+    public NeuralNetwork getNet() {
+        return net;
+    }
 
-    public void netKNN(KNN knn) { this.knn = knn; }
+    public void setNet(NeuralNetwork net) {
+        this.net = net;
+    }
 
-    public void setAdaBoost(AdaBoost forest) { this.forest = forest; }
+    public KNN getKNN() {
+        return knn;
+    }
+
+    public AdaBoost getForest() {
+        return forest;
+    }
+
+    public void netKNN(KNN knn) {
+        this.knn = knn;
+    }
+
+    public void setAdaBoost(AdaBoost forest) {
+        this.forest = forest;
+    }
 }
 
 

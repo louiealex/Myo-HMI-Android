@@ -1,18 +1,20 @@
 package example.ASPIRE.MyoHMI_Android;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import smile.classification.*;
-import smile.math.kernel.LinearKernel;
-import smile.validation.CrossValidation;
-import smile.math.Math;
-
 import android.app.Activity;
-import android.os.Handler;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+
+import smile.classification.AdaBoost;
+import smile.classification.DecisionTree;
+import smile.classification.KNN;
+import smile.classification.LDA;
+import smile.classification.LogisticRegression;
+import smile.classification.NeuralNetwork;
+import smile.classification.SVM;
+import smile.math.Math;
+import smile.math.kernel.LinearKernel;
 
 
 /**
@@ -20,8 +22,6 @@ import android.widget.Toast;
  */
 
 public class Classifier {
-    private String TAG = "Classifier";
-
     static int numFeatures = 6;
     static double[][] trainVectorP;
     static LDA lda;
@@ -31,21 +31,10 @@ public class Classifier {
     static NeuralNetwork net;
     static KNN knn;
     static AdaBoost forest;
-
-    double[] features;
     static int[] classes;
     static Activity activity;
-
-    int samples = 100;
-
-    private static boolean trained = false;
-
     static int choice = 0; //default lda
     static int choice2;
-
-    private int prediction;
-    static private int classSize;
-
     //classifier trained booleans (just 1 for now to test)
     static boolean trainedLDA;
     static boolean trainedSVM;
@@ -54,15 +43,17 @@ public class Classifier {
     static boolean trainedNET;
     static boolean trainedKNN;
     static boolean trainedFOREST;
-
     static boolean trained2 = false;
-
     static int nIMUSensors = 0;
-
+    static FeatureCalculator fcalc2 = new FeatureCalculator();
+    private static boolean trained = false;
+    static private int classSize;
+    double[] features;
+    int samples = 100;
     double[] mins;
     double[] maxs;
-
-    static FeatureCalculator fcalc2 = new FeatureCalculator();
+    private String TAG = "Classifier";
+    private int prediction;
 
     public Classifier(Activity activity) {
         this.activity = activity;
@@ -72,7 +63,7 @@ public class Classifier {
 
     }
 
-    public static void reset(){//reset button from ClassificationFragment
+    public static void reset() {//reset button from ClassificationFragment
         classes = null;
         trainVectorP = null;
         trained = false;
@@ -86,7 +77,7 @@ public class Classifier {
         trainedFOREST = false;
     }
 
-    public void setnIMUSensors(int imus){
+    public void setnIMUSensors(int imus) {
         nIMUSensors = imus;
     }
 
@@ -202,7 +193,7 @@ public class Classifier {
                 case 1:
                     int lastPred = prediction;
                     prediction = svm.predict(features);
-                    if(prediction>((classSize/100)-1)){
+                    if (prediction > ((classSize / 100) - 1)) {
                         prediction = lastPred;
                     }
 //                    Log.d(TAG, "SVM");
@@ -219,8 +210,8 @@ public class Classifier {
                     break;
                 case 4:
 //                    Log.d(TAG, "NET");
-                    for(int i = 0;i<features.length;i++){
-                        features[i] = (features[i]-mins[i])/(maxs[i]-mins[i]);
+                    for (int i = 0; i < features.length; i++) {
+                        features[i] = (features[i] - mins[i]) / (maxs[i] - mins[i]);
                     }
                     prediction = net.predict(features);
                     //Log.d(TAG, "Net");
@@ -267,7 +258,7 @@ public class Classifier {
         if (!trainedLOGIT) {
             Toast.makeText(activity, "Training Logit", Toast.LENGTH_SHORT).show();
             //Log.d("2", "222" + String.valueOf(trainVectorP.length) + " : " + String.valueOf(classes.length));
-            logit = new LogisticRegression(trainVectorP, classes,  0.0, 1E-5, 5000);
+            logit = new LogisticRegression(trainVectorP, classes, 0.0, 1E-5, 5000);
             trainedLOGIT = true;
         }
         Log.d("3", "333");
@@ -307,19 +298,19 @@ public class Classifier {
         }
     }
 
-    private double[][] Normalize(double[][] feats){//to normalize data between interval [0,1]
+    private double[][] Normalize(double[][] feats) {//to normalize data between interval [0,1]
         int rows = feats.length;//800
         int columns = feats[0].length;//48
         maxs = new double[columns];//feats[0];
         mins = feats[0];
         double[][] normalized = new double[rows][columns];
 
-        for(int i=1;i<rows;i++){
-            for(int j=0;j<columns;j++){
-                if(feats[i][j]<mins[j]){
+        for (int i = 1; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                if (feats[i][j] < mins[j]) {
                     mins[j] = feats[i][j];
                 }
-                if(feats[i][j]>maxs[j]){
+                if (feats[i][j] > maxs[j]) {
                     maxs[j] = feats[i][j];
                 }
             }
@@ -327,9 +318,9 @@ public class Classifier {
 //            System.out.println(" : " + String.valueOf(i));
         }
 
-        for(int i=0;i<rows;i++){
-            for(int j=0;j<columns;j++){
-                normalized[i][j] = (feats[i][j]-mins[j])/(maxs[j]-mins[j]);
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                normalized[i][j] = (feats[i][j] - mins[j]) / (maxs[j] - mins[j]);
             }
         }
 

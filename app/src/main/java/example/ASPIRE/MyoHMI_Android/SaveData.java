@@ -29,28 +29,25 @@ import java.util.Date;
  * Created by Charles on 7/12/17.
  */
 
-public class SaveData extends Activity{
+public class SaveData extends Activity {
 
     private static final int MY_PERMISSIONS_WRITE_EXTERNAL_STORAGE = 1;
     private static final int MY_PERMISSIONS_READ_EXTERNAL_STORAGE = 2;
-
+    private static SaveData saver;
+    String FileName;
+    CloudUpload cloudUpload;
     private Context context;
     private ArrayList<DataVector> trainData = new ArrayList<>();
-    private static SaveData saver;
     private FeatureCalculator fcalc;
 
-    String FileName;
-
-    CloudUpload cloudUpload;
-
-    public SaveData(Context context){
+    public SaveData(Context context) {
         this.context = context;
         checkWriteExternalStoragePermission();//move to initial upload file button
         checkReadExternalStoragePermission();
         cloudUpload = new CloudUpload(context);
     }
 
-    public File addData(ArrayList<DataVector> trainData){
+    public File addData(ArrayList<DataVector> trainData) {
 
         File file = null;
         String state;
@@ -58,14 +55,14 @@ public class SaveData extends Activity{
 
         String date = new SimpleDateFormat("yyyy-MM-dd-hh-mm").format(new Date());
 
-        if(Environment.MEDIA_MOUNTED.equals(state)){
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
             File Root = Environment.getExternalStorageDirectory();
             File Dir = new File(Root.getAbsolutePath() + "/MyoAppFile");
-            if(!Dir.exists()){
+            if (!Dir.exists()) {
                 Dir.mkdir();
             }
 
-            FileName  = date + ".txt";
+            FileName = date + ".txt";
 
             file = new File(Dir, FileName);
 
@@ -73,11 +70,11 @@ public class SaveData extends Activity{
                 FileOutputStream fileOutputStream = new FileOutputStream(file, true);
                 OutputStreamWriter osw = new OutputStreamWriter(fileOutputStream);
 
-                for(int i=0;i<trainData.size();i++) {
+                for (int i = 0; i < trainData.size(); i++) {
                     DataVector data = trainData.get(i);
-                    double trunc = i/100;
+                    double trunc = i / 100;
                     //            saver.addData(selectedItems.get((int)trunc), data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
-                    osw.append((int)trunc + "\t" + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
+                    osw.append((int) trunc + "\t" + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
                     osw.append("\n");
 //                    Log.d("To be saved: ", selectedItems.get((int)trunc) + data.getVectorData().toString() + "\t" + String.valueOf(data.getTimestamp()));
                 }
@@ -91,52 +88,50 @@ public class SaveData extends Activity{
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else {
-            Log.d("EXTERNAL STRG","No SD card found");
+        } else {
+            Log.d("EXTERNAL STRG", "No SD card found");
         }
         return file;
     }
 
-    public File makeFile(String filename){
+    public File makeFile(String filename) {
         File file = null;
         String state;
         state = Environment.getExternalStorageState();
 
         String date = new SimpleDateFormat("yyyy-MM-dd-hh-mm").format(new Date());
 
-        if(Environment.MEDIA_MOUNTED.equals(state)){
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
             File Root = Environment.getExternalStorageDirectory();
             File Dir = new File(Root.getAbsolutePath() + "/MyoAppFile");
-            if(!Dir.exists()){
+            if (!Dir.exists()) {
                 Dir.mkdir();
             }
 
-            FileName  =  filename + " " + date + ".txt";
+            FileName = filename + " " + date + ".txt";
 
             file = new File(Dir, FileName);
-        }
-        else {
-            Log.d("EXTERNAL STRG","No SD card found");
+        } else {
+            Log.d("EXTERNAL STRG", "No SD card found");
         }
         return file;
     }
 
-    public void addToFile(File file, String line){
-            try {
-                FileOutputStream fileOutputStream = new FileOutputStream(file, true);
-                OutputStreamWriter osw = new OutputStreamWriter(fileOutputStream);
+    public void addToFile(File file, String line) {
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(file, true);
+            OutputStreamWriter osw = new OutputStreamWriter(fileOutputStream);
 
-                osw.append(line + "\n");
+            osw.append(line + "\n");
 
-                osw.flush();
-                osw.close();
+            osw.flush();
+            osw.close();
 
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void checkWriteExternalStoragePermission() {
@@ -161,7 +156,7 @@ public class SaveData extends Activity{
         try {
             File Root = Environment.getExternalStorageDirectory();
             String[] elements = data.getPath().toString().split("/");
-            BufferedReader reader = new BufferedReader(new FileReader(Root + "/MyoAppFile/" + elements[elements.length-1]));
+            BufferedReader reader = new BufferedReader(new FileReader(Root + "/MyoAppFile/" + elements[elements.length - 1]));
             String text;
             String[] column;
             String[] emgData;
@@ -195,7 +190,7 @@ public class SaveData extends Activity{
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        Log.d("REQUEST_CODE",String.valueOf(requestCode));
+        Log.d("REQUEST_CODE", String.valueOf(requestCode));
         switch (requestCode) {
             case MY_PERMISSIONS_WRITE_EXTERNAL_STORAGE: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {

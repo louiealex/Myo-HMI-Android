@@ -1,8 +1,7 @@
 package example.ASPIRE.MyoHMI_Android;
-import android.util.Log;
+
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -11,17 +10,14 @@ import java.util.Arrays;
 public class ServerCommunicationThread extends Thread {
 
     public final static int TCP_SERVER_PORT = 9940;
-
-    private ArrayList<byte[]> mMessages = new ArrayList<>();
-    private String mServer;
-
-    private boolean mRun = true;
-
     private final String ec2ip = "34.215.131.221";
     private final String alexHomeip = "2601:645:c100:b669:ad86:cf34:9b81:48e3";
     private final String icelabip = "192.168.0.100";//"34.213.61.15";
     private final String dragonip = "2601:645:c100:b669:0:2bff:feed:2e50";
     private final String sfStateip = "10.143.132.221";
+    private ArrayList<byte[]> mMessages = new ArrayList<>();
+    private String mServer;
+    private boolean mRun = true;
 
     public ServerCommunicationThread() {
         this.mServer = ec2ip;

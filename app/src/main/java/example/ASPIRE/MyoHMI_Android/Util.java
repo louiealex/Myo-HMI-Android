@@ -32,8 +32,6 @@ import java.io.InputStream;
 import java.util.Map;
 import java.util.UUID;
 
-import example.ASPIRE.MyoHMI_Android.Credentials;
-
 /*
  * Handles basic helper functions used throughout the app.
  */
@@ -79,7 +77,7 @@ public class Util {
     /**
      * Gets an instance of the TransferUtility which is constructed using the
      * given Context
-     * 
+     *
      * @param context
      * @return a TransferUtility instance
      */
@@ -98,11 +96,11 @@ public class Util {
      * @return A string that represents the bytes in a proper scale.
      */
     public static String getBytesString(long bytes) {
-        String[] quantifiers = new String[] {
+        String[] quantifiers = new String[]{
                 "KB", "MB", "GB", "TB"
         };
         double speedNum = bytes;
-        for (int i = 0;; i++) {
+        for (int i = 0; ; i++) {
             if (i >= quantifiers.length) {
                 return "";
             }
@@ -116,7 +114,7 @@ public class Util {
     /**
      * Copies the data from the passed in Uri, to a new file for use with the
      * Transfer Service
-     * 
+     *
      * @param context
      * @param uri
      * @return

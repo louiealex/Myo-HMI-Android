@@ -31,8 +31,9 @@ import com.echo.holographlibrary.LineGraph;
 import com.github.mikephil.charting.charts.RadarChart;
 
 import static android.content.Context.BLUETOOTH_SERVICE;
-//import static example.ASPIRE.MyoHMI_Android.R.id.ConnectingText;
 import static example.ASPIRE.MyoHMI_Android.R.id.conncectionProgress;
+
+//import static example.ASPIRE.MyoHMI_Android.R.id.ConnectingText;
 
 /**
  * Created by User on 2/28/2017.
@@ -42,7 +43,7 @@ public class EmgFragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Tab2Fragment";
 
     private static final int REQUEST_ENABLE_BT = 1;
-
+    Activity activity;
     private Handler mHandler;
     private BluetoothAdapter mBluetoothAdapter;
     private BluetoothGatt mBluetoothGatt;
@@ -50,24 +51,80 @@ public class EmgFragment extends Fragment implements View.OnClickListener {
     private TextView myoConnectionText;
     private TextView connectingText;
     private BluetoothLeScanner mLEScanner;
-
     private MyoGattCallback mMyoCallback;
     private MyoCommandList commandList = new MyoCommandList();
-
     private String deviceName;
-
     private LineGraph graph;
     private RadarChart mChart;
     private Plotter plotter;
-    Activity activity;
+    private final View.OnTouchListener changeColorListener = new View.OnTouchListener() {
+
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            Bitmap source = v.getDrawingCache();
+            Bitmap bmp = Bitmap.createBitmap(source, 0, 0, v.getWidth(), v.getHeight());
+            int color = bmp.getPixel((int) event.getX(), (int) event.getY());
+            if (plotter != null) {
+                if (color == Color.rgb(89, 140, 175)) {
+                    Log.d("Clicked on ", "blue");
+                    plotter.setEMG(color, 2);
+                } else if (color == Color.rgb(100, 169, 95)) {
+                    Log.d("Clicked on ", "green");
+                    plotter.setEMG(color, 1);
+                } else if (color == Color.rgb(169, 95, 95)) {
+                    Log.d("Clicked on ", "clay");
+                    plotter.setEMG(color, 0);
+                } else if (color == Color.rgb(189, 75, 167)) {
+                    Log.d("Clicked on ", "magenta");
+                    plotter.setEMG(color, 7);
+                } else if (color == Color.rgb(171, 89, 43)) {
+                    Log.d("Clicked on ", "brown");
+                    plotter.setEMG(color, 6);
+                } else if (color == Color.rgb(94, 62, 130)) {
+                    Log.d("Clicked on ", "purple");
+                    plotter.setEMG(color, 5);
+                } else if (color == Color.rgb(171, 21, 21)) {
+                    Log.d("Clicked on ", "red");
+                    plotter.setEMG(color, 4);
+                } else if (color == Color.rgb(64, 64, 64) || (color < -12500000 && color > -15800000)) {//gray or the logo color
+                    Log.d("Clicked on ", "gray");
+                    plotter.setEMG(Color.rgb(64, 64, 64), 3);
+                }
+                return true;
+            } else {
+                return false;
+            }
+
+        }
+    };
     private ProgressBar prog;
     private ToggleButton emgButton;
-
     private ScanCallback scanCallback = new ScanCallback() {
     };
-
     private boolean click = false;
+    private ScanCallback mScanCallback = new ScanCallback() {
+        @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+        @Override
+        public void onScanResult(int callbackType, ScanResult result) {
+            BluetoothDevice device = result.getDevice();
+            if (deviceName.equals(device.getName())) {
+                //mLEScanner.stopScan(scanCallback);
+                BluetoothLeScanner scanner = mBluetoothAdapter.getBluetoothLeScanner();
+                if (scanner != null) {
+                    scanner.stopScan(mScanCallback);
+                } else {
+                    // Device Bluetooth is disabled; scanning should already be stopped, nothing to do here.
+                }
 
+                // Trying to connect GATT
+
+                plotter = new Plotter(mHandler, graph);
+                mMyoCallback = new MyoGattCallback(mHandler, myoConnectionText, prog, connectingText, plotter, getView());
+                mBluetoothGatt = device.connectGatt(getActivity(), false, mMyoCallback);
+                mMyoCallback.setBluetoothGatt(mBluetoothGatt);
+            }
+        }
+    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -233,75 +290,10 @@ public class EmgFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private ScanCallback mScanCallback = new ScanCallback() {
-        @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-        @Override
-        public void onScanResult(int callbackType, ScanResult result) {
-            BluetoothDevice device = result.getDevice();
-            if (deviceName.equals(device.getName())) {
-                //mLEScanner.stopScan(scanCallback);
-                BluetoothLeScanner scanner = mBluetoothAdapter.getBluetoothLeScanner();
-                if (scanner != null) {
-                    scanner.stopScan(mScanCallback);
-                } else {
-                    // Device Bluetooth is disabled; scanning should already be stopped, nothing to do here.
-                }
-
-                // Trying to connect GATT
-
-                plotter = new Plotter(mHandler, graph);
-                mMyoCallback = new MyoGattCallback(mHandler, myoConnectionText, prog, connectingText, plotter, getView());
-                mBluetoothGatt = device.connectGatt(getActivity(), false, mMyoCallback);
-                mMyoCallback.setBluetoothGatt(mBluetoothGatt);
-            }
-        }
-    };
-
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
     }
-
-    private final View.OnTouchListener changeColorListener = new View.OnTouchListener() {
-
-        @Override
-        public boolean onTouch(View v, MotionEvent event) {
-            Bitmap source = v.getDrawingCache();
-            Bitmap bmp = Bitmap.createBitmap(source, 0, 0, v.getWidth(), v.getHeight());
-            int color = bmp.getPixel((int) event.getX(), (int) event.getY());
-            if (plotter != null) {
-                if (color == Color.rgb(89, 140, 175)) {
-                    Log.d("Clicked on ", "blue");
-                    plotter.setEMG(color, 2);
-                } else if (color == Color.rgb(100, 169, 95)) {
-                    Log.d("Clicked on ", "green");
-                    plotter.setEMG(color, 1);
-                } else if (color == Color.rgb(169, 95, 95)) {
-                    Log.d("Clicked on ", "clay");
-                    plotter.setEMG(color, 0);
-                } else if (color == Color.rgb(189, 75, 167)) {
-                    Log.d("Clicked on ", "magenta");
-                    plotter.setEMG(color, 7);
-                } else if (color == Color.rgb(171, 89, 43)) {
-                    Log.d("Clicked on ", "brown");
-                    plotter.setEMG(color, 6);
-                } else if (color == Color.rgb(94, 62, 130)) {
-                    Log.d("Clicked on ", "purple");
-                    plotter.setEMG(color, 5);
-                } else if (color == Color.rgb(171, 21, 21)) {
-                    Log.d("Clicked on ", "red");
-                    plotter.setEMG(color, 4);
-                } else if (color == Color.rgb(64, 64, 64) || (color < -12500000 && color > -15800000)) {//gray or the logo color
-                    Log.d("Clicked on ", "gray");
-                    plotter.setEMG(Color.rgb(64, 64, 64), 3);
-                }
-                return true;
-            } else {
-                return false;
-            }
-
-        }
-    };
 
 
 }

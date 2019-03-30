@@ -3,22 +3,12 @@ package example.ASPIRE.MyoHMI_Android;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class exportEMGRequest extends StringRequest {
 
     private static final String EMG_REQUEST_URL = "http://ec2-52-13-172-17.us-west-2.compute.amazonaws.com/exportEMGData.php";
-    private Map<String, String> params;
-
     //for each of columns in EMG mysql base
     String[] columnNames = {"s1_MAV", "s2_MAV", "s3_MAV", "s4_MAV", "s5_MAV", "s6_MAV", "s7_MAV", "s8_MAV",
             "s1_WAV", "s2_WAV", "s3_WAV", "s4_WAV", "s5_WAV", "s6_WAV", "s7_WAV", "s8_WAV",
@@ -27,6 +17,7 @@ public class exportEMGRequest extends StringRequest {
             "s1_SMAV", "s2_SMAV", "s3_SMAV", "s4_SMAV", "s5_SMAV", "s6_SMAV", "s7_SMAV", "s8_SMAV",
             "s1_AdjUnique", "s2_AdjUnique", "s3_AdjUnique", "s4_AdjUnique", "s5_AdjUnique", "s6_AdjUnique", "s7_AdjUnique", "s8_AdjUnique"
     };
+    private Map<String, String> params;
 
     public exportEMGRequest(DataVector data, String gesture, Response.Listener<String> listener) {
         super(Method.POST, EMG_REQUEST_URL, listener, null);

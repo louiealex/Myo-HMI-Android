@@ -1,4 +1,4 @@
-package  example.ASPIRE.MyoHMI_Android;
+package example.ASPIRE.MyoHMI_Android;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -43,12 +43,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-             tvContinueLink.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent continueIntent = new Intent(LoginActivity.this, MainActivity.class);
-                    LoginActivity.this.startActivity(continueIntent);
-                }
+        tvContinueLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent continueIntent = new Intent(LoginActivity.this, MainActivity.class);
+                LoginActivity.this.startActivity(continueIntent);
+            }
         });
 
         bLogin.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +102,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-    public boolean getLoggedIn(){
+
+    public boolean getLoggedIn() {
         return loggedIn;
     }
 }

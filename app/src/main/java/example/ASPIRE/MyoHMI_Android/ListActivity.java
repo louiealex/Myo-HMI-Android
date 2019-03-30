@@ -23,56 +23,138 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static example.ASPIRE.MyoHMI_Android.R.id.conncectionProgress;
-import static example.ASPIRE.MyoHMI_Android.R.id.progressBar2;
 
 public class ListActivity extends AppCompatActivity {
 
     public static final int MENU_SCAN = 0;
 //    public static final int LIST_DEVICE_MAX = 5;
-
-    public static String TAG = "BluetoothList";
-
     /**
      * Device Scanning Time (ms)
      */
     private static final long SCAN_PERIOD = 5000;
-
     /**
      * Intent code for requesting Bluetooth enable
      */
     private static final int REQUEST_ENABLE_BT = 1;
-
-    private ArrayList<String> deviceNames = new ArrayList<>();
+    public static String TAG = "BluetoothList";
     public static String myoName = null;
-
+    private final BluetoothGattCallback gattCallback = new BluetoothGattCallback() {
+        @Override
+        public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState) {
+            Log.i("onConnectionStateChange", "Status: " + status);
+            switch (newState) {
+                case BluetoothProfile.STATE_CONNECTED:
+                    Log.i("gattCallback", "STATE_CONNECTED");
+                    gatt.discoverServices();
+                    break;
+                case BluetoothProfile.STATE_DISCONNECTED:
+                    Log.e("gattCallback", "STATE_DISCONNECTED");
+                    break;
+                default:
+                    Log.e("gattCallback", "STATE_OTHER");
+            }
+        }
+    };
+    private ArrayList<String> deviceNames = new ArrayList<>();
     private ArrayAdapter<String> adapter;
-
     private BluetoothAdapter mBluetoothAdapter;
     private Handler mHandler;
     private BluetoothLeScanner mLEScanner;
     private ScanSettings settings;
     private List<ScanFilter> filters;
-
     private TextView scanningText;
     private ProgressBar prog;
-    private Button scanButton;
 
     /*Updated by Ricardo Colin 06/15/18*/
+    private Button scanButton;
+
+    /*
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        //getMenuInflater().inflate(R.menu.menu_list, menu);
+        menu.add(0, MENU_SCAN, 0, "Scan");
+
+        return true;
+    }
+
+   @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == MENU_SCAN) {
+            scanDevice();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }*/
+    private ScanCallback mScanCallback = new ScanCallback() {
+        @Override
+        public void onScanResult(int callbackType, ScanResult result) {
+            Log.d("callbackType", String.valueOf(callbackType));
+            Log.d("result", result.toString());
+            BluetoothDevice device = result.getDevice();
+            ParcelUuid[] uuids = device.getUuids();
+            String uuid = "";
+            if (uuids != null) {
+                for (ParcelUuid puuid : uuids) {
+                    uuid += puuid.toString() + " ";
+                }
+            }
+
+            String msg = "name=" + device.getName() + ", bondStatus="
+                    + device.getBondState() + ", address="
+                    + device.getAddress() + ", type" + device.getType()
+                    + ", uuids=" + uuid;
+            Log.d("BLEActivity", msg);
+
+            if (device.getName() != null && !deviceNames.contains(device.getName())) {
+                deviceNames.add(device.getName());
+            }
+            Log.d(TAG, "onScanResult: Device = " + result.getDevice().getName());
+        }
+
+        @Override
+        public void onBatchScanResults(List<ScanResult> results) {
+            Log.d("BTScan", "ENTERED onBatchScanResult");
+            for (ScanResult sr : results) {
+                Log.i("ScanResult - Results", sr.toString());
+            }
+        }
+
+        @Override
+        public void onScanFailed(int errorCode) {
+            Log.d("Scan Failed", "Error Code: " + errorCode);
+        }
+    };
+    private BluetoothAdapter.LeScanCallback mLeScanCallback = new BluetoothAdapter.LeScanCallback() {
+        @Override
+        public void onLeScan(final BluetoothDevice device, int rssi, byte[] scanRecord) {
+            Log.d("BTScan", "ENTERED onLeScan");
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.i("onLeScan", device.toString());
+                }
+            });
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +178,6 @@ public class ListActivity extends AppCompatActivity {
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1, deviceNames);
 
         devicesList.setAdapter(adapter);
-
 
 
         if (mBluetoothAdapter == null || !mBluetoothAdapter.isEnabled()) {
@@ -137,36 +218,7 @@ public class ListActivity extends AppCompatActivity {
         });
 
 
-
     }
-
-    /*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_list, menu);
-        menu.add(0, MENU_SCAN, 0, "Scan");
-
-        return true;
-    }
-
-   @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == MENU_SCAN) {
-            scanDevice();
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/
-
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -203,77 +255,6 @@ public class ListActivity extends AppCompatActivity {
             mLEScanner.startScan(filters, settings, mScanCallback);
         }
     }
-
-    private ScanCallback mScanCallback = new ScanCallback() {
-        @Override
-        public void onScanResult(int callbackType, ScanResult result) {
-            Log.d("callbackType", String.valueOf(callbackType));
-            Log.d("result", result.toString());
-            BluetoothDevice device = result.getDevice();
-            ParcelUuid[] uuids = device.getUuids();
-            String uuid = "";
-            if (uuids != null) {
-                for (ParcelUuid puuid : uuids) {
-                    uuid += puuid.toString() + " ";
-                }
-            }
-
-            String msg = "name=" + device.getName() + ", bondStatus="
-                    + device.getBondState() + ", address="
-                    + device.getAddress() + ", type" + device.getType()
-                    + ", uuids=" + uuid;
-            Log.d("BLEActivity", msg);
-
-            if (device.getName() != null && !deviceNames.contains(device.getName())) {
-                deviceNames.add(device.getName());
-            }
-            Log.d(TAG, "onScanResult: Device = " + result.getDevice().getName());
-        }
-
-        @Override
-        public void onBatchScanResults(List<ScanResult> results) {
-            Log.d("BTScan", "ENTERED onBatchScanResult");
-            for (ScanResult sr : results) {
-                Log.i("ScanResult - Results", sr.toString());
-            }
-        }
-
-        @Override
-        public void onScanFailed(int errorCode) {
-            Log.d("Scan Failed", "Error Code: " + errorCode);
-        }
-    };
-
-    private BluetoothAdapter.LeScanCallback mLeScanCallback = new BluetoothAdapter.LeScanCallback() {
-        @Override
-        public void onLeScan(final BluetoothDevice device, int rssi, byte[] scanRecord) {
-            Log.d("BTScan", "ENTERED onLeScan");
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Log.i("onLeScan", device.toString());
-                }
-            });
-        }
-    };
-
-    private final BluetoothGattCallback gattCallback = new BluetoothGattCallback() {
-        @Override
-        public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState) {
-            Log.i("onConnectionStateChange", "Status: " + status);
-            switch (newState) {
-                case BluetoothProfile.STATE_CONNECTED:
-                    Log.i("gattCallback", "STATE_CONNECTED");
-                    gatt.discoverServices();
-                    break;
-                case BluetoothProfile.STATE_DISCONNECTED:
-                    Log.e("gattCallback", "STATE_DISCONNECTED");
-                    break;
-                default:
-                    Log.e("gattCallback", "STATE_OTHER");
-            }
-        }
-    };
 
     private void showPhoneStatePermission() {
         int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION);

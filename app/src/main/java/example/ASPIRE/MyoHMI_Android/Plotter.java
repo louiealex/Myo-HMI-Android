@@ -1,18 +1,14 @@
 package example.ASPIRE.MyoHMI_Android;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Handler;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
 import com.echo.holographlibrary.Line;
 import com.echo.holographlibrary.LineGraph;
 import com.echo.holographlibrary.LinePoint;
-import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.RadarChart;
 import com.github.mikephil.charting.components.AxisBase;
@@ -31,21 +27,7 @@ import com.github.mikephil.charting.interfaces.dataprovider.LineDataProvider;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.IRadarDataSet;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.RotateAnimation;
-import android.widget.TextView;
-
 import java.util.ArrayList;
-import java.lang.Math;
-import java.util.Arrays;
-
-import android.graphics.Matrix;
-import android.widget.ImageView;
-
-import static android.R.attr.pivotX;
-import static android.R.attr.pivotY;
 
 /**
  * Created by Alex on 6/30/2017.
@@ -54,26 +36,19 @@ import static android.R.attr.pivotY;
 public class Plotter extends Activity {
     //boolean emg;
     private static RadarChart mChart;
-    private LineChart cubicChart;
-    private LineGraph lineGraph;
     private static Handler mHandler;
-    protected Typeface mTfLight;
-
     private static int currentTab = 0; //current tab from MainActivity
-    private int lineColor = Color.rgb(64, 64, 64);
-
+    private static int nowGraphIndexIMU = 0;
+    private static boolean[] featuresSelected = new boolean[]{true, true, true, true, true, true};
     public boolean startup = true;
-
+    protected Typeface mTfLight;
     int[][] dataList1_a = new int[10][50];
     int[][] dataList1_b = new int[10][50];
-
+    private LineChart cubicChart;
+    private LineGraph lineGraph;
+    private int lineColor = Color.rgb(64, 64, 64);
     private int nowGraphIndex = 3;
-    private static int nowGraphIndexIMU = 0;
-
     private ArrayList<Number> f0, f1, f2, f3, f4, f5;
-
-    private static boolean[] featuresSelected = new boolean[]{true, true, true, true, true, true};
-
     private int w, x, y, z;
     private double pitch, roll, yaw;
 
@@ -123,16 +98,16 @@ public class Plotter extends Activity {
 
         this.setCurrentTab(1);
 
-        for(int i=0; i<8; i++){
-            for (int j=0;j<6;j++){
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 6; j++) {
                 featemg.setMatrixValue(j, i, 128);
             }
         }
 
         this.pushFeaturePlotter(featemg);
 
-        for(int i=0; i<8; i++){
-            for (int j=0;j<6;j++){
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 6; j++) {
                 featemg.setMatrixValue(j, i, 0);
             }
         }
@@ -148,7 +123,7 @@ public class Plotter extends Activity {
         lineGraph = line;
     }
 
-    public Plotter(Handler handler, LineChart cubicLine){
+    public Plotter(Handler handler, LineChart cubicLine) {
 
         mHandler = handler;
         cubicChart = cubicLine;
@@ -217,6 +192,10 @@ public class Plotter extends Activity {
 
     }
 
+    public static void setIMU(int imu) {
+        nowGraphIndexIMU = imu;
+    }
+
     private void setData(int count, float range) {
 
         ArrayList<Entry> xVals = new ArrayList<Entry>();
@@ -253,8 +232,8 @@ public class Plotter extends Activity {
             // ((mult *
             // 0.1) / 10);
             xVals.add(new Entry(i, val));
-            yVals.add(new Entry(i, val+10));
-            zVals.add(new Entry(i+2, val+20));
+            yVals.add(new Entry(i, val + 10));
+            zVals.add(new Entry(i + 2, val + 20));
         }
 
 
@@ -262,9 +241,9 @@ public class Plotter extends Activity {
 
         if (cubicChart.getData() != null &&
                 cubicChart.getData().getDataSetCount() > 0) {
-            x = (LineDataSet)cubicChart.getData().getDataSetByIndex(0);
-            y = (LineDataSet)cubicChart.getData().getDataSetByIndex(1);
-            z = (LineDataSet)cubicChart.getData().getDataSetByIndex(2);
+            x = (LineDataSet) cubicChart.getData().getDataSetByIndex(0);
+            y = (LineDataSet) cubicChart.getData().getDataSetByIndex(1);
+            z = (LineDataSet) cubicChart.getData().getDataSetByIndex(2);
 
             x.setValues(xVals);
             y.setValues(yVals);
@@ -339,7 +318,7 @@ public class Plotter extends Activity {
 
             // create a data object with the datasets
             //LineData data = new LineData(x,y,z);
-            LineData data = new LineData(x,y,z);
+            LineData data = new LineData(x, y, z);
 
             data.setValueTypeface(mTfLight);
             data.setValueTextSize(12f);
@@ -351,9 +330,10 @@ public class Plotter extends Activity {
             //cubicChart.invalidate();
         }
     }
+
     public void pushPlotter(byte[] data) {
 //        setData();
-        if (data.length == 16 && (currentTab == 0||currentTab==1)) {
+        if (data.length == 16 && (currentTab == 0 || currentTab == 1)) {
 //        if ((data.length == 16 && currentTab == 0)||startup) {
 
 //            Log.d("tag", String.valueOf(startup));
@@ -444,60 +424,60 @@ public class Plotter extends Activity {
 
 //        Log.d("length", String.valueOf(data.length));
 
-            mHandler.post(new Runnable() {
-                @Override
-                public void run() {
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
 
-                    lineGraph.removeAllLines();
+                lineGraph.removeAllLines();
 
-                    for (int inputIndex = 0; inputIndex < 10; inputIndex++) {
-                        dataList1_a[inputIndex][0] = data[0 + inputIndex];
-                        dataList1_b[inputIndex][0] = data[9 + inputIndex];
-                    }
-                    // 折れ線グラフ
-                    int number = 50;
-                    int addNumber = 100;
-                    Line line = new Line();
-                    while (0 < number) {
-                        number--;
-                        addNumber--;
-
-                        //１点目add
-                        if (number != 0) {
-                            for (int setDatalistIndex = 0; setDatalistIndex < 10; setDatalistIndex++) {
-                                dataList1_a[setDatalistIndex][number] = dataList1_a[setDatalistIndex][number - 1];
-                            }
-                        }
-                        LinePoint linePoint = new LinePoint();
-                        linePoint.setY(dataList1_a[nowGraphIndexIMU][number]); //ランダムで生成した値をSet
-                        linePoint.setX(addNumber); //x軸を１ずつずらしてSet
-                        //linePoint.setColor(Color.parseColor("#9acd32")); // 丸の色をSet
-
-                        line.addPoint(linePoint);
-                        //2点目add
-                        /////number--;
-                        addNumber--;
-                        if (number != 0) {
-                            for (int setDatalistIndex = 0; setDatalistIndex < 10; setDatalistIndex++) {
-                                dataList1_b[setDatalistIndex][number] = dataList1_b[setDatalistIndex][number - 1];
-                            }
-                        }
-                        linePoint = new LinePoint();
-                        linePoint.setY(dataList1_b[nowGraphIndexIMU][number]); //ランダムで生成した値をSet
-                        linePoint.setX(addNumber); //x軸を１ずつずらしてSet
-                        //linePoint.setColor(Color.parseColor("#9acd32")); // 丸の色をSet
-
-                        line.addPoint(linePoint);
-                    }
-
-                    line.setColor(lineColor); // 線の色をSet
-
-                    line.setShowingPoints(false);
-                    lineGraph.addLine(line);
-                    lineGraph.setRangeY(-128, 128); // 表示するY軸の最低値・最高値 今回は0から1まで
-
+                for (int inputIndex = 0; inputIndex < 10; inputIndex++) {
+                    dataList1_a[inputIndex][0] = data[0 + inputIndex];
+                    dataList1_b[inputIndex][0] = data[9 + inputIndex];
                 }
-            });
+                // 折れ線グラフ
+                int number = 50;
+                int addNumber = 100;
+                Line line = new Line();
+                while (0 < number) {
+                    number--;
+                    addNumber--;
+
+                    //１点目add
+                    if (number != 0) {
+                        for (int setDatalistIndex = 0; setDatalistIndex < 10; setDatalistIndex++) {
+                            dataList1_a[setDatalistIndex][number] = dataList1_a[setDatalistIndex][number - 1];
+                        }
+                    }
+                    LinePoint linePoint = new LinePoint();
+                    linePoint.setY(dataList1_a[nowGraphIndexIMU][number]); //ランダムで生成した値をSet
+                    linePoint.setX(addNumber); //x軸を１ずつずらしてSet
+                    //linePoint.setColor(Color.parseColor("#9acd32")); // 丸の色をSet
+
+                    line.addPoint(linePoint);
+                    //2点目add
+                    /////number--;
+                    addNumber--;
+                    if (number != 0) {
+                        for (int setDatalistIndex = 0; setDatalistIndex < 10; setDatalistIndex++) {
+                            dataList1_b[setDatalistIndex][number] = dataList1_b[setDatalistIndex][number - 1];
+                        }
+                    }
+                    linePoint = new LinePoint();
+                    linePoint.setY(dataList1_b[nowGraphIndexIMU][number]); //ランダムで生成した値をSet
+                    linePoint.setX(addNumber); //x軸を１ずつずらしてSet
+                    //linePoint.setColor(Color.parseColor("#9acd32")); // 丸の色をSet
+
+                    line.addPoint(linePoint);
+                }
+
+                line.setColor(lineColor); // 線の色をSet
+
+                line.setShowingPoints(false);
+                lineGraph.addLine(line);
+                lineGraph.setRangeY(-128, 128); // 表示するY軸の最低値・最高値 今回は0から1まで
+
+            }
+        });
 //        }
     }
 
@@ -604,7 +584,7 @@ public class Plotter extends Activity {
                     }
                 }
             });
-        }else if (mChart==null){
+        } else if (mChart == null) {
             Log.d("wassup ", "mchart might be null************************************");
         }
     }
@@ -612,10 +592,6 @@ public class Plotter extends Activity {
     public void setEMG(int color, int emg) {
         lineColor = color;
         nowGraphIndex = emg;
-    }
-
-    public static void setIMU(int imu) {
-        nowGraphIndexIMU = imu;
     }
 
     public void setCurrentTab(int tab) {
@@ -626,10 +602,10 @@ public class Plotter extends Activity {
         featuresSelected = features;
     }
 
-    public float setMaxValue(float inValue){
+    public float setMaxValue(float inValue) {
         float value = inValue;
         if (inValue > 14000) {
-            value =  14000;
+            value = 14000;
         }
         return value;
     }
