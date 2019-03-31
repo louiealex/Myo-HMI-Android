@@ -83,12 +83,10 @@ public class MainActivity extends AppCompatActivity {
         TabLayout.Tab IMUTab = tabLayout.newTab();
         TabLayout.Tab ClassificationTab = tabLayout.newTab();
 
-
         tabLayout.addTab(EMGTab, 0, true);
         tabLayout.addTab(FeatureTab, 1, true);
         tabLayout.addTab(IMUTab, 2, true);
         tabLayout.addTab(ClassificationTab, 3, true);
-
 
         tabLayout.setupWithViewPager(mViewPager);
 
@@ -96,19 +94,16 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setAdapter(adapter);
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
-        // Create an instance of CognitoCachingCredentialsProvider
-        //CognitoCachingCredentialsProvider cognitoProvider = new CognitoCachingCredentialsProvider(this.getApplicationContext(), "us-west-2:b547c9df-87e3-4a7a-b418-c5649f10c17b", Regions.US_WEST_2);
-
-        CognitoCachingCredentialsProvider cognitoProvider = new CognitoCachingCredentialsProvider(
-                getApplicationContext(),
-                "us-west-2:916f7fdd-9429-4d93-8606-b46efd049d9b", // Identity pool ID
-                Regions.US_WEST_2 // Region
-        );
-
-        // Create LambdaInvokerFactory, to be used to instantiate the Lambda proxy.
-        LambdaInvokerFactory factory = new LambdaInvokerFactory(this.getApplicationContext(), Regions.US_WEST_2, cognitoProvider);
-
-        Lambda mLambda = new Lambda(cognitoProvider, factory);//pass context to static variables for use in feature calculator
+//        CognitoCachingCredentialsProvider cognitoProvider = new CognitoCachingCredentialsProvider(
+//                getApplicationContext(),
+//                "us-west-2:916f7fdd-9429-4d93-8606-b46efd049d9b", // Identity pool ID
+//                Regions.US_WEST_2 // Region
+//        );
+//
+//        // Create LambdaInvokerFactory, to be used to instantiate the Lambda proxy.
+//        LambdaInvokerFactory factory = new LambdaInvokerFactory(this.getApplicationContext(), Regions.US_WEST_2, cognitoProvider);
+//
+//        Lambda mLambda = new Lambda(cognitoProvider, factory);//pass context to static variables for use in feature calculator
     }
 
     /***********************TOP ADDED BY CHARLES FOR SWIPEABLE TABS***************************/
@@ -144,107 +139,6 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    /*
-    int nSamples = 100;
-
-    public void onClickTrain(View v) {
-        //for(int i = 0; i < gestureCounter; i++) {
-        //Log.d(TAG, "NEW GESTURE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-            /*
-            try {
-                Thread.sleep(3000);
-
-            } catch(InterruptedException e) {
-                e.printStackTrace();
-            }
-
-        for (int j = 0; j < nSamples; j++) {
-            mMyoCallback.getFeatCalc().setTrain(true);
-            //if(j == 100 ){Log.d(TAG, "NEW GESTURE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");}
-        }
-        //}
-        mMyoCallback.getFeatCalc().printClassiferTrainer();
-    }
-    */
-    public void onClickedcbGesture(View view) {
-
-        // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
-
-        // Check which checkbox was clicked
-//        switch(view.getId()) {
-//            case R.id.cbFist:
-//                if (checked){
-//                    gestureCounter++;
-//                }
-//
-//                else{
-//                    if(gestureCounter > 0){gestureCounter--;}
-//                    //Remove value from gestureCounter++;
-//                }
-//
-//                break;
-//            case R.id.cbOpenHand:
-//                if (checked){
-//                    gestureCounter++;
-//                }
-//
-//                else{
-//                    if(gestureCounter > 0){gestureCounter--;}
-//                }
-//                break;
-//
-//            case R.id.cbPoint:
-//                if(checked){
-//                    gestureCounter++;
-//                }
-//                else{
-//                    if(gestureCounter > 0){gestureCounter--;}
-//                }
-//                break;
-//        }
-    }
-
-/*
-
-  @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menu.add(0, MENU_LIST, 0, "Connect to Myo");
-        menu.add(1, MENU_BYE, 1, "Disconnect");
-        return true;
-    }
-
-
-  @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        //noinspection SimplifiableIfStatement
-        switch (id) {
-            case MENU_LIST:
-//                Log.d("Menu","Select Menu A");
-                Intent intent = new Intent(this, ListActivity.class);
-                startActivity(intent);
-                return true;
-
-            case MENU_BYE:
-//                Log.d("Menu","Select Menu B");
-                closeBLEGatt();
-                Toast.makeText(getApplicationContext(), "Close GATT", Toast.LENGTH_SHORT).show();
-                return true;
-        }
-        return false;
-    }*/
-
-    public void onClickedAddGesture(View view) {
-        //Using to debig the amount of gestures at the moment
-        Log.d(TAG, "Gesture Count: " + gestureCounter);
-        //Add Name for the gesture
-        //Add gesture to the gesture counter
-        //Call classifier and add the gesture to it
-
-    }
-
     public void closeBLEGatt() {
         if (mBluetoothGatt == null) {
             return;
@@ -253,37 +147,6 @@ public class MainActivity extends AppCompatActivity {
         mBluetoothGatt.close();
         mBluetoothGatt = null;
     }
-
-//    public void onClickVibration(View v) {
-//        if (mBluetoothGatt == null || !mMyoCallback.setMyoControlCommand(commandList.sendVibration3())) {
-//            Log.d(TAG, "False Vibrate");
-//        }
-//    }
-//
-//    public void onClickUnlock(View v) {
-//        if (mBluetoothGatt == null || !mMyoCallback.setMyoControlCommand(commandList.sendUnLock())) {
-//            Log.d(TAG, "False UnLock");
-//        }
-//    }
-//
-//    public void onToggleClicked(View v) {
-//        Log.d(TAG, "Toggle Clicked");
-//        if (click = true) {
-//            if (mBluetoothGatt == null || !mMyoCallback.setMyoControlCommand(commandList.sendEmgOnly())) {
-//                Log.d(TAG, "False EMG");
-//                click = false;
-//            }
-//        } else {
-//            if (mBluetoothGatt == null
-//                    || !mMyoCallback.setMyoControlCommand(commandList.sendUnsetData())
-//                    || !mMyoCallback.setMyoControlCommand(commandList.sendNormalSleep())) {
-//                Log.d(TAG, "False Data Stop");
-//                click = true;
-//            }
-//
-//        }
-//        click=!click;
-//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

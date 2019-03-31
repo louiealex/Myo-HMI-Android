@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class WelcomeActivity extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT = 4000;
+    private static int SPLASH_TIME_OUT = 3000;
 
     TextView title;
     ImageView logo;
@@ -65,7 +65,7 @@ public class WelcomeActivity extends AppCompatActivity {
             public void onFinish() {
                 title.setVisibility(View.VISIBLE);
                 logo.setVisibility(View.VISIBLE);
-                welcome_sound.start();
+//                welcome_sound.start();
 
             }
         };

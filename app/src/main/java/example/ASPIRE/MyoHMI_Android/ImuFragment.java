@@ -97,8 +97,7 @@ public class ImuFragment extends Fragment implements SensorEventListener {
 
         mHandler = new Handler();
 
-        plotter = new Plotter(mHandler, cubicLineChart);//must pass chart from this fragment
-
+//        plotter = new Plotter(mHandler, cubicLineChart);//must pass chart from this fragment
 
         listView_IMU.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
