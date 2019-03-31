@@ -29,9 +29,7 @@ public class WelcomeActivity extends AppCompatActivity {
             /*final MediaPlayer welcome_sound = MediaPlayer.create(getApplicationContext(), R.raw.welcome_sound);
             welcome_sound.start();*/
 
-
         timer();
-
 
         new Handler().postDelayed(new Runnable() {
             @Override

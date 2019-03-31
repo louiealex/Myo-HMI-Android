@@ -123,9 +123,9 @@ public class ImuFragment extends Fragment implements SensorEventListener {
             classifier.setChoice(position);
 
             // selected item
-            String Classifier_selectedItem = ((TextView) view).getText().toString();
+//            String Classifier_selectedItem = ((TextView) view).getText().toString();
 
-            Toast.makeText(getActivity(), "selected: " + Classifier_selectedItem, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getActivity(), "selected: " + Classifier_selectedItem, Toast.LENGTH_SHORT).show();
 
         });
 

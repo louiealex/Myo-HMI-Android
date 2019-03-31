@@ -104,7 +104,6 @@ public class ClassificationFragment extends Fragment {
         final String[] projection = {
                 column
         };
-
         try {
             cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs,
                     null);
@@ -159,7 +158,6 @@ public class ClassificationFragment extends Fragment {
         saver = new SaveData(this.getContext());
         saver.checkReadExternalStoragePermission();
 
-
         liveView = (TextView) v.findViewById(R.id.gesture_detected);
         GetValue = (EditText) v.findViewById(R.id.add_gesture_text);
         trainButton = (ImageButton) v.findViewById(R.id.bt_train);
@@ -175,35 +173,40 @@ public class ClassificationFragment extends Fragment {
 
         ListElementsArrayList = new ArrayList<String>(Arrays.asList(ListElements));
         ClassifierArrayList = new ArrayList<String>(Arrays.asList(classifier_options));
-//        DocumentsContract = new DocumentsContract();
 
         cloudUpload = new CloudUpload(getActivity());
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.mytextview, ListElementsArrayList);
-
         ArrayAdapter<String> adapter_classifier = new ArrayAdapter<String>(getActivity(), R.layout.myradioview, ClassifierArrayList);
 
         listview.setAdapter(adapter);
         listview_Classifier.setAdapter(adapter_classifier);
 
-        //selectes lda
         listview_Classifier.setItemChecked(0, true);
 
+        selectedItems = new ArrayList<>();
         for (int i = 0; i < ListElements.length; i++) {
             listview.setItemChecked(i, true);
             selectedItems.add(i, adapter.getItem(i));
         }
 
-        //set OnItemClickListener
         listview.setOnItemClickListener((parent, view, position, id) -> {
-
-            // selected item
             String selectedItem = ((TextView) view).getText().toString();
-
             if (selectedItems.contains(selectedItem)) {
-                selectedItems.remove(selectedItem); //remove deselected item from the list of selected items
-            } else {
-                selectedItems.add(selectedItem); //add selected item to the list of selected items
+                Log.d("Removing", String.valueOf(selectedItem));
+                selectedItems.remove(selectedItem);
+                return;
+            }
+            int sCount = 0;
+            for(int i=0 ; i<adapter.getCount() ; i++){
+                if (adapter.getItem(i) == selectedItem) {
+                    selectedItems.add(sCount, selectedItem);
+                    Log.d("Selected Gestures", String.valueOf(selectedItems));
+                    return;
+                }
+                if (selectedItems.contains(adapter.getItem(i))) {
+                    sCount++;
+                }
             }
         });
 
@@ -216,7 +219,6 @@ public class ClassificationFragment extends Fragment {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (selectedItems.size() > 0) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
@@ -234,7 +236,6 @@ public class ClassificationFragment extends Fragment {
                             while (selectedItems.size() > 0) {
                                 for (int i = 0; i < selectedItems.size(); ++i) {
                                     String item = selectedItems.get(i);
-
                                     for (int x = 0; x <= item.length(); ++x) {
                                         selectedItems.remove(item); //remove deselected item from the list of selected items
                                         listview.setItemChecked(x, false);
@@ -251,7 +252,6 @@ public class ClassificationFragment extends Fragment {
 
                 } else if (ListElementsArrayList.size() > 0) {
                     Toast.makeText(getActivity(), "Please select the desired gestures to be deleted!", Toast.LENGTH_SHORT).show();
-
                 } else {
                     Toast.makeText(getActivity(), "There is nothing to delete!", Toast.LENGTH_SHORT).show();
                 }
@@ -264,29 +264,18 @@ public class ClassificationFragment extends Fragment {
                 InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
             } catch (Exception e) {
-
+                e.printStackTrace();
             }
-
             String newGesture = GetValue.getText().toString();
 
             if (newGesture.matches("")) {
                 Toast.makeText(getActivity(), "Please Enter A Gesture", Toast.LENGTH_SHORT).show();
-
-
             } else {
                 ListElementsArrayList.add(GetValue.getText().toString());
                 GetValue.setText("");
                 adapter.notifyDataSetChanged();
             }
         });
-
-//        uploadButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v){
-//                fcalc.setClassify(false);
-//                countdown(false);
-//            }
-//        });
 
         uploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -310,26 +299,19 @@ public class ClassificationFragment extends Fragment {
         trainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (MyoGattCallback.myoConnected == null) {
                     AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
                     alertDialog.setTitle("Myo not detected");
                     alertDialog.setMessage("Myo armband should be connected before training gestures.");
                     alertDialog.setIcon(R.drawable.stop_icon);
-
                     alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(getContext(), "On the top right corner, select 'Connect'", Toast.LENGTH_LONG).show();
                         }
                     });
-
                     alertDialog.show();
-
                 } else {
-
-                    //onClickTrain(v);
                     countdown(true);
-//                mHandler.post(r1);
                 }
             }
         });
@@ -370,12 +352,13 @@ public class ClassificationFragment extends Fragment {
                         count = 4;//3 seconds + 1
                         mHandler.post(this);
                         fcalc.setTrain(true);
-                        while (fcalc.getTrain()) {//wait till trainig is done
+                        while (fcalc.getTrain()) {//wait till training is done
 
                             /* For some reason we must print something here or else it gets stuck */
                             System.out.print("");
                         }
                         gestureCounter++;
+                        Log.d("Gesture Counter", String.valueOf(gestureCounter));
                     } else {
                         liveView.setText("");
                         if (train) {
@@ -387,10 +370,8 @@ public class ClassificationFragment extends Fragment {
                     }
                 } else if (selectedItems.size() == 1) {
                     Toast.makeText(getActivity(), "at least 2 gestures must be selected!", Toast.LENGTH_SHORT).show();
-
                 } else {
                     Toast.makeText(getActivity(), "No gestures selected!", Toast.LENGTH_SHORT).show();
-
                 }
             }
         };
