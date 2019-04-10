@@ -22,10 +22,28 @@ public class MyoCommandList {
         return send_bytes_data;
     }
 
-    public byte[] sendVibration3() {
+    public byte[] sendVibration3() { // long vibrate
         byte command_vibrate = (byte) 0x03;
         byte payload_vibrate = (byte) 1;
         byte vibrate_type = (byte) 0x03;
+        send_bytes_data = new byte[]{command_vibrate, payload_vibrate, vibrate_type};
+
+        return send_bytes_data;
+    }
+
+    public byte[] sendVibration2() { // medium vibrate
+        byte command_vibrate = (byte) 0x03;
+        byte payload_vibrate = (byte) 1;
+        byte vibrate_type = (byte) 0x02;
+        send_bytes_data = new byte[]{command_vibrate, payload_vibrate, vibrate_type};
+
+        return send_bytes_data;
+    }
+
+    public byte[] sendVibration1() { // short vibrate
+        byte command_vibrate = (byte) 0x03;
+        byte payload_vibrate = (byte) 1;
+        byte vibrate_type = (byte) 0x01;
         send_bytes_data = new byte[]{command_vibrate, payload_vibrate, vibrate_type};
 
         return send_bytes_data;

@@ -7,6 +7,7 @@ import android.bluetooth.BluetoothGatt;
 import android.bluetooth.le.BluetoothLeScanner;
 import android.bluetooth.le.ScanCallback;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.TabLayout;
@@ -46,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
     public int gestureCounter = 0;
     public ClassificationFragment classificationFragment;
     TextView countdown;
+
+    //Added by Alex L.
+    //Needed to Receive Vibration Requests from Unity.
+    private ReceiveFromUnity receiveFromUnity;
+
     /***********************Below ADDED BY CHARLES FOR SWIPEABLE TABS***************************/
 
     ViewPager mViewPager;
@@ -104,6 +110,12 @@ public class MainActivity extends AppCompatActivity {
 //        LambdaInvokerFactory factory = new LambdaInvokerFactory(this.getApplicationContext(), Regions.US_WEST_2, cognitoProvider);
 //
 //        Lambda mLambda = new Lambda(cognitoProvider, factory);//pass context to static variables for use in feature calculator
+
+
+        //To Send and Receive from Unity - Alex L.
+        startService(new Intent(this, SendToUnity.class));
+        receiveFromUnity = new ReceiveFromUnity();
+        registerReceiver(receiveFromUnity, new IntentFilter("com.test.sendintent.IntentFromUnity"));
     }
 
     /***********************TOP ADDED BY CHARLES FOR SWIPEABLE TABS***************************/

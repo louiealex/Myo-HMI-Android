@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HoloGraphLibrary/HoloGraphLibrary.iml" filepath="$PROJECT_DIR$/HoloGraphLibrary/HoloGraphLibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Myo-HMI-Android.iml" filepath="$PROJECT_DIR$/Myo-HMI-Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Myo-HMI-Android-April10.iml" filepath="$PROJECT_DIR$/Myo-HMI-Android-April10.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\alexa\\Desktop\\Myo-HMI-Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-normal-v4\\values-normal-v4.xml",
+            "outputFile": "/Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-normal-v4/values-normal-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\alexa\\Desktop\\Myo-HMI-Android\\app\\src\\main\\res\\values-normal\\dimens.xml",
+                    "source": "/Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/res/values-normal/dimens.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "4",

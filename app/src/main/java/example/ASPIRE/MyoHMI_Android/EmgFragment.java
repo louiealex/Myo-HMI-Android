@@ -114,6 +114,10 @@ public class EmgFragment extends Fragment implements View.OnClickListener {
                 mMyoCallback = new MyoGattCallback(mHandler, myoConnectionText, prog, connectingText, plotter, getView());
                 mBluetoothGatt = device.connectGatt(getActivity(), false, mMyoCallback);
                 mMyoCallback.setBluetoothGatt(mBluetoothGatt);
+
+
+                // Added so Unity can trigger vibrations
+                ReceiveFromUnity.setmMyoCallback(mMyoCallback);
             }
         }
     };

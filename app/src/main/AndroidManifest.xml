@@ -71,6 +71,19 @@
             android:name=".RegisterActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/register_title" />
+
+
+        <service
+            android:name=".SendToUnity"
+            android:stopWithTask="false" />
+
+        <!--        <receiver android:name="example.ASPIRE.MyoHMI_Android.ReceiveFromUnity">
+                    <intent-filter>
+                        <action android:name="com.test.sendintent.IntentFromUnity"></action>
+                    </intent-filter>
+                </receiver>-->
+
+
     </application>
 
 </manifest>

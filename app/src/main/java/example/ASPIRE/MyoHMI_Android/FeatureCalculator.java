@@ -148,6 +148,16 @@ public class FeatureCalculator {
 
         prediction = classifier.predict(inFeatemg);
 
+
+        //Log.d("FeatureCalculator", String.valueOf(prediction));
+        Log.d("FeatureCalculator", gestures.get(prediction));
+
+        //Sends predicted Gesture to Unity
+        SendToUnity.setMessage(gestures.get(prediction));
+        //SendToUnity.setQuaternion((float) inFeatemg.getValue(0).byteValue(), (float) inFeatemg.getValue(1).byteValue(), (float) inFeatemg.getValue(2).byteValue(), (float) inFeatemg.getValue(3).byteValue());
+
+
+
         if (prediction == -1) {
             return;
         }
@@ -493,6 +503,10 @@ public class FeatureCalculator {
         if (imusamplebuffer.size() > bufsize)//limit size of buffer to bufsize
             imusamplebuffer.remove(samplebuffer.size() - 1);
         imuibuf = ++imuibuf % (bufsize);
+
+        if (data.getFlag() == 2) {
+            SendToUnity.setQuaternion((float) data.getValue(0).byteValue(), (float) data.getValue(1).byteValue(), (float) data.getValue(2).byteValue(), (float) data.getValue(3).byteValue());
+        }
     }
 
     public twoDimArray featCalcIMU(ArrayList<DataVector> imusamplebuf) {
