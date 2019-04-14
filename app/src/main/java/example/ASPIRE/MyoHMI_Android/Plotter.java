@@ -115,7 +115,6 @@ public class Plotter extends Activity {
         this.pushFeaturePlotter(featemg);
 
 //        this.setCurrentTab(0);
-
     }
 
     public Plotter(Handler handler, LineGraph line) {
@@ -394,96 +393,17 @@ public class Plotter extends Activity {
                 }
             });
         } else if (data.length == 20 && currentTab == 1) {//emg=false;
-//            chartView.setAnimation(an);
-//            Log.d("In: ", "IMU Graph");
             w = data[0];
             x = data[1];
             y = data[2];
             z = data[3];
 
             roll = Math.atan(2 * (x * w + z * y) / (2 * (x ^ 2 + y ^ 2) - 1));
-
-//            Log.d("roll", String.valueOf(roll));
-
-//            Log.d("IMU: ", Arrays.toString(data));
-
-//            Log.d("roll: ", String.valueOf(roll));
-
-//            mHandler.post(new Runnable() {
-//                @Override
-//                public void run() {
-//                    mChart.spin(1,0,30, Easing.EasingOption.Linear);
-//                }
-//            });
         }
-    }
-
-    public void pushIMUPlotter(byte[] data) {
-//        setData();
-//        if (currentTab == 3) {
-
-//        Log.d("length", String.valueOf(data.length));
-
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-
-                lineGraph.removeAllLines();
-
-                for (int inputIndex = 0; inputIndex < 10; inputIndex++) {
-                    dataList1_a[inputIndex][0] = data[0 + inputIndex];
-                    dataList1_b[inputIndex][0] = data[9 + inputIndex];
-                }
-                // 折れ線グラフ
-                int number = 50;
-                int addNumber = 100;
-                Line line = new Line();
-                while (0 < number) {
-                    number--;
-                    addNumber--;
-
-                    //１点目add
-                    if (number != 0) {
-                        for (int setDatalistIndex = 0; setDatalistIndex < 10; setDatalistIndex++) {
-                            dataList1_a[setDatalistIndex][number] = dataList1_a[setDatalistIndex][number - 1];
-                        }
-                    }
-                    LinePoint linePoint = new LinePoint();
-                    linePoint.setY(dataList1_a[nowGraphIndexIMU][number]); //ランダムで生成した値をSet
-                    linePoint.setX(addNumber); //x軸を１ずつずらしてSet
-                    //linePoint.setColor(Color.parseColor("#9acd32")); // 丸の色をSet
-
-                    line.addPoint(linePoint);
-                    //2点目add
-                    /////number--;
-                    addNumber--;
-                    if (number != 0) {
-                        for (int setDatalistIndex = 0; setDatalistIndex < 10; setDatalistIndex++) {
-                            dataList1_b[setDatalistIndex][number] = dataList1_b[setDatalistIndex][number - 1];
-                        }
-                    }
-                    linePoint = new LinePoint();
-                    linePoint.setY(dataList1_b[nowGraphIndexIMU][number]); //ランダムで生成した値をSet
-                    linePoint.setX(addNumber); //x軸を１ずつずらしてSet
-                    //linePoint.setColor(Color.parseColor("#9acd32")); // 丸の色をSet
-
-                    line.addPoint(linePoint);
-                }
-
-                line.setColor(lineColor); // 線の色をSet
-
-                line.setShowingPoints(false);
-                lineGraph.addLine(line);
-                lineGraph.setRangeY(-128, 128); // 表示するY軸の最低値・最高値 今回は0から1まで
-
-            }
-        });
-//        }
     }
 
     public void pushFeaturePlotter(twoDimArray featureData) {
         if (mChart != null && currentTab == 1) {
-//        if (mChart != null) {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
@@ -495,7 +415,7 @@ public class Plotter extends Activity {
                     f4 = featureData.getInnerArray(4);
                     f5 = featureData.getInnerArray(5);
 
-                    ArrayList<RadarEntry> entries0 = new ArrayList<RadarEntry>();
+                    ArrayList<RadarEntry> entries0 = new ArrayList<>();
                     ArrayList<RadarEntry> entries1 = new ArrayList<RadarEntry>();
                     ArrayList<RadarEntry> entries2 = new ArrayList<RadarEntry>();
                     ArrayList<RadarEntry> entries3 = new ArrayList<RadarEntry>();
@@ -510,8 +430,6 @@ public class Plotter extends Activity {
                         entries3.add(new RadarEntry(setMaxValue(f3.get(i).floatValue() * 170)));
                         entries4.add(new RadarEntry(setMaxValue(f4.get(i).floatValue() * 200)));
                         entries5.add(new RadarEntry(setMaxValue(f5.get(i).floatValue() * 200)));
-
-//                        Log.d("asdfadsf", String.valueOf(f3.get(i)));
                     }
 
                     ArrayList<IRadarDataSet> sets = new ArrayList<IRadarDataSet>();
@@ -571,9 +489,6 @@ public class Plotter extends Activity {
                     if (featuresSelected[5])
                         sets.add(set5);
 
-                    //                        set1.setDrawHighlightCircleEnabled(true);
-                    //                        set1.setDrawHighlightIndicators(false);
-
                     if (!sets.isEmpty()) {
                         RadarData data = new RadarData(sets);
                         data.setValueTextSize(18f);
@@ -581,6 +496,8 @@ public class Plotter extends Activity {
                         mChart.setData(data);
                         mChart.notifyDataSetChanged();
                         mChart.invalidate();
+                    } else {
+                        mChart.clear();
                     }
                 }
             });

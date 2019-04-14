@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/bt_cancel"
         android:layout_marginTop="16dp"
-        android:text="Upload Files?"
+        android:text="Upload Files"
         android:textColor="@color/colorMidnight"
         android:textSize="36sp" />
 

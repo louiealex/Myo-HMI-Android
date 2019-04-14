@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml",
+            "outputFile": "C:\\Users\\alexa\\Desktop\\Myo-HMI-Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
             "map": [
                 {
-                    "source": "/Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/res/values-large/dimens.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "59",
-                        "endColumns": "43",
-                        "endOffsets": "98"
-                    },
-                    "to": {
-                        "startLines": "9",
-                        "startColumns": "4",
-                        "startOffsets": "532",
-                        "endColumns": "43",
-                        "endOffsets": "571"
-                    }
-                },
-                {
-                    "source": "/Users/A/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/2c382fd288c0b794a1c44d1a669fcc16/res/values-large-v4/values-large-v4.xml",
+                    "source": "C:\\Users\\alexa\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d5d36a8f77b840d38c719f96d2305a39\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -35,6 +18,23 @@
                         "startOffsets": "55,114,185,256,326,396,464,576,680",
                         "endColumns": "58,70,70,69,69,67,67,103,115",
                         "endOffsets": "109,180,251,321,391,459,527,675,791"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\alexa\\Desktop\\Myo-HMI-Android\\app\\src\\main\\res\\values-large\\dimens.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "59",
+                        "endColumns": "43",
+                        "endOffsets": "98"
+                    },
+                    "to": {
+                        "startLines": "9",
+                        "startColumns": "4",
+                        "startOffsets": "532",
+                        "endColumns": "43",
+                        "endOffsets": "571"
                     }
                 }
             ]
