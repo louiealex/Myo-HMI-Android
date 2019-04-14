@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.HandlerThread;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -48,8 +49,7 @@ public class ClassificationFragment extends Fragment {
     //create an ArrayList object to store selected items
     public static ArrayList<String> selectedItems = new ArrayList<>();
     private static SaveData saver;
-    Runnable r1;
-    Runnable r2;
+    //    Runnable r1;
     EditText GetValue;
     ImageButton addButton;
     ImageButton deleteButton;
@@ -89,7 +89,9 @@ public class ClassificationFragment extends Fragment {
     private List<String> ClassifierArrayList;
     private ArrayList<DataVector> trainData = new ArrayList<>();
     private int count = 4;
-    private Handler mHandler = new Handler();
+    //    private Handler mHandler = new Handler();
+    private Handler mHandler;
+    private HandlerThread readThread;
     private int gestureCounter = 0;
     private TextView liveView, status;
     private CloudUpload cloudUpload;
@@ -198,7 +200,7 @@ public class ClassificationFragment extends Fragment {
                 return;
             }
             int sCount = 0;
-            for(int i=0 ; i<adapter.getCount() ; i++){
+            for (int i = 0; i < adapter.getCount(); i++) {
                 if (adapter.getItem(i) == selectedItem) {
                     selectedItems.add(sCount, selectedItem);
                     Log.d("Selected Gestures", String.valueOf(selectedItems));
@@ -299,20 +301,20 @@ public class ClassificationFragment extends Fragment {
         trainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (MyoGattCallback.myoConnected == null) {
-                    AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
-                    alertDialog.setTitle("Myo not detected");
-                    alertDialog.setMessage("Myo armband should be connected before training gestures.");
-                    alertDialog.setIcon(R.drawable.stop_icon);
-                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(getContext(), "On the top right corner, select 'Connect'", Toast.LENGTH_LONG).show();
-                        }
-                    });
-                    alertDialog.show();
-                } else {
-                    countdown(true);
-                }
+//                if (MyoGattCallback.myoConnected == null) {
+//                    AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+//                    alertDialog.setTitle("Myo not detected");
+//                    alertDialog.setMessage("Myo armband should be connected before training gestures.");
+//                    alertDialog.setIcon(R.drawable.stop_icon);
+//                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            Toast.makeText(getContext(), "On the top right corner, select 'Connect'", Toast.LENGTH_LONG).show();
+//                        }
+//                    });
+//                    alertDialog.show();
+//                } else {
+                countdown();
+//                }
             }
         });
 
@@ -326,13 +328,14 @@ public class ClassificationFragment extends Fragment {
         return v;
     }
 
-    private void countdown(boolean train) {
-
-        fcalc.sendClasses(selectedItems);
+    private void countdown() {
+        readThread = new HandlerThread("");
+        readThread.start();
+        mHandler = new Handler(readThread.getLooper());
         count = 4;
         gestureCounter = 0;
-
-        r1 = new Runnable() {
+        fcalc.sendClasses(selectedItems);
+        Runnable countdown = new Runnable() {
             @Override
             public void run() {
                 if (selectedItems.size() > 1) {
@@ -340,13 +343,13 @@ public class ClassificationFragment extends Fragment {
 
                     if ((--count != -1) && (gestureCounter != selectedItems.size())) {
                         mHandler.postDelayed(this, 1000);
-                        liveView.setText("Do " + selectedItems.get(gestureCounter) + " in " + String.valueOf(count));
-//                        progressBar.setVisibility(View.VISIBLE);
+
+                        updateLiveViewText("Do " + selectedItems.get(gestureCounter) + " in " + String.valueOf(count));
+//                      progressBar.setVisibility(View.VISIBLE);
 
                         if (count == 0) {
-//                            progressBar.setVisibility(View.INVISIBLE);
-                            liveView.setText("Hold " + selectedItems.get(gestureCounter));
-                            //status.getText(featureCalculator.sampleClassifier);
+//                          progressBar.setVisibility(View.INVISIBLE);
+                            updateLiveViewText("Hold " + selectedItems.get(gestureCounter));
                         }
                     } else if (gestureCounter != selectedItems.size()) {
                         count = 4;//3 seconds + 1
@@ -360,13 +363,10 @@ public class ClassificationFragment extends Fragment {
                         gestureCounter++;
                         Log.d("Gesture Counter", String.valueOf(gestureCounter));
                     } else {
-                        liveView.setText("");
-                        if (train) {
-                            fcalc.Train();
-                        } else {
-                            fileUpload();
-                        }
+                        updateLiveViewText("");
+                        fcalc.Train();
                         fcalc.setClassify(true);
+                        readThread.quit();
                     }
                 } else if (selectedItems.size() == 1) {
                     Toast.makeText(getActivity(), "at least 2 gestures must be selected!", Toast.LENGTH_SHORT).show();
@@ -375,38 +375,63 @@ public class ClassificationFragment extends Fragment {
                 }
             }
         };
-        r1.run();
+        countdown.run();
+    }
+
+
+    private void updateLiveViewText(String text) {
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                liveView.setText(text);
+            }
+        });
+//        new Thread() {
+//            public void run() {
+//                    try {
+//                        getActivity().runOnUiThread(new Runnable() {
+//
+//                            @Override
+//                            public void run() {
+//                                liveView.setText(text);
+//                            }
+//                        });
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//            }
+//        }.start();
     }
 
     private void fileLoad() {
-//        if (MyoGattCallback.myoConnected == null) {
-//            AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
-//            alertDialog.setTitle("Myo not detected");
-//            alertDialog.setMessage("Myo armband should be connected before importing data.");
-//            alertDialog.setIcon(R.drawable.stop_icon);
-//
-//            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
-//                public void onClick(DialogInterface dialog, int which) {
-//                    Toast.makeText(getContext(), "On the top right corner, select 'Connect'", Toast.LENGTH_LONG).show();
-//                }
-//            });
-//
-//            alertDialog.show();
-//
-//        } else {
-        AlertDialog.Builder loadDialog = new AlertDialog.Builder(getContext());
-        loadDialog.setTitle("Load From:");
-        loadDialog.setMessage("Where would you like to load the Trained Gestures from?");
-        loadDialog.setIcon(R.drawable.add_icon_extra);
-        loadDialog.setCancelable(true);
+        if (MyoGattCallback.myoConnected == null) {
+            AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+            alertDialog.setTitle("Myo not detected");
+            alertDialog.setMessage("Myo armband should be connected before importing data.");
+            alertDialog.setIcon(R.drawable.stop_icon);
 
-        loadDialog.setPositiveButton(
-                "SD CARD",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        openFolder();
-                    }
-                });
+            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getContext(), "On the top right corner, select 'Connect'", Toast.LENGTH_LONG).show();
+                }
+            });
+
+            alertDialog.show();
+
+        } else {
+            AlertDialog.Builder loadDialog = new AlertDialog.Builder(getContext());
+            loadDialog.setTitle("Load From:");
+            loadDialog.setMessage("Where would you like to load the Trained Gestures from?");
+            loadDialog.setIcon(R.drawable.add_icon_extra);
+            loadDialog.setCancelable(true);
+
+            loadDialog.setPositiveButton(
+                    "SD CARD",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            openFolder();
+                        }
+                    });
 
 //            loadDialog.setNegativeButton(
 //                    "Cloud",
@@ -415,32 +440,32 @@ public class ClassificationFragment extends Fragment {
 //                        }
 //                    });
 
-        loadDialog.setNeutralButton(
-                "Cancel",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
+            loadDialog.setNeutralButton(
+                    "Cancel",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
 
-        AlertDialog loadOptions = loadDialog.create();
-        loadOptions.show();
+            AlertDialog loadOptions = loadDialog.create();
+            loadOptions.show();
 
-        // Get the alert dialog buttons reference
-        Button positiveButton = loadOptions.getButton(AlertDialog.BUTTON_POSITIVE);
-        Button negativeButton = loadOptions.getButton(AlertDialog.BUTTON_NEGATIVE);
-        Button neutralButton = loadOptions.getButton(AlertDialog.BUTTON_NEUTRAL);
+            // Get the alert dialog buttons reference
+            Button positiveButton = loadOptions.getButton(AlertDialog.BUTTON_POSITIVE);
+            Button negativeButton = loadOptions.getButton(AlertDialog.BUTTON_NEGATIVE);
+            Button neutralButton = loadOptions.getButton(AlertDialog.BUTTON_NEUTRAL);
 
-        // Change the alert dialog buttons text and background color
-        positiveButton.setTextColor(Color.parseColor("#FFFFFF"));
-        positiveButton.setBackgroundColor(Color.parseColor("#000000"));
+            // Change the alert dialog buttons text and background color
+            positiveButton.setTextColor(Color.parseColor("#FFFFFF"));
+            positiveButton.setBackgroundColor(Color.parseColor("#000000"));
 
-        negativeButton.setTextColor(Color.parseColor("#FFFFFF"));
-        negativeButton.setBackgroundColor(Color.parseColor("#030000"));
+            negativeButton.setTextColor(Color.parseColor("#FFFFFF"));
+            negativeButton.setBackgroundColor(Color.parseColor("#030000"));
 
-        neutralButton.setTextColor(Color.parseColor("#FFFFFF"));
-        neutralButton.setBackgroundColor(Color.parseColor("#FF0000"));
-//        }
+            neutralButton.setTextColor(Color.parseColor("#FFFFFF"));
+            neutralButton.setBackgroundColor(Color.parseColor("#FF0000"));
+        }
     }
 
     private void fileUpload() {

@@ -1,252 +1,252 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:2:1-89:12
-INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:2:1-89:12
-INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:2:1-89:12
-INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:2:1-89:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/A/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/8a41b0e9be02f07f6d75614d8bc931ef/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:design:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/08437914299f4113065a343b2c7986d6/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/2c382fd288c0b794a1c44d1a669fcc16/AndroidManifest.xml:17:1-22:12
-MERGED from [:HoloGraphLibrary] /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/HoloGraphLibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-18:12
-MERGED from [com.android.support:percent:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/percent-27.1.1.aar/2fc98327d472abd8f6e6bcebcfd0206e/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.volley:volley:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/b4598deab2bba65ac19ab7329424dd07/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-v4:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/64033a418262603bbe8e714d2b315c53/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/6a248b48b7c56883c4204808b8aa5a0d/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/fba1e582a4c6f22cc93541917afa4537/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/d6e59942e08f3a8d671a24abd93197bd/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/56cc04c4b469040f98bdedc395abb0a7/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/f8f87338c65a128a01bb60798b026a86/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/2a743999eb913d5f8efef9cb6039297d/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:transition:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/f9c6ba017fd9fe6465ffa71bcd7b8e7f/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/cd8e37b66ad40521904fe3466e3d1bfe/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/a4cb58e01a0f0df4c63a6fbfbcbd8c1b/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/8e8b8c100ae1fd8c661e0b65147ccf89/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/9c9ea8f9ec863862d6ea3189be96edce/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/3d98087c1c05c020f62a0fc6d483d7c9/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/c8faa4ff596c8744a8e7ce24c4aeddf5/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:2:1-89:12
-INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:2:1-89:12
-INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:2:1-89:12
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-89:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\18ea84ec4754483b5e426838ab1e96e8\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\9d5d00f4c50269280643322882da9005\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\d5d36a8f77b840d38c719f96d2305a39\AndroidManifest.xml:17:1-22:12
+MERGED from [:HoloGraphLibrary] C:\Users\alexa\Desktop\Myo-HMI-Android\HoloGraphLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-18:12
+MERGED from [com.android.support:percent:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\percent-27.1.1.aar\f5986859620a72442aa4066ed838623d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\c443978f6f9d66870a52d77ace23ec6a\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\1a6c8a79b3e5b5379ad58e127a6ab365\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\69adcafb2c9468eb9eb710a1765c8af8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\51aca6faa7bc0c2e0f85c63b52545094\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\0334a3b3d874cbd76742e8530461089c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\77dca7d6bc767389f3769bea6e67de55\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\ce118cbb6f82a9ec7baa8c6a33407a4a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\611a888b36c72b8d8732393ca59a6bb8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\9eba7d0c17cb186cd9e627d597e1ac7a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\ed0d4d48ac41565d254bcb831f869aa5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\6b35785f0158513a028c58a7fcb85c25\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\02b75ff9a3b3c1cdc4e4a15039bf90ed\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\f6742afadfaa06f149eeae59a089c9e7\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\c1421b514921fea225a0acc0e7312020\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\55ef06633a81ad3191976f3c905f7093\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-89:12
 	package
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:4:5-44
-		INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:4:5-44
+		INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:2:1-89:12
-		INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-89:12
+		INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:3:5-51
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:2:1-89:12
-		INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:1-89:12
+		INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:6:5-79
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:6:5-79
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:6:22-76
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:6:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:7:5-81
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:7:5-81
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:7:22-78
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:7:22-78
 uses-permission#android.permission.BLUETOOTH
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:8:5-68
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:8:5-68
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:8:22-65
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:8:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:9:5-74
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:9:5-74
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:9:22-71
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:9:22-71
 uses-permission#android.permission.INTERNET
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:10:5-67
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:10:5-67
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:10:22-64
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:10:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:11:5-79
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:11:5-79
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:11:22-76
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:11:22-76
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:12:5-80
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:12:5-80
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:12:22-77
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:12:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:13:5-81
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:13:5-81
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:13:22-78
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:13:22-78
 uses-feature#android.hardware.bluetooth_le
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:15:5-17:35
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:15:5-17:35
 	android:required
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:17:9-32
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:17:9-32
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:16:9-53
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:16:9-53
 permission#android.permission.BLUETOOTH
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:21:5-23:37
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:21:5-23:37
 	android:label
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:23:9-34
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:23:9-34
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:22:9-52
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:22:9-52
 permission#android.permission.BLUETOOTH_ADMIN
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:24:5-69
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:24:5-69
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:24:17-66
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:24:17-66
 permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:25:5-74
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:25:5-74
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:25:17-71
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:25:17-71
 permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:26:5-76
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:26:5-76
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:26:17-73
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:26:17-73
 supports-screens
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:28:5-31:39
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:28:5-31:39
 	android:largeScreens
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:29:9-36
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:29:9-36
 	android:smallScreens
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:31:9-36
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:31:9-36
 	android:normalScreens
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:30:9-37
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:30:9-37
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:33:5-75
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:33:5-75
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:33:22-72
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:33:22-72
 application
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:35:5-87:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/A/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/8a41b0e9be02f07f6d75614d8bc931ef/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/A/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/8a41b0e9be02f07f6d75614d8bc931ef/AndroidManifest.xml:9:5-20
-MERGED from [:HoloGraphLibrary] /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/HoloGraphLibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-16:19
-MERGED from [:HoloGraphLibrary] /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/HoloGraphLibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-16:19
-MERGED from [com.android.volley:volley:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/b4598deab2bba65ac19ab7329424dd07/AndroidManifest.xml:9:5-20
-MERGED from [com.android.volley:volley:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/b4598deab2bba65ac19ab7329424dd07/AndroidManifest.xml:9:5-20
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:35:5-87:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\18ea84ec4754483b5e426838ab1e96e8\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\18ea84ec4754483b5e426838ab1e96e8\AndroidManifest.xml:9:5-20
+MERGED from [:HoloGraphLibrary] C:\Users\alexa\Desktop\Myo-HMI-Android\HoloGraphLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-16:19
+MERGED from [:HoloGraphLibrary] C:\Users\alexa\Desktop\Myo-HMI-Android\HoloGraphLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-16:19
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\c443978f6f9d66870a52d77ace23ec6a\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\c443978f6f9d66870a52d77ace23ec6a\AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:39:9-41
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:39:9-41
 	android:hardwareAccelerated
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:37:9-44
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:37:9-44
 	android:largeHeap
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:40:9-33
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:40:9-33
 	android:icon
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:38:9-42
-		REJECTED from [:HoloGraphLibrary] /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/HoloGraphLibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-45
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:38:9-42
+		REJECTED from [:HoloGraphLibrary] C:\Users\alexa\Desktop\Myo-HMI-Android\HoloGraphLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-45
 	android:allowBackup
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:36:9-35
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:36:9-35
 	android:theme
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:41:9-40
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:41:9-40
 	tools:replace
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:42:9-37
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:42:9-37
 activity#example.ASPIRE.MyoHMI_Android.WelcomeActivity
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:43:9-52:20
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:43:9-52:20
 	android:label
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:46:13-45
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:46:13-45
 	android:configChanges
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:45:13-74
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:45:13-74
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:44:13-44
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:44:13-44
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:47:13-51:29
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:47:13-51:29
 action#android.intent.action.MAIN
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:48:17-69
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:48:17-69
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:48:25-66
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:48:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:50:17-77
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:50:17-77
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:50:27-74
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:50:27-74
 activity#example.ASPIRE.MyoHMI_Android.LoginActivity
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:53:9-56:51
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:53:9-56:51
 	android:label
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:56:13-48
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:56:13-48
 	android:configChanges
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:55:13-74
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:55:13-74
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:54:13-42
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:54:13-42
 activity#example.ASPIRE.MyoHMI_Android.MainActivity
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:57:9-60:48
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:57:9-60:48
 	android:label
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:60:13-45
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:60:13-45
 	android:configChanges
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:59:13-74
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:59:13-74
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:58:13-41
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:58:13-41
 activity#example.ASPIRE.MyoHMI_Android.ListActivity
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:61:9-64:59
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:61:9-64:59
 	android:label
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:64:13-56
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:64:13-56
 	android:configChanges
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:63:13-74
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:63:13-74
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:62:13-41
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:62:13-41
 service#com.amazonaws.mobileconnectors.s3.transferutility.TransferService
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:66:9-68:38
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:66:9-68:38
 	android:enabled
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:68:13-35
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:68:13-35
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:67:13-93
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:67:13-93
 activity#example.ASPIRE.MyoHMI_Android.RegisterActivity
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:70:9-73:54
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:70:9-73:54
 	android:label
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:73:13-51
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:73:13-51
 	android:configChanges
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:72:13-74
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:72:13-74
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:71:13-45
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:71:13-45
 service#example.ASPIRE.MyoHMI_Android.SendToUnity
-ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:76:9-78:44
+ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:76:9-78:44
 	android:stopWithTask
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:78:13-41
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:78:13-41
 	android:name
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml:77:13-40
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml:77:13-40
 uses-sdk
-INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml
-INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/A/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/8a41b0e9be02f07f6d75614d8bc931ef/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/A/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/8a41b0e9be02f07f6d75614d8bc931ef/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:design:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/08437914299f4113065a343b2c7986d6/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/08437914299f4113065a343b2c7986d6/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/2c382fd288c0b794a1c44d1a669fcc16/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/2c382fd288c0b794a1c44d1a669fcc16/AndroidManifest.xml:20:5-44
-MERGED from [:HoloGraphLibrary] /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/HoloGraphLibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:HoloGraphLibrary] /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/HoloGraphLibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:percent:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/percent-27.1.1.aar/2fc98327d472abd8f6e6bcebcfd0206e/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:percent:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/percent-27.1.1.aar/2fc98327d472abd8f6e6bcebcfd0206e/AndroidManifest.xml:20:5-44
-MERGED from [com.android.volley:volley:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/b4598deab2bba65ac19ab7329424dd07/AndroidManifest.xml:7:5-43
-MERGED from [com.android.volley:volley:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/b4598deab2bba65ac19ab7329424dd07/AndroidManifest.xml:7:5-43
-MERGED from [com.android.support:support-v4:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/64033a418262603bbe8e714d2b315c53/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/64033a418262603bbe8e714d2b315c53/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/6a248b48b7c56883c4204808b8aa5a0d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/6a248b48b7c56883c4204808b8aa5a0d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/fba1e582a4c6f22cc93541917afa4537/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/fba1e582a4c6f22cc93541917afa4537/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/d6e59942e08f3a8d671a24abd93197bd/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/d6e59942e08f3a8d671a24abd93197bd/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/56cc04c4b469040f98bdedc395abb0a7/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/56cc04c4b469040f98bdedc395abb0a7/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/f8f87338c65a128a01bb60798b026a86/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/f8f87338c65a128a01bb60798b026a86/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/2a743999eb913d5f8efef9cb6039297d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/2a743999eb913d5f8efef9cb6039297d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/f9c6ba017fd9fe6465ffa71bcd7b8e7f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/f9c6ba017fd9fe6465ffa71bcd7b8e7f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/cd8e37b66ad40521904fe3466e3d1bfe/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/cd8e37b66ad40521904fe3466e3d1bfe/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/a4cb58e01a0f0df4c63a6fbfbcbd8c1b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] /Users/A/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/a4cb58e01a0f0df4c63a6fbfbcbd8c1b/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/8e8b8c100ae1fd8c661e0b65147ccf89/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/8e8b8c100ae1fd8c661e0b65147ccf89/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/9c9ea8f9ec863862d6ea3189be96edce/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/9c9ea8f9ec863862d6ea3189be96edce/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/3d98087c1c05c020f62a0fc6d483d7c9/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/3d98087c1c05c020f62a0fc6d483d7c9/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/c8faa4ff596c8744a8e7ce24c4aeddf5/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] /Users/A/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/c8faa4ff596c8744a8e7ce24c4aeddf5/AndroidManifest.xml:20:5-44
-INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml
-INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml
+INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\18ea84ec4754483b5e426838ab1e96e8\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\18ea84ec4754483b5e426838ab1e96e8\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\9d5d00f4c50269280643322882da9005\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\9d5d00f4c50269280643322882da9005\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\d5d36a8f77b840d38c719f96d2305a39\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\d5d36a8f77b840d38c719f96d2305a39\AndroidManifest.xml:20:5-44
+MERGED from [:HoloGraphLibrary] C:\Users\alexa\Desktop\Myo-HMI-Android\HoloGraphLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:HoloGraphLibrary] C:\Users\alexa\Desktop\Myo-HMI-Android\HoloGraphLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:percent:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\percent-27.1.1.aar\f5986859620a72442aa4066ed838623d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:percent:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\percent-27.1.1.aar\f5986859620a72442aa4066ed838623d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\c443978f6f9d66870a52d77ace23ec6a\AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\c443978f6f9d66870a52d77ace23ec6a\AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\1a6c8a79b3e5b5379ad58e127a6ab365\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\1a6c8a79b3e5b5379ad58e127a6ab365\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\69adcafb2c9468eb9eb710a1765c8af8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\69adcafb2c9468eb9eb710a1765c8af8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\51aca6faa7bc0c2e0f85c63b52545094\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\51aca6faa7bc0c2e0f85c63b52545094\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\0334a3b3d874cbd76742e8530461089c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\0334a3b3d874cbd76742e8530461089c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\77dca7d6bc767389f3769bea6e67de55\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\77dca7d6bc767389f3769bea6e67de55\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\ce118cbb6f82a9ec7baa8c6a33407a4a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\ce118cbb6f82a9ec7baa8c6a33407a4a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\611a888b36c72b8d8732393ca59a6bb8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\611a888b36c72b8d8732393ca59a6bb8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\9eba7d0c17cb186cd9e627d597e1ac7a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\9eba7d0c17cb186cd9e627d597e1ac7a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\ed0d4d48ac41565d254bcb831f869aa5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\ed0d4d48ac41565d254bcb831f869aa5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\6b35785f0158513a028c58a7fcb85c25\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\6b35785f0158513a028c58a7fcb85c25\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\02b75ff9a3b3c1cdc4e4a15039bf90ed\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\02b75ff9a3b3c1cdc4e4a15039bf90ed\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\f6742afadfaa06f149eeae59a089c9e7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\f6742afadfaa06f149eeae59a089c9e7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\c1421b514921fea225a0acc0e7312020\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\c1421b514921fea225a0acc0e7312020\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\55ef06633a81ad3191976f3c905f7093\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\alexa\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\55ef06633a81ad3191976f3c905f7093\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml
-		ADDED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/A/Desktop/Zhang/Myo-HMI-Android-April10/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\alexa\Desktop\Myo-HMI-Android\app\src\main\AndroidManifest.xml
