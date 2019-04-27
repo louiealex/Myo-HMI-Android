@@ -79,31 +79,6 @@ public class ListActivity extends AppCompatActivity {
     /*Updated by Ricardo Colin 06/15/18*/
     private Button scanButton;
 
-    /*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_list, menu);
-        menu.add(0, MENU_SCAN, 0, "Scan");
-
-        return true;
-    }
-
-   @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == MENU_SCAN) {
-            scanDevice();
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/
     private ScanCallback mScanCallback = new ScanCallback() {
         @Override
         public void onScanResult(int callbackType, ScanResult result) {
@@ -264,9 +239,6 @@ public class ListActivity extends AppCompatActivity {
             } else {
                 requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
                 requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 2);
-//                requestPermissions(new String[]{Manifest.permission.BLUETOOTH}, 1);
-//                requestPermissions(new String[]{Manifest.permission.BLUETOOTH_ADMIN}, 1);
-
             }
         } else {
             //Toast.makeText(this, "Location Permission (already) Granted!", Toast.LENGTH_SHORT).show();
@@ -278,32 +250,18 @@ public class ListActivity extends AppCompatActivity {
         switch (requestCode) {
             case 1: {
 
-                // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    // permission was granted, yay! Do the
-                    // contacts-related task you need to do.
                 } else {
-
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
                     Toast.makeText(this, "Permission denied to access location services (coarse)", Toast.LENGTH_SHORT).show();
                 }
                 return;
             }
             case 2: {
 
-                // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    // permission was granted, yay! Do the
-                    // contacts-related task you need to do.
                 } else {
-
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
                     Toast.makeText(this, "Permission denied to access external storage", Toast.LENGTH_SHORT).show();
                 }
                 return;
