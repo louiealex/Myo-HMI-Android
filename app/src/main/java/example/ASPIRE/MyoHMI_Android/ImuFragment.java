@@ -137,27 +137,51 @@ public class ImuFragment extends Fragment implements SensorEventListener {
 
         //plotter.pushImuPlotter(data);
 
-        float w, x, y, z;
+        double xRaw, wRaw,yRaw,zRaw;
+        double w, x, y, z;
 
         //added function to work with the IMU raw data from armband
-        w = (float) data.getValue(0).byteValue();
-        x = (float) data.getValue(1).byteValue();
-        y = (float) data.getValue(2).byteValue();
-        z = (float) data.getValue(3).byteValue();
+//        w = (float) data.getValue(0).byteValue();
+//        x = (float) data.getValue(1).byteValue();
+//        y = (float) data.getValue(2).byteValue();
+//        z = (float) data.getValue(3).byteValue();
+
+        wRaw = data.getValue(0).doubleValue();
+        xRaw = data.getValue(1).doubleValue();
+        yRaw = data.getValue(2).doubleValue();
+        zRaw = data.getValue(3).doubleValue();
+
+        //Normalizing the data such that the magnitude is 1
+        w = wRaw/(Math.sqrt( Math.pow( wRaw,2)   +  Math.pow( xRaw,2)  +  Math.pow( yRaw,2)  +  Math.pow( zRaw,2) ) );
+        x = xRaw/(Math.sqrt( Math.pow( wRaw,2)   +  Math.pow( xRaw,2)  +  Math.pow( yRaw,2)  +  Math.pow( zRaw,2) ) );
+        y = yRaw/(Math.sqrt( Math.pow( wRaw,2)   +  Math.pow( xRaw,2)  +  Math.pow( yRaw,2)  +  Math.pow( zRaw,2) ) );
+        z = zRaw/(Math.sqrt( Math.pow( wRaw,2)   +  Math.pow( xRaw,2)  +  Math.pow( yRaw,2)  +  Math.pow( zRaw,2) ) );
+
+
         //double check this is good IMU data
 
         //putting the accelerometer data into and sting and saving it to a file
-        String acceData = String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(z);
+        //String acceData = String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(z);
 
         //saver2.addToFile(phoneFile,acceData);
 
-        roll = (float) Math.atan2(x, z);//outcome in radians so might need to convert to degrees.
-        pitch = (float) Math.asin(Math.max(-1.0f, Math.min(1.0f, 2.0f * (w * y - z * x))));
-        yaw = 0;
+//        roll = (float) Math.atan2(x, z);//outcome in radians so might need to convert to degrees.
+//        pitch = (float) Math.asin(Math.max(-1.0f, Math.min(1.0f, 2.0f * (w * y - z * x))));
+//        yaw = 0;
+
+        roll = (float) Math.atan2(2.0f*(y*z + w*x), 1.0f - 2.0f* ( x*x + y*y)); // rotation about x
+        pitch = (float) Math.asin(Math.max(-1.0f, Math.min(1.0f, 2.0f*(w*y - x*z)))); // rotation about y
+        yaw = (float) Math.atan2(2.0f*(x*y + w*z), 1.0f-2.0f*( y*y + z*z)); // rotation about z
 
         //converting to degrees. converting it to degrees could be one on the same roll calculation line.
-        roll = roll * (180f / (float) Math.PI);
+        roll = roll* (180f / (float) Math.PI);
         roll = Math.round(roll);
+
+        pitch = pitch * (180f / (float) Math.PI);
+        pitch = Math.round(pitch);
+
+        yaw = yaw * (180f / (float) Math.PI);
+        yaw = Math.round(yaw);
 
         //String stuffArray =
 
@@ -166,8 +190,8 @@ public class ImuFragment extends Fragment implements SensorEventListener {
             @Override
             public void run() {
                 //updates the UI
-                img_horizon.setRotation(-1 * roll);
-                txt_azimuth.setText(roll + "°" + "\nW:" + w + "\nX:" + x + "\nY:" + y + "\nZ:" + z);
+                img_horizon.setRotation(-1 * yaw);
+                txt_azimuth.setText("Roll: " + roll  + "°" +  "\nPitch: " + pitch + "°" + "\nYaw: " + yaw + "°" +  "\nW: " + w + "\nX: " + x + "\nY: " + y + "\nZ: " + z);
             }
         });
     }

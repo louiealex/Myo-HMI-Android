@@ -32,6 +32,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
     private static final String MYO_CONTROL_ID = "d5060001-a904-deb9-4748-2c7f4a124842";
     private static final String MYO_EMG_DATA_ID = "d5060005-a904-deb9-4748-2c7f4a124842";
     private static final String MYO_IMU_DATA_ID = "d5060002-a904-deb9-4748-2c7f4a124842";
+    private static final String MYO_CLASSIFIER_ID = "d5060003-a904-deb9-4748-2c7f4a124842";
     /**
      * Characteristics ID
      */
@@ -44,6 +45,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
     private static final String EMG_2_ID = "d5060305-a904-deb9-4748-2c7f4a124842";
     private static final String EMG_3_ID = "d5060405-a904-deb9-4748-2c7f4a124842";
     private static final String IMU_0_ID = "d5060402-a904-deb9-4748-2c7f4a124842";
+    private static final String Classifier_ID = "d5060103-a904-deb9-4748-2c7f4a124842";
     /**
      * android Characteristic ID (from Android Samples/BluetoothLeGatt/SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG)
      */
@@ -310,11 +312,54 @@ public class MyoGattCallback extends BluetoothGattCallback {
         } else if (IMU_0_ID.equals(characteristic.getUuid().toString())) {
             long systemTime_ms = System.currentTimeMillis();
             byte[] imu_data = characteristic.getValue();
+
+
+            float orient_w, orient_x, orient_y, orient_z;
+            short int16 = (short)(((imu_data[0] & 0xFF) << 8) | (imu_data[1] & 0xFF));
+            orient_w = (float) int16/16384;
+            int16 = (short)(((imu_data[2] & 0xFF) << 8) | (imu_data[3] & 0xFF));
+            orient_x = (float) int16/16384;
+            int16 = (short)(((imu_data[4] & 0xFF) << 8) | (imu_data[5] & 0xFF));
+            orient_y = (float) int16/16384;
+            int16 = (short)(((imu_data[6] & 0xFF) << 8) | (imu_data[7] & 0xFF));
+            orient_z = (float) int16/16384;
+
+            float accel_x, accel_y, accel_z;
+            int16 = (short)(((imu_data[8] & 0xFF) << 8) | (imu_data[9] & 0xFF));
+            accel_x = (float) int16/2048;
+            int16 = (short)(((imu_data[10] & 0xFF) << 8) | (imu_data[11] & 0xFF));
+            accel_y = (float) int16/2048;
+            int16 = (short)(((imu_data[12] & 0xFF) << 8) | (imu_data[13] & 0xFF));
+            accel_z = (float) int16/2048;
+
+            float gyro_x, gyro_y, gyro_z;
+            int16 = (short)(((imu_data[14] & 0xFF) << 8) | (imu_data[15] & 0xFF));
+            gyro_x = (float) int16/16;
+            int16 = (short)(((imu_data[16] & 0xFF) << 8) | (imu_data[17] & 0xFF));
+            gyro_y = (float) int16/16;
+            int16 = (short)(((imu_data[18] & 0xFF) << 8) | (imu_data[19] & 0xFF));
+            gyro_z = (float) int16/16;
+
+
             Number[] emg_dataObj = ArrayUtils.toObject(imu_data);
-            ArrayList<Number> imu_data_list1 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 0, 10)));
-            ArrayList<Number> imu_data_list2 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 9, 19)));
-            DataVector dvec1 = new DataVector(true, 1, 10, imu_data_list1, systemTime_ms);
-            DataVector dvec2 = new DataVector(true, 2, 10, imu_data_list2, systemTime_ms);
+            //ArrayList<Number> imu_data_list1 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 0, 10)));
+            //ArrayList<Number> imu_data_list2 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 9, 19)));
+            ArrayList<Number> imu_data_list1 = new ArrayList<>();
+            imu_data_list1.add(0,accel_x);
+            imu_data_list1.add(1,accel_y);
+            imu_data_list1.add(2,accel_z);
+            imu_data_list1.add(3,gyro_x);
+            imu_data_list1.add(4,gyro_y);
+            imu_data_list1.add(5,gyro_z);
+
+            ArrayList<Number> imu_data_list2 = new ArrayList<>();
+            imu_data_list2.add(0,orient_w);
+            imu_data_list2.add(1,orient_x);
+            imu_data_list2.add(2,orient_y);
+            imu_data_list2.add(3,orient_z);
+
+            DataVector dvec1 = new DataVector(true, 1, imu_data_list1.size(), imu_data_list1, systemTime_ms);
+            DataVector dvec2 = new DataVector(true, 2, imu_data_list2.size(), imu_data_list2, systemTime_ms);
             fcalc.pushIMUFeatureBuffer(dvec1);
             fcalc.pushIMUFeatureBuffer(dvec2);
 
@@ -322,17 +367,9 @@ public class MyoGattCallback extends BluetoothGattCallback {
             imuFragment.sendIMUValues(dvec2);
 
 
-            float w, x, y,z;
-            short int16 = (short)(((imu_data[0] & 0xFF) << 8) | (imu_data[1] & 0xFF));
-            w = (float) int16/16384;
-            int16 = (short)(((imu_data[2] & 0xFF) << 8) | (imu_data[3] & 0xFF));
-            x = (float) int16/16384;
-            int16 = (short)(((imu_data[4] & 0xFF) << 8) | (imu_data[5] & 0xFF));
-            y = (float) int16/16384;
-            int16 = (short)(((imu_data[6] & 0xFF) << 8) | (imu_data[7] & 0xFF));
-            z = (float) int16/16384;
+
             //SendToUnity.setQuaternion((float) data.getValue(0).byteValue(), (float) data.getValue(1).byteValue(), (float) data.getValue(2).byteValue(), (float) data.getValue(3).byteValue());
-            SendToUnity.setQuaternion(w, x, y, z);
+            SendToUnity.setQuaternion(orient_w, orient_x, orient_y, orient_z);
 
 
 /*            try{
