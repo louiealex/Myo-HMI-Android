@@ -36,7 +36,7 @@ public class ReceiveFromUnity extends BroadcastReceiver {
         if (receivedIntent != null) {
             // We assigned it to our static variable
             text = receivedIntent.toUpperCase();
-            Log.d("ReceiveFromUnity", text);
+            //Log.d("ReceiveFromUnity", text);
 
             if (text.equals("LONG")) {
                 mMyoCallback.setMyoControlCommand(myoCommandList.sendVibration3());

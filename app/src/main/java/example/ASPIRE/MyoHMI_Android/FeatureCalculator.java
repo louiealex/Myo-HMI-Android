@@ -504,8 +504,18 @@ public class FeatureCalculator {
             imusamplebuffer.remove(samplebuffer.size() - 1);
         imuibuf = ++imuibuf % (bufsize);
 
-        if (data.getFlag() == 2) {
-            SendToUnity.setQuaternion((float) data.getValue(0).byteValue(), (float) data.getValue(1).byteValue(), (float) data.getValue(2).byteValue(), (float) data.getValue(3).byteValue());
+        if (data.getFlag() == 1) {
+//            float w, x, y,z;
+//            short int16 = (short)(((((byte)data.getValue(0)) & 0xFF) << 8) | (((byte) data.getValue(1)) & 0xFF));
+//            w = int16;
+//            int16 = (short)(((((byte)data.getValue(2)) & 0xFF) << 8) | (((byte) data.getValue(3)) & 0xFF));
+//            x = int16;
+//            int16 = (short)(((((byte)data.getValue(4)) & 0xFF) << 8) | (((byte) data.getValue(5)) & 0xFF));
+//            y = int16;
+//            int16 = (short)(((((byte)data.getValue(6)) & 0xFF) << 8) | (((byte) data.getValue(7)) & 0xFF));
+//            z = int16;
+            //SendToUnity.setQuaternion((float) data.getValue(0).byteValue(), (float) data.getValue(1).byteValue(), (float) data.getValue(2).byteValue(), (float) data.getValue(3).byteValue());
+            //SendToUnity.setQuaternion(w, x, y, z);
         }
     }
 

@@ -312,7 +312,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
             byte[] imu_data = characteristic.getValue();
             Number[] emg_dataObj = ArrayUtils.toObject(imu_data);
             ArrayList<Number> imu_data_list1 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 0, 10)));
-            ArrayList<Number> imu_data_list2 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 10, 20)));
+            ArrayList<Number> imu_data_list2 = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(emg_dataObj, 9, 19)));
             DataVector dvec1 = new DataVector(true, 1, 10, imu_data_list1, systemTime_ms);
             DataVector dvec2 = new DataVector(true, 2, 10, imu_data_list2, systemTime_ms);
             fcalc.pushIMUFeatureBuffer(dvec1);
@@ -320,6 +320,46 @@ public class MyoGattCallback extends BluetoothGattCallback {
 
             imuFragment = new ImuFragment();
             imuFragment.sendIMUValues(dvec2);
+
+
+            float w, x, y,z;
+            short int16 = (short)(((imu_data[0] & 0xFF) << 8) | (imu_data[1] & 0xFF));
+            w = (float) int16/16384;
+            int16 = (short)(((imu_data[2] & 0xFF) << 8) | (imu_data[3] & 0xFF));
+            x = (float) int16/16384;
+            int16 = (short)(((imu_data[4] & 0xFF) << 8) | (imu_data[5] & 0xFF));
+            y = (float) int16/16384;
+            int16 = (short)(((imu_data[6] & 0xFF) << 8) | (imu_data[7] & 0xFF));
+            z = (float) int16/16384;
+            //SendToUnity.setQuaternion((float) data.getValue(0).byteValue(), (float) data.getValue(1).byteValue(), (float) data.getValue(2).byteValue(), (float) data.getValue(3).byteValue());
+            SendToUnity.setQuaternion(w, x, y, z);
+
+
+/*            try{
+            Log.d(TAG, String.valueOf((int)imu_data[0]));
+            Log.d(TAG, String.valueOf((int)imu_data[1]));
+            Log.d(TAG, String.valueOf((int)imu_data[2]));
+            Log.d(TAG, String.valueOf((int)imu_data[3]));
+            Log.d(TAG, String.valueOf((int)imu_data[4]));
+            Log.d(TAG, String.valueOf((int)imu_data[5]));
+            Log.d(TAG, String.valueOf((int)imu_data[6]));
+            Log.d(TAG, String.valueOf((int)imu_data[7]));
+            Log.d(TAG, String.valueOf((int)imu_data[8]));
+            Log.d(TAG, String.valueOf((int)imu_data[9]));
+            Log.d(TAG, String.valueOf((int)imu_data[10]));
+            Log.d(TAG, String.valueOf((int)imu_data[11]));
+            Log.d(TAG, String.valueOf((int)imu_data[12]));
+            Log.d(TAG, String.valueOf((int)imu_data[13]));
+            Log.d(TAG, String.valueOf((int)imu_data[14]));
+            Log.d(TAG, String.valueOf((int)imu_data[15]));
+            Log.d(TAG, String.valueOf((int)imu_data[16]));
+            Log.d(TAG, String.valueOf((int)imu_data[17]));
+            Log.d(TAG, String.valueOf((int)imu_data[18]));
+            Log.d(TAG, String.valueOf((int)imu_data[19]));
+            } catch(Exception ex){
+
+            }*/
+
         }
     }
 

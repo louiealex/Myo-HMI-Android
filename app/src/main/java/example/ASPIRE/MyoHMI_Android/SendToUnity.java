@@ -46,7 +46,7 @@ public class SendToUnity extends Service {
             }
 
             handler.removeCallbacks(this);
-            handler.postDelayed(this, 200);
+            handler.postDelayed(this, 50);
         }
     };
 
@@ -63,7 +63,7 @@ public class SendToUnity extends Service {
     public void onStart(Intent intent, int startid) {
         // We first start the Handler
         handler.removeCallbacks(sendData);
-        handler.postDelayed(sendData, 200);
+        handler.postDelayed(sendData, 50);
         Log.d("SendToUnity", "Started");
     }
 
