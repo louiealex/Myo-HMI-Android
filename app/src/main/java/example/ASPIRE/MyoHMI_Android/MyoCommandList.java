@@ -85,6 +85,19 @@ public class MyoCommandList {
         return send_bytes_data;
     }
 
+    public byte[] sendImuEmgAndClassifier() {
+        byte command_data = (byte) 0x01;
+        byte payload_data = (byte) 3;
+        byte emg_mode = (byte) 0x02;
+        byte imu_mode = (byte) 0x01;
+        byte class_mode = (byte) 0x01;
+        send_bytes_data =
+                new byte[]{command_data, payload_data, emg_mode, imu_mode, class_mode};
+
+        return send_bytes_data;
+    }
+
+
     public byte[] sendUnLock() {
         byte command_unlock = (byte) 0x0a;
         byte payload_unlock = (byte) 1;

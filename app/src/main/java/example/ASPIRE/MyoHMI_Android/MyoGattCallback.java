@@ -32,7 +32,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
     private static final String MYO_CONTROL_ID = "d5060001-a904-deb9-4748-2c7f4a124842";
     private static final String MYO_EMG_DATA_ID = "d5060005-a904-deb9-4748-2c7f4a124842";
     private static final String MYO_IMU_DATA_ID = "d5060002-a904-deb9-4748-2c7f4a124842";
-    private static final String MYO_CLASSIFIER_ID = "d5060003-a904-deb9-4748-2c7f4a124842";
+    private static final String MYO_CLASSIFIER_DATA_ID = "d5060003-a904-deb9-4748-2c7f4a124842";
     /**
      * Characteristics ID
      */
@@ -45,7 +45,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
     private static final String EMG_2_ID = "d5060305-a904-deb9-4748-2c7f4a124842";
     private static final String EMG_3_ID = "d5060405-a904-deb9-4748-2c7f4a124842";
     private static final String IMU_0_ID = "d5060402-a904-deb9-4748-2c7f4a124842";
-    private static final String Classifier_ID = "d5060103-a904-deb9-4748-2c7f4a124842";
+    private static final String Classifier_0_ID = "d5060103-a904-deb9-4748-2c7f4a124842";
     /**
      * android Characteristic ID (from Android Samples/BluetoothLeGatt/SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG)
      */
@@ -67,6 +67,8 @@ public class MyoGattCallback extends BluetoothGattCallback {
     private BluetoothGattCharacteristic mCharacteristic_emg2;
     private BluetoothGattCharacteristic mCharacteristic_emg3;
     private BluetoothGattCharacteristic mCharacteristic_imu0;
+    private BluetoothGattCharacteristic mCharacteristic_classifier0;
+
     private MyoCommandList commandList = new MyoCommandList();
     private String TAG = "MyoGatt";
     private TextView textView;
@@ -132,7 +134,8 @@ public class MyoGattCallback extends BluetoothGattCallback {
             // Find GATT Service
             BluetoothGattService service_emg = gatt.getService(UUID.fromString(MYO_EMG_DATA_ID));
             BluetoothGattService service_imu = gatt.getService(UUID.fromString(MYO_IMU_DATA_ID));
-            if (service_emg == null || service_imu == null) {//should probably break this into another separate checker for IMU service
+            BluetoothGattService service_classifier = gatt.getService(UUID.fromString(MYO_CLASSIFIER_DATA_ID));
+            if (service_emg == null || service_imu == null || service_classifier == null) {//should probably break this into another separate checker for IMU service
                 Log.d(TAG, "No Myo Service !!");
             } else {
                 Log.d(TAG, "Find Myo Data Service !!");
@@ -142,7 +145,8 @@ public class MyoGattCallback extends BluetoothGattCallback {
                 mCharacteristic_emg2 = service_emg.getCharacteristic(UUID.fromString(EMG_2_ID));
                 mCharacteristic_emg3 = service_emg.getCharacteristic(UUID.fromString(EMG_3_ID));
                 mCharacteristic_imu0 = service_imu.getCharacteristic(UUID.fromString(IMU_0_ID));
-                if (mCharacteristic_emg0 == null || mCharacteristic_imu0 == null) {
+                mCharacteristic_classifier0 = service_classifier.getCharacteristic(UUID.fromString(Classifier_0_ID));
+                if (mCharacteristic_emg0 == null || mCharacteristic_imu0 == null || mCharacteristic_classifier0 == null) {
                     callback_msg = "Not Found Data Characteristics";
                 } else {
                     // Setting the notification
@@ -151,7 +155,8 @@ public class MyoGattCallback extends BluetoothGattCallback {
                     boolean registered_2 = gatt.setCharacteristicNotification(mCharacteristic_emg2, true);
                     boolean registered_3 = gatt.setCharacteristicNotification(mCharacteristic_emg3, true);
                     boolean iregistered_0 = gatt.setCharacteristicNotification(mCharacteristic_imu0, true);
-                    if (!registered_0 || !iregistered_0) {
+                    boolean cregistered_0 = gatt.setCharacteristicNotification(mCharacteristic_classifier0, true);
+                if (!registered_0 || !iregistered_0 || !cregistered_0) {
                         Log.d(TAG, "EMG-Data Notification FALSE !!");
                     } else {
                         Log.d(TAG, "EMG-Data Notification TRUE !!");
@@ -161,12 +166,15 @@ public class MyoGattCallback extends BluetoothGattCallback {
                         BluetoothGattDescriptor descriptor_2 = mCharacteristic_emg2.getDescriptor(UUID.fromString(CLIENT_CHARACTERISTIC_CONFIG));
                         BluetoothGattDescriptor descriptor_3 = mCharacteristic_emg3.getDescriptor(UUID.fromString(CLIENT_CHARACTERISTIC_CONFIG));
                         BluetoothGattDescriptor idescriptor_0 = mCharacteristic_imu0.getDescriptor(UUID.fromString(CLIENT_CHARACTERISTIC_CONFIG));
-                        if (descriptor_0 != null || idescriptor_0 != null) {
+                        BluetoothGattDescriptor cdescriptor_0 = mCharacteristic_classifier0.getDescriptor(UUID.fromString(CLIENT_CHARACTERISTIC_CONFIG));
+                        if (descriptor_0 != null || idescriptor_0 != null || cdescriptor_0 != null) {
+                            cdescriptor_0.setValue(BluetoothGattDescriptor.ENABLE_INDICATION_VALUE);
                             idescriptor_0.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
                             descriptor_0.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
                             descriptor_1.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
                             descriptor_2.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
                             descriptor_3.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
+                            descriptorWriteQueue.add(cdescriptor_0);
                             descriptorWriteQueue.add(idescriptor_0);
                             descriptorWriteQueue.add(descriptor_0);
                             descriptorWriteQueue.add(descriptor_1);
@@ -255,11 +263,18 @@ public class MyoGattCallback extends BluetoothGattCallback {
             myoConnected = false;
             Log.d(TAG, "onCharacteristicRead error: " + status);
         }
-        if (setMyoControlCommand(commandList.sendImuAndEmg())) {
+/*        if (setMyoControlCommand(commandList.sendImuAndEmg())) {
             Log.d(TAG, "Successfully started EMG stream");
         } else {
             Log.d(TAG, "Unable to start EMG stream");
+        }*/
+
+        if (setMyoControlCommand(commandList.sendImuEmgAndClassifier())) {
+            Log.d(TAG, "Successfully started EMG IMU Classifier stream");
+        } else {
+            Log.d(TAG, "Unable to start EMG stream");
         }
+
     }
 
     @Override
@@ -315,29 +330,29 @@ public class MyoGattCallback extends BluetoothGattCallback {
 
 
             float orient_w, orient_x, orient_y, orient_z;
-            short int16 = (short)(((imu_data[0] & 0xFF) << 8) | (imu_data[1] & 0xFF));
+            short int16 = (short)(((imu_data[1] & 0xFF) << 8) | (imu_data[0] & 0xFF));
             orient_w = (float) int16/16384;
-            int16 = (short)(((imu_data[2] & 0xFF) << 8) | (imu_data[3] & 0xFF));
+            int16 = (short)(((imu_data[3] & 0xFF) << 8) | (imu_data[2] & 0xFF));
             orient_x = (float) int16/16384;
-            int16 = (short)(((imu_data[4] & 0xFF) << 8) | (imu_data[5] & 0xFF));
+            int16 = (short)(((imu_data[5] & 0xFF) << 8) | (imu_data[4] & 0xFF));
             orient_y = (float) int16/16384;
-            int16 = (short)(((imu_data[6] & 0xFF) << 8) | (imu_data[7] & 0xFF));
+            int16 = (short)(((imu_data[7] & 0xFF) << 8) | (imu_data[6] & 0xFF));
             orient_z = (float) int16/16384;
 
             float accel_x, accel_y, accel_z;
-            int16 = (short)(((imu_data[8] & 0xFF) << 8) | (imu_data[9] & 0xFF));
+            int16 = (short)(((imu_data[9] & 0xFF) << 8) | (imu_data[8] & 0xFF));
             accel_x = (float) int16/2048;
-            int16 = (short)(((imu_data[10] & 0xFF) << 8) | (imu_data[11] & 0xFF));
+            int16 = (short)(((imu_data[11] & 0xFF) << 8) | (imu_data[10] & 0xFF));
             accel_y = (float) int16/2048;
-            int16 = (short)(((imu_data[12] & 0xFF) << 8) | (imu_data[13] & 0xFF));
+            int16 = (short)(((imu_data[13] & 0xFF) << 8) | (imu_data[12] & 0xFF));
             accel_z = (float) int16/2048;
 
             float gyro_x, gyro_y, gyro_z;
-            int16 = (short)(((imu_data[14] & 0xFF) << 8) | (imu_data[15] & 0xFF));
+            int16 = (short)(((imu_data[15] & 0xFF) << 8) | (imu_data[14] & 0xFF));
             gyro_x = (float) int16/16;
-            int16 = (short)(((imu_data[16] & 0xFF) << 8) | (imu_data[17] & 0xFF));
+            int16 = (short)(((imu_data[17] & 0xFF) << 8) | (imu_data[16] & 0xFF));
             gyro_y = (float) int16/16;
-            int16 = (short)(((imu_data[18] & 0xFF) << 8) | (imu_data[19] & 0xFF));
+            int16 = (short)(((imu_data[19] & 0xFF) << 8) | (imu_data[18] & 0xFF));
             gyro_z = (float) int16/16;
 
 
@@ -371,7 +386,6 @@ public class MyoGattCallback extends BluetoothGattCallback {
             //SendToUnity.setQuaternion((float) data.getValue(0).byteValue(), (float) data.getValue(1).byteValue(), (float) data.getValue(2).byteValue(), (float) data.getValue(3).byteValue());
             SendToUnity.setQuaternion(orient_w, orient_x, orient_y, orient_z);
 
-
 /*            try{
             Log.d(TAG, String.valueOf((int)imu_data[0]));
             Log.d(TAG, String.valueOf((int)imu_data[1]));
@@ -396,6 +410,98 @@ public class MyoGattCallback extends BluetoothGattCallback {
             } catch(Exception ex){
 
             }*/
+
+        } else if (Classifier_0_ID.equals(characteristic.getUuid().toString())) {
+            Log.d(TAG, "Classifier DATA RECEIVED");
+            long systemTime_ms = System.currentTimeMillis();
+            byte[] classifier_data = characteristic.getValue();
+
+            short type, arm, x_axis_direction, pose, sync_result;
+            type = (short) classifier_data[0];
+
+
+
+            if (type == 1){
+                Log.d(TAG, "Type: Arm Synced");
+            } else if (type == 2){
+                Log.d(TAG, "Type: Arm Unsynced");
+            } else if (type == 3){
+                Log.d(TAG, "Type: Pose");
+            } else if (type == 4){
+                Log.d(TAG, "Type: Unlocked");
+            } else if (type == 5){
+                Log.d(TAG, "Type: Locked");
+            } else if (type == 6){
+                Log.d(TAG, "Type: Failed");
+            } else {
+                Log.d(TAG, "Type: Invalid Result");
+            }
+
+
+
+            if (type == 1){
+                arm = (short) classifier_data[1];
+                x_axis_direction = (short) classifier_data[2];
+
+                if(arm == 1){
+                    Log.d(TAG, "ARM: Right");
+                } else if (arm == 2){
+                    Log.d(TAG, "ARM: Left");
+                } else if(arm == -1){
+                    Log.d(TAG, "ARM: Unknown");
+                } else{
+                    Log.d(TAG, "ARM: Invalid Result");
+                }
+
+                if(x_axis_direction == 1){
+                    Log.d(TAG, "x_axis_direction: Towards Wrist");
+                } else if (x_axis_direction == 2){
+                    Log.d(TAG, "x_axis_direction: Towards Elbow");
+                } else if (arm == -1){
+                    Log.d(TAG, "x_axis_direction: Unknown");
+                } else{
+                    Log.d(TAG, "X_axis direction: Invalid Result");
+                }
+
+            } else if(type == 3){
+                pose  = (short)(((classifier_data[2] & 0xFF) << 8) | (classifier_data[1] & 0xFF));
+
+
+                if(pose == 0){
+                    Log.d(TAG, "Pose: Rest");
+                } else if (pose == 1){
+                    Log.d(TAG, "Pose: Fist");
+                } else if (pose == 2){
+                    Log.d(TAG, "Pose: Wave In");
+                } else if (pose == 3){
+                    Log.d(TAG, "Pose: Wave Out");
+                } else if (pose == 4){
+                    Log.d(TAG, "Pose: Finger Spread");;
+                } else if (pose == 5){
+                    Log.d(TAG, "Pose: Double Tap");
+                } else if (pose == -1){
+                    Log.d(TAG, "Pose: Unknown");
+                } else {
+                    Log.d(TAG, "Pose: Invalid Result");
+                }
+
+                Log.d(TAG, "POSE: " + String.valueOf(pose));
+
+
+            }  else if (type ==6){
+                sync_result = (short) classifier_data[1];
+                if(sync_result == 1){
+                    Log.d(TAG, "Sync Result: Sync Gesture Performed too hard.");
+                }
+            }
+
+
+
+
+
+            //SendToUnity.setQuaternion((float) data.getValue(0).byteValue(), (float) data.getValue(1).byteValue(), (float) data.getValue(2).byteValue(), (float) data.getValue(3).byteValue());
+            //SendToUnity.setQuaternion(orient_w, orient_x, orient_y, orient_z);
+
 
         }
     }

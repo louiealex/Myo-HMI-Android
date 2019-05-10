@@ -42,7 +42,7 @@ public class SendToUnity extends Service {
 
             // In our case we run this method each 0.5 second with postDelayed
             for (int i = 0; i < fullMessage.length; i++) {
-                Log.d("SendToUnityMessage", fullMessage[i]);
+                //Log.d("SendToUnityMessage", fullMessage[i]);
             }
 
             handler.removeCallbacks(this);

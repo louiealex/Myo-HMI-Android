@@ -146,16 +146,16 @@ public class ImuFragment extends Fragment implements SensorEventListener {
 //        y = (float) data.getValue(2).byteValue();
 //        z = (float) data.getValue(3).byteValue();
 
-        wRaw = data.getValue(0).doubleValue();
-        xRaw = data.getValue(1).doubleValue();
-        yRaw = data.getValue(2).doubleValue();
-        zRaw = data.getValue(3).doubleValue();
+        w= data.getValue(0).doubleValue();
+        x = data.getValue(1).doubleValue();
+        y = data.getValue(2).doubleValue();
+        z = data.getValue(3).doubleValue();
 
-        //Normalizing the data such that the magnitude is 1
-        w = wRaw/(Math.sqrt( Math.pow( wRaw,2)   +  Math.pow( xRaw,2)  +  Math.pow( yRaw,2)  +  Math.pow( zRaw,2) ) );
-        x = xRaw/(Math.sqrt( Math.pow( wRaw,2)   +  Math.pow( xRaw,2)  +  Math.pow( yRaw,2)  +  Math.pow( zRaw,2) ) );
-        y = yRaw/(Math.sqrt( Math.pow( wRaw,2)   +  Math.pow( xRaw,2)  +  Math.pow( yRaw,2)  +  Math.pow( zRaw,2) ) );
-        z = zRaw/(Math.sqrt( Math.pow( wRaw,2)   +  Math.pow( xRaw,2)  +  Math.pow( yRaw,2)  +  Math.pow( zRaw,2) ) );
+//        //Normalizing the data such that the magnitude is 1
+//        w = wRaw/(Math.sqrt( Math.pow( wRaw,2)   +  Math.pow( xRaw,2)  +  Math.pow( yRaw,2)  +  Math.pow( zRaw,2) ) );
+//        x = xRaw/(Math.sqrt( Math.pow( wRaw,2)   +  Math.pow( xRaw,2)  +  Math.pow( yRaw,2)  +  Math.pow( zRaw,2) ) );
+//        y = yRaw/(Math.sqrt( Math.pow( wRaw,2)   +  Math.pow( xRaw,2)  +  Math.pow( yRaw,2)  +  Math.pow( zRaw,2) ) );
+//        z = zRaw/(Math.sqrt( Math.pow( wRaw,2)   +  Math.pow( xRaw,2)  +  Math.pow( yRaw,2)  +  Math.pow( zRaw,2) ) );
 
 
         //double check this is good IMU data
@@ -190,8 +190,9 @@ public class ImuFragment extends Fragment implements SensorEventListener {
             @Override
             public void run() {
                 //updates the UI
-                img_horizon.setRotation(-1 * yaw);
-                txt_azimuth.setText("Roll: " + roll  + "°" +  "\nPitch: " + pitch + "°" + "\nYaw: " + yaw + "°" +  "\nW: " + w + "\nX: " + x + "\nY: " + y + "\nZ: " + z);
+                img_horizon.setRotation(-1 * roll);
+                //txt_azimuth.setText("Roll: " + roll  + "°" +  "\nPitch: " + pitch + "°" + "\nYaw: " + yaw + "°" +  "\nW: " + w + "\nX: " + x + "\nY: " + y + "\nZ: " + z);
+                txt_azimuth.setText("Roll: " + roll  + "°" +  "\nPitch: " + pitch + "°" + "\nYaw: " + yaw + "°" +  "\nW: " + String.format("%.6f", w) + "\nX: " + String.format("%.6f", x) + "\nY: " + String.format("%.6f", y) + "\nZ: " + String.format("%.6f", z));
             }
         });
     }
