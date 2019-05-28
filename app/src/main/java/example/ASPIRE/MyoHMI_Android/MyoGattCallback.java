@@ -385,34 +385,12 @@ public class MyoGattCallback extends BluetoothGattCallback {
 
             //SendToUnity.setQuaternion((float) data.getValue(0).byteValue(), (float) data.getValue(1).byteValue(), (float) data.getValue(2).byteValue(), (float) data.getValue(3).byteValue());
             SendToUnity.setQuaternion(orient_w, orient_x, orient_y, orient_z);
+            //Log.d(TAG, "IMU DATA RECEIVED");
 
-/*            try{
-            Log.d(TAG, String.valueOf((int)imu_data[0]));
-            Log.d(TAG, String.valueOf((int)imu_data[1]));
-            Log.d(TAG, String.valueOf((int)imu_data[2]));
-            Log.d(TAG, String.valueOf((int)imu_data[3]));
-            Log.d(TAG, String.valueOf((int)imu_data[4]));
-            Log.d(TAG, String.valueOf((int)imu_data[5]));
-            Log.d(TAG, String.valueOf((int)imu_data[6]));
-            Log.d(TAG, String.valueOf((int)imu_data[7]));
-            Log.d(TAG, String.valueOf((int)imu_data[8]));
-            Log.d(TAG, String.valueOf((int)imu_data[9]));
-            Log.d(TAG, String.valueOf((int)imu_data[10]));
-            Log.d(TAG, String.valueOf((int)imu_data[11]));
-            Log.d(TAG, String.valueOf((int)imu_data[12]));
-            Log.d(TAG, String.valueOf((int)imu_data[13]));
-            Log.d(TAG, String.valueOf((int)imu_data[14]));
-            Log.d(TAG, String.valueOf((int)imu_data[15]));
-            Log.d(TAG, String.valueOf((int)imu_data[16]));
-            Log.d(TAG, String.valueOf((int)imu_data[17]));
-            Log.d(TAG, String.valueOf((int)imu_data[18]));
-            Log.d(TAG, String.valueOf((int)imu_data[19]));
-            } catch(Exception ex){
 
-            }*/
 
         } else if (Classifier_0_ID.equals(characteristic.getUuid().toString())) {
-            Log.d(TAG, "Classifier DATA RECEIVED");
+            //Log.d(TAG, "Classifier DATA RECEIVED");
             long systemTime_ms = System.currentTimeMillis();
             byte[] classifier_data = characteristic.getValue();
 
@@ -420,80 +398,93 @@ public class MyoGattCallback extends BluetoothGattCallback {
             type = (short) classifier_data[0];
 
 
+            switch (type) {
+                case 1:
+                    Log.d(TAG, "Type: Arm Synced");
 
-            if (type == 1){
-                Log.d(TAG, "Type: Arm Synced");
-            } else if (type == 2){
-                Log.d(TAG, "Type: Arm Unsynced");
-            } else if (type == 3){
-                Log.d(TAG, "Type: Pose");
-            } else if (type == 4){
-                Log.d(TAG, "Type: Unlocked");
-            } else if (type == 5){
-                Log.d(TAG, "Type: Locked");
-            } else if (type == 6){
-                Log.d(TAG, "Type: Failed");
-            } else {
-                Log.d(TAG, "Type: Invalid Result");
+                    arm = (short) classifier_data[1];
+                    x_axis_direction = (short) classifier_data[2];
+
+                    if (arm == 1) {
+                        Log.d(TAG, "ARM: Right");
+                    } else if (arm == 2) {
+                        Log.d(TAG, "ARM: Left");
+                    } else if (arm == -1) {
+                        Log.d(TAG, "ARM: Unknown");
+                    } else {
+                        Log.d(TAG, "ARM: Invalid Result");
+                    }
+
+                    if (x_axis_direction == 1) {
+                        Log.d(TAG, "x_axis_direction: Towards Wrist");
+                    } else if (x_axis_direction == 2) {
+                        Log.d(TAG, "x_axis_direction: Towards Elbow");
+                    } else if (arm == -1) {
+                        Log.d(TAG, "x_axis_direction: Unknown");
+                    } else {
+                        Log.d(TAG, "X_axis direction: Invalid Result");
+                    }
+
+
+                    break;
+                case 2:
+                    Log.d(TAG, "Type: Arm Unsynced");
+                    SendToUnity.setDefaultGesture("No Predictions Available");
+                    break;
+                case 3:
+                    Log.d(TAG, "Type: Pose");
+
+                    pose = (short) (((classifier_data[2] & 0xFF) << 8) | (classifier_data[1] & 0xFF));
+
+
+                    if (pose == 0) {
+                        Log.d(TAG, "Pose: Rest");
+                        SendToUnity.setDefaultGesture("Rest");
+                    } else if (pose == 1) {
+                        Log.d(TAG, "Pose: Fist");
+                        SendToUnity.setDefaultGesture("Fist");
+                    } else if (pose == 2) {
+                        Log.d(TAG, "Pose: Wave In");
+                        SendToUnity.setDefaultGesture("Wave In");
+                    } else if (pose == 3) {
+                        Log.d(TAG, "Pose: Wave Out");
+                        SendToUnity.setDefaultGesture("Wave Out");
+                    } else if (pose == 4) {
+                        //Log.d(TAG, "Pose: Finger Spread");
+                        Log.d(TAG, "Pose: Open Hand");
+                        SendToUnity.setDefaultGesture("Open Hand");
+                    } else if (pose == 5) {
+                        Log.d(TAG, "Pose: Double Tap");
+                        SendToUnity.setDefaultGesture("Double Tap");
+                    } else if (pose == -1) {
+                        Log.d(TAG, "Pose: Unknown");
+                        SendToUnity.setDefaultGesture("Unknown");
+                        //SendToUnity.setDefaultGesture("ZERO GESTURES");
+                    } else {
+                        Log.d(TAG, "Pose: Invalid Result");
+                    }
+
+                    break;
+                case 4:
+                    Log.d(TAG, "Type: Unlocked");
+                    break;
+                case 5:
+                    Log.d(TAG, "Type: Locked");
+                    break;
+                case 6:
+                    Log.d(TAG, "Type: Failed");
+
+                    sync_result = (short) classifier_data[1];
+                    if (sync_result == 1) {
+                        Log.d(TAG, "Sync Result: Sync Gesture Performed too hard.");
+                    }
+
+                    break;
+                default:
+                    Log.d(TAG, "Type: Invalid Result");
+                    break;
             }
 
-
-
-            if (type == 1){
-                arm = (short) classifier_data[1];
-                x_axis_direction = (short) classifier_data[2];
-
-                if(arm == 1){
-                    Log.d(TAG, "ARM: Right");
-                } else if (arm == 2){
-                    Log.d(TAG, "ARM: Left");
-                } else if(arm == -1){
-                    Log.d(TAG, "ARM: Unknown");
-                } else{
-                    Log.d(TAG, "ARM: Invalid Result");
-                }
-
-                if(x_axis_direction == 1){
-                    Log.d(TAG, "x_axis_direction: Towards Wrist");
-                } else if (x_axis_direction == 2){
-                    Log.d(TAG, "x_axis_direction: Towards Elbow");
-                } else if (arm == -1){
-                    Log.d(TAG, "x_axis_direction: Unknown");
-                } else{
-                    Log.d(TAG, "X_axis direction: Invalid Result");
-                }
-
-            } else if(type == 3){
-                pose  = (short)(((classifier_data[2] & 0xFF) << 8) | (classifier_data[1] & 0xFF));
-
-
-                if(pose == 0){
-                    Log.d(TAG, "Pose: Rest");
-                } else if (pose == 1){
-                    Log.d(TAG, "Pose: Fist");
-                } else if (pose == 2){
-                    Log.d(TAG, "Pose: Wave In");
-                } else if (pose == 3){
-                    Log.d(TAG, "Pose: Wave Out");
-                } else if (pose == 4){
-                    Log.d(TAG, "Pose: Finger Spread");;
-                } else if (pose == 5){
-                    Log.d(TAG, "Pose: Double Tap");
-                } else if (pose == -1){
-                    Log.d(TAG, "Pose: Unknown");
-                } else {
-                    Log.d(TAG, "Pose: Invalid Result");
-                }
-
-                Log.d(TAG, "POSE: " + String.valueOf(pose));
-
-
-            }  else if (type ==6){
-                sync_result = (short) classifier_data[1];
-                if(sync_result == 1){
-                    Log.d(TAG, "Sync Result: Sync Gesture Performed too hard.");
-                }
-            }
 
 
 

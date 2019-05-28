@@ -153,7 +153,7 @@ public class FeatureCalculator {
         Log.d("FeatureCalculator", gestures.get(prediction));
 
         //Sends predicted Gesture to Unity
-        SendToUnity.setMessage(gestures.get(prediction));
+        SendToUnity.setGesture(gestures.get(prediction));
         //SendToUnity.setQuaternion((float) inFeatemg.getValue(0).byteValue(), (float) inFeatemg.getValue(1).byteValue(), (float) inFeatemg.getValue(2).byteValue(), (float) inFeatemg.getValue(3).byteValue());
 
 
